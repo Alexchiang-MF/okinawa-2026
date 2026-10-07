@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="沖繩本島五天四夜自駕手冊 2026/11/11–11/15：航班、租車、住宿、逐日行程、餐飲訂位、導航速查。">
+<meta name="theme-color" content="#F4F2EE" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1317" media="(prefers-color-scheme: dark)">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="沖繩本島五天四夜自駕手冊">
+<meta property="og:description" content="2026/11/11–11/15 · 西岸北上、山原折返、東岸南下。航班、租車、住宿、逐日行程與導航速查。">
+<meta property="og:image" content="https://alexchiang-mf.github.io/okinawa-2026/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://alexchiang-mf.github.io/okinawa-2026/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="color-scheme" content="light dark">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23C8442A'/%3E%3Ctext x='16' y='22.5' font-family='sans-serif' font-size='17' font-weight='900' fill='white' text-anchor='middle'%3E沖%3C/text%3E%3C/svg%3E">
+<title>沖繩自駕手冊 · 2026.11.11–15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+/* 沖繩 2026 旅のしおり
+   Concept: ゆいレール station signage + road-trip line map. Each day is a "line" with its own colour,
+   like a rail network; vermilion (首里朱) is the single action accent.
+   Shape rule: containers 14px, numbering badges 8px, controls full pill. */
+
+:root{
+  --bg:#F4F2EE; --surface:#FDFCFA; --surface-2:#ECE9E3;
+  --ink:#17212A; --ink-2:#47535D; --ink-3:#5E6971; --line:#DAD6CF;
+  --accent:#B83C22; --accent-ink:#FFFFFF; --accent-wash:#FBE8E1;
+  --caution:#7A4E00; --caution-wash:#FFF1CF;
+  --park:#1B57A3; --park-wash:#E3EDF9;
+  --tip:#1F6B5C; --tip-wash:#DFF1EC;
+  /* day lines */
+  --d1:#56677A; --d2:#0A78A0; --d3:#2E7A4C; --d4:#A3570B; --d5:#56677A;
+  --on-line:#FFFFFF;
+  --scrim:10 18 24;
+  --shadow:0 1px 2px rgb(23 33 42 / .06), 0 8px 24px rgb(23 33 42 / .06);
+  --f-body:"Noto Sans TC","PingFang TC","Hiragino Sans","Microsoft JhengHei",sans-serif;
+  --f-num:"Barlow Condensed","Noto Sans TC","Arial Narrow",sans-serif;
+  --r-box:14px; --r-badge:8px;
+  --gutter:clamp(16px,4vw,40px);
+  --ease:cubic-bezier(.16,1,.3,1);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1317; --surface:#151D23; --surface-2:#1C262D;
+    --ink:#E6EAED; --ink-2:#AAB5BD; --ink-3:#85919A; --line:#29343C;
+    --accent:#F2805F; --accent-ink:#1A0D08; --accent-wash:#38211A;
+    --caution:#F3C866; --caution-wash:#312712;
+    --park:#86B4F2; --park-wash:#15263B;
+    --tip:#7FD4BE; --tip-wash:#12291F;
+    --d1:#9DAEC0; --d2:#5EC3E8; --d3:#82CC9C; --d4:#F2A75A; --d5:#9DAEC0;
+    --on-line:#0D1317;
+    --shadow:0 1px 2px rgb(0 0 0 / .3), 0 10px 30px rgb(0 0 0 / .25);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1317; --surface:#151D23; --surface-2:#1C262D;
+  --ink:#E6EAED; --ink-2:#AAB5BD; --ink-3:#85919A; --line:#29343C;
+  --accent:#F2805F; --accent-ink:#1A0D08; --accent-wash:#38211A;
+  --caution:#F3C866; --caution-wash:#312712;
+  --park:#86B4F2; --park-wash:#15263B;
+  --tip:#7FD4BE; --tip-wash:#12291F;
+  --d1:#9DAEC0; --d2:#5EC3E8; --d3:#82CC9C; --d4:#F2A75A; --d5:#9DAEC0;
+  --on-line:#0D1317;
+  --shadow:0 1px 2px rgb(0 0 0 / .3), 0 10px 30px rgb(0 0 0 / .25);
+  color-scheme:dark;
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; scroll-padding-top:76px}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.75; overflow-x:hidden}
+img{max-width:100%; display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:4px}
+h1,h2,h3,h4,h5{margin:0; line-height:1.3; text-wrap:balance}
+p{margin:0}
+::selection{background:var(--accent-wash)}
+.num{font-family:var(--f-num); font-variant-numeric:tabular-nums; letter-spacing:.01em}
+.wrap{width:100%; max-width:1180px; margin-inline:auto; padding-inline:var(--gutter)}
+.ic{width:1em; height:1em; flex:none; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; vertical-align:-.14em}
+.d1{--c:var(--d1)} .d2{--c:var(--d2)} .d3{--c:var(--d3)} .d4{--c:var(--d4)} .d5{--c:var(--d5)}
+
+/* ---------- top bar ---------- */
+.topbar{position:sticky; top:0; z-index:30; padding-top:env(safe-area-inset-top,0px);
+  background:color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter:saturate(160%) blur(14px); -webkit-backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid var(--line)}
+@media (prefers-reduced-transparency: reduce){.topbar{background:var(--bg); backdrop-filter:none}}
+.topbar-in{display:flex; align-items:center; gap:10px; height:58px}
+.mark{display:flex; align-items:center; gap:8px; text-decoration:none; font-weight:900; letter-spacing:.04em; white-space:nowrap; flex:none}
+.mark i{width:26px; height:26px; border-radius:var(--r-badge); background:var(--accent); color:var(--accent-ink); display:grid; place-items:center; font-style:normal; font-size:13px; font-weight:900}
+.mark span{font-size:15px}
+.daytabs{display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; flex:1; min-width:0; padding-block:4px; mask-image:linear-gradient(90deg,#000 88%,transparent); -webkit-mask-image:linear-gradient(90deg,#000 88%,transparent)}
+.daytabs::-webkit-scrollbar{display:none}
+.daytabs a{flex:none; display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:0 14px 0 12px; border-radius:999px; text-decoration:none; font-size:14px; color:var(--ink-2); border:1px solid var(--line); background:var(--surface); transition:background .25s var(--ease), color .25s var(--ease), border-color .25s var(--ease)}
+.daytabs a::before{content:""; width:8px; height:8px; border-radius:50%; background:var(--c)}
+.daytabs a b{font-family:var(--f-num); font-size:15px; color:var(--ink)}
+.daytabs a[aria-current="true"]{background:var(--ink); color:var(--bg); border-color:var(--ink)}
+.daytabs a[aria-current="true"] b{color:var(--bg)}
+.daytabs a .today{font-size:11px; font-weight:700; color:var(--accent)}
+.daytabs a[aria-current="true"] .today{color:var(--bg)}
+.iconbtn{flex:none; width:36px; height:36px; display:grid; place-items:center; border-radius:999px; border:1px solid var(--line); background:var(--surface); color:var(--ink-2); cursor:pointer; font-size:17px; transition:border-color .2s var(--ease), transform .3s var(--ease)}
+.iconbtn:hover{border-color:var(--ink-3)}
+.iconbtn:active{transform:scale(.94)}
+.i-sun{display:none}
+:root[data-theme="dark"] .i-sun{display:block} :root[data-theme="dark"] .i-moon{display:none}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .i-sun{display:block} :root:not([data-theme="light"]) .i-moon{display:none}}
+.toplink{flex:none; display:inline-flex; align-items:center; gap:6px; min-height:36px; padding:0 14px; border-radius:999px; background:var(--accent); color:var(--accent-ink); text-decoration:none; font-size:14px; font-weight:700}
+.toplink .ic{font-size:16px}
+.progress{position:absolute; left:0; right:0; bottom:-1px; height:2px; background:var(--accent); transform-origin:0 50%; transform:scaleX(0)}
+@supports (animation-timeline: scroll()){
+  @media (prefers-reduced-motion: no-preference){.progress{animation:grow linear both; animation-timeline:scroll(root)}}
+}
+@keyframes grow{to{transform:scaleX(1)}}
+@media (max-width:560px){
+  .mark{display:none} .toplink span{display:none} .toplink{padding:0 11px}
+  .daytabs{gap:4px; mask-image:none; -webkit-mask-image:none}
+  .daytabs a{padding:0 11px; gap:4px}
+  .daytabs a::before,.daytabs a span:not(.today){display:none}
+  .daytabs a b{color:var(--c)}
+}
+
+/* ---------- hero ---------- */
+.hero{position:relative; min-height:min(88svh,780px); display:grid; align-items:end; color:#F4F6F7; overflow:hidden; isolation:isolate; background:#0E1A1F}
+.hero img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:50% 58%; z-index:-2}
+.hero::after{content:""; position:absolute; inset:0; z-index:-1;
+  background:linear-gradient(180deg, rgb(var(--scrim) / .28) 0%, rgb(var(--scrim) / .04) 30%, rgb(var(--scrim) / .2) 55%, rgb(var(--scrim) / .82) 100%)}
+.hero-in{padding-block:56px 44px; display:grid; gap:18px; max-width:780px}
+.hero .over{font-family:var(--f-num); font-size:clamp(17px,2.4vw,22px); font-weight:600; letter-spacing:.08em; display:flex; flex-wrap:wrap; gap:4px 12px; align-items:center; text-shadow:0 1px 16px rgb(0 0 0 / .35)}
+.hero .over em{font-style:normal; font-family:var(--f-body); font-size:.78em; font-weight:700; letter-spacing:.06em; padding:2px 10px; border-radius:999px; background:rgb(255 255 255 / .16); border:1px solid rgb(255 255 255 / .3)}
+.hero h1{font-size:clamp(40px,9vw,84px); font-weight:900; letter-spacing:.03em; line-height:1.08; text-shadow:0 2px 30px rgb(0 0 0 / .3)}
+.hero .lede{font-size:clamp(15px,2.2vw,18px); max-width:32em; opacity:.95; text-shadow:0 1px 12px rgb(0 0 0 / .4)}
+.hero-row{display:flex; flex-wrap:wrap; gap:10px; align-items:center}
+.chip-count{display:inline-flex; align-items:baseline; gap:6px; padding:6px 14px; border-radius:999px; background:rgb(255 255 255 / .16); border:1px solid rgb(255 255 255 / .32); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); font-size:14px}
+.chip-count b{font-family:var(--f-num); font-size:22px; line-height:1}
+.hero .btn{background:rgb(255 255 255 / .1); color:#F4F6F7; border-color:rgb(255 255 255 / .34); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px)}
+.hero .btn:hover{border-color:rgb(255 255 255 / .7)}
+.hero .btn-solid{background:#F4F6F7; color:#17212A; border-color:transparent}
+.credit-hero{position:absolute; right:var(--gutter); bottom:10px; font-size:11px; opacity:.72}
+.credit-hero a{color:inherit}
+
+/* ---------- buttons ---------- */
+.btn{display:inline-flex; align-items:center; justify-content:center; gap:6px; min-height:40px; padding:0 16px; border-radius:999px; font:inherit; font-size:14px; font-weight:700; text-decoration:none; white-space:nowrap; cursor:pointer; border:1px solid var(--line); background:var(--surface); color:var(--ink); transition:transform .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease)}
+.btn:hover{border-color:var(--ink-3)}
+.btn:active{transform:scale(.97)}
+.btn .ic{font-size:16px}
+.btn-solid{background:var(--accent); color:var(--accent-ink); border-color:transparent}
+.btn-solid:hover{border-color:transparent; filter:brightness(1.06)}
+.btn-sm{min-height:34px; padding:0 12px; font-size:13px}
+.btns{display:flex; flex-wrap:wrap; gap:8px}
+
+/* ---------- sections ---------- */
+.sec{padding-block:clamp(56px,9vw,104px) 0}
+.sec-head{display:grid; grid-template-columns:auto 1fr; gap:6px 16px; align-items:baseline; margin-bottom:28px}
+.sec-head .n{font-family:var(--f-num); font-size:clamp(44px,7vw,68px); font-weight:700; line-height:.9; color:var(--accent)}
+.sec-head h2{font-size:clamp(24px,3.6vw,34px); font-weight:900; letter-spacing:.02em}
+.sec-head p{grid-column:2; color:var(--ink-2); max-width:60ch}
+@media (max-width:560px){.sec-head{grid-template-columns:1fr} .sec-head p{grid-column:1}}
+.sub-h{font-size:18px; font-weight:900; display:flex; align-items:center; gap:8px; margin:34px 0 14px}
+.sub-h .ic{color:var(--accent); font-size:20px}
+
+/* ---------- boarding passes ---------- */
+.passes{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px}
+@media (max-width:760px){.passes{grid-template-columns:1fr}}
+.pass{position:relative; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-box); box-shadow:var(--shadow); display:grid; grid-template-columns:1fr auto; overflow:hidden}
+.pass-main{padding:18px 20px; display:grid; gap:10px; min-width:0}
+.pass-top{display:flex; justify-content:space-between; gap:8px; font-size:13px; color:var(--ink-3)}
+.pass-top b{color:var(--ink); font-family:var(--f-num); font-size:16px; letter-spacing:.06em}
+.pass-legs{display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:12px}
+.pass-legs .city{display:grid}
+.pass-legs .code{font-family:var(--f-num); font-weight:700; font-size:clamp(36px,6vw,46px); line-height:1; letter-spacing:.02em}
+.pass-legs small{font-size:13px; color:var(--ink-2)}
+.pass-legs .city:last-child{text-align:right}
+.pass-legs .path{height:2px; background:repeating-linear-gradient(90deg,var(--ink-3) 0 6px,transparent 6px 11px); position:relative}
+.pass-legs .path .ic{position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); background:var(--surface); padding:0 6px; box-sizing:content-box; font-size:22px; color:var(--accent)}
+.pass.ret .path .ic{transform:translate(-50%,-50%) scaleX(-1)}
+.pass-times{display:flex; justify-content:space-between; font-family:var(--f-num); font-size:24px; font-weight:600}
+.pass-note{font-size:13px; color:var(--ink-2); padding-top:10px; border-top:1px dashed var(--line)}
+.pass-note b{color:var(--ink)}
+.pass-stub{width:96px; border-left:2px dashed var(--line); display:grid; place-items:center; text-align:center; padding:12px 8px; background:var(--surface-2)}
+.pass-stub > div{display:grid; gap:2px}
+.pass-stub span{font-size:12px; color:var(--ink-3)}
+.pass-stub b{font-family:var(--f-num); font-size:24px; line-height:1.1}
+.pass::before,.pass::after{content:""; position:absolute; right:87px; width:18px; height:18px; border-radius:50%; background:var(--bg); border:1px solid var(--line)}
+.pass::before{top:-10px} .pass::after{bottom:-10px}
+@media (max-width:420px){.pass{grid-template-columns:1fr} .pass-stub,.pass::before,.pass::after{display:none}}
+
+/* ---------- key facts ---------- */
+.facts{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:var(--r-box); overflow:hidden; margin:16px 0 0}
+.facts > div{background:var(--surface); padding:14px 18px; min-width:0}
+.facts dt{font-size:12px; letter-spacing:.08em; color:var(--ink-3); display:flex; align-items:center; gap:6px}
+.facts dd{margin:2px 0 0; font-weight:700; font-size:15px}
+.facts dd small{display:block; font-weight:500; font-size:13px; color:var(--ink-2)}
+.lead-box{margin-top:16px; padding:18px 20px; border-radius:var(--r-box); background:var(--surface-2); font-size:15px}
+.lead-box strong{color:var(--accent)}
+
+/* ---------- line map ---------- */
+.linemap{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-box); padding:26px 18px 20px; box-shadow:var(--shadow)}
+.linemap ol{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(11,minmax(0,1fr)); position:relative}
+.linemap li{position:relative; display:grid; justify-items:center; align-content:start; text-align:center; gap:2px; --i:0}
+.linemap li:not(:first-child)::before{content:""; position:absolute; top:15px; right:50%; width:100%; height:6px; background:var(--c); z-index:0; transform-origin:0 50%}
+.linemap .stop{width:36px; height:36px; border-radius:50%; background:var(--surface); border:6px solid var(--c); position:relative; z-index:1; display:grid; place-items:center}
+.linemap .night .stop{border-color:var(--ink)}
+.linemap .night .stop::after{content:"泊"; font-size:11px; font-weight:900; color:var(--ink); line-height:1}
+.linemap .air .stop{border-color:var(--ink-3)}
+.linemap a{text-decoration:none; display:grid; justify-items:center; gap:0; padding:8px 2px 0; border-radius:10px}
+.linemap a:hover b{color:var(--accent)}
+.linemap b{font-size:15px; font-weight:900; letter-spacing:.02em; transition:color .2s; line-height:1.35}
+.linemap small{font-size:12px; color:var(--ink-3); line-height:1.4}
+.linemap .d{font-family:var(--f-num); font-size:13px; font-weight:600; color:var(--c); letter-spacing:.06em}
+.lm-legend{display:flex; flex-wrap:wrap; gap:6px 18px; margin-top:18px; padding-top:14px; border-top:1px solid var(--line); font-size:13px; color:var(--ink-2)}
+.lm-legend span{display:inline-flex; align-items:center; gap:7px}
+.lm-legend i{width:22px; height:6px; border-radius:3px; background:var(--c)}
+.lm-legend i.dot{width:14px; height:14px; border-radius:50%; background:var(--surface); border:3px solid var(--ink)}
+@media (max-width:899px){
+  .linemap{padding:16px 16px 18px}
+  .linemap ol{grid-template-columns:1fr}
+  .linemap li{grid-template-columns:36px minmax(0,1fr); justify-items:start; align-items:start; text-align:left; column-gap:14px; height:48px}
+  .linemap li:not(:first-child)::before{top:auto; bottom:calc(100% - 18px); left:15px; right:auto; width:6px; height:48px; transform-origin:50% 100%}
+  .linemap a{display:flex; align-items:baseline; gap:8px; padding:6px 0 0; white-space:nowrap; overflow:hidden; max-width:100%}
+  .linemap a .d{width:44px; flex:none}
+}
+@media (prefers-reduced-motion: no-preference){
+  .js .linemap li:not(:first-child)::before{transform:scaleX(0); transition:transform .5s var(--ease); transition-delay:calc(var(--i) * .11s + .15s)}
+  .js .linemap.in li:not(:first-child)::before{transform:none}
+  .js .linemap .stop{transform:scale(.4); opacity:0; transition:transform .5s var(--ease), opacity .3s; transition-delay:calc(var(--i) * .11s + .1s)}
+  .js .linemap.in .stop{transform:none; opacity:1}
+}
+@media (prefers-reduced-motion: no-preference) and (max-width:899px){
+  .js .linemap li:not(:first-child)::before{transform:scaleY(0)}
+}
+
+/* ---------- overview board ---------- */
+.board{border-radius:var(--r-box); background:var(--surface); border:1px solid var(--line); overflow:hidden; box-shadow:var(--shadow); margin-top:16px}
+.board-row{display:grid; grid-template-columns:92px minmax(0,1.7fr) minmax(0,1fr) minmax(0,1fr); gap:16px; padding:16px 20px; align-items:center; text-decoration:none; transition:background .2s; position:relative}
+.board-row + .board-row{border-top:1px solid var(--line)}
+a.board-row::before{content:""; position:absolute; left:0; top:14px; bottom:14px; width:4px; border-radius:0 4px 4px 0; background:var(--c)}
+a.board-row:hover{background:var(--surface-2)}
+.board-head{font-size:12px; letter-spacing:.1em; color:var(--ink-3); padding-block:10px; background:var(--surface-2)}
+.board-row .when{display:grid; line-height:1.2}
+.board-row .when b{font-family:var(--f-num); font-size:28px; font-weight:700; color:var(--c)}
+.board-row .when small{font-size:12px; color:var(--ink-3)}
+.board-row .what{font-weight:700}
+.board-row .what small{display:block; font-weight:400; font-size:13px; color:var(--ink-2)}
+.board-row .meta{font-size:14px; color:var(--ink-2)}
+.board-row .meta .lbl{display:none}
+.board-row .ok{color:var(--tip); font-weight:700}
+.board-row .must{color:var(--accent); font-weight:700}
+@media (max-width:760px){
+  .board-head{display:none}
+  .board-row{grid-template-columns:62px minmax(0,1fr); gap:3px 14px}
+  .board-row .when{grid-row:span 3; align-self:start}
+  .board-row .meta .lbl{display:inline; color:var(--ink-3); margin-right:6px}
+}
+
+/* ---------- day ---------- */
+.day{display:grid; grid-template-columns:1fr; gap:20px; padding-block:28px; scroll-margin-top:70px}
+.day + .day{border-top:1px solid var(--line)}
+@media (min-width:1000px){
+  .day{grid-template-columns:350px minmax(0,1fr); gap:44px; padding-block:48px}
+  .day-aside{position:sticky; top:82px; align-self:start}
+}
+.day-aside{display:grid; gap:14px}
+.sign{background:var(--surface); border-radius:var(--r-box); border:1px solid var(--line); box-shadow:var(--shadow); overflow:hidden}
+.sign-top{display:grid; grid-template-columns:auto 1fr; gap:14px; align-items:center; padding:18px 18px 14px}
+.badge{width:60px; height:60px; border-radius:var(--r-badge); border:4px solid var(--c); display:grid; place-items:center; align-content:center; line-height:1; background:var(--surface)}
+.badge span{font-family:var(--f-num); font-size:12px; font-weight:600; letter-spacing:.12em; color:var(--c)}
+.badge b{font-family:var(--f-num); font-size:30px; font-weight:700}
+.sign-name h3{font-size:clamp(26px,4vw,32px); font-weight:900; letter-spacing:.08em}
+.sign-name .kana{font-size:13px; color:var(--ink-3); letter-spacing:.14em}
+.sign-bar{display:flex; justify-content:space-between; gap:8px; padding:7px 18px; background:var(--c); color:var(--on-line); font-size:13px; font-weight:700}
+.sign-bar span{display:inline-flex; align-items:center; gap:4px}
+.sign-foot{display:grid; gap:2px; padding:12px 18px 16px; font-size:14px}
+.sign-foot .date{font-family:var(--f-num); font-size:19px; font-weight:600}
+.sign-foot .date small{font-family:var(--f-body); font-size:14px; font-weight:500; margin-left:4px}
+.sign-foot .theme{color:var(--ink-2)}
+.stamp{display:none}
+.sign.is-today .stamp{display:inline-flex; align-items:center; gap:4px; margin-left:8px; padding:2px 10px; border-radius:999px; background:var(--accent); color:var(--accent-ink); font-size:12px; font-weight:700; vertical-align:3px; font-family:var(--f-body)}
+.day-photo{margin:0}
+.day-photo .ph{border-radius:var(--r-box); overflow:hidden; aspect-ratio:3 / 2; background:var(--surface-2)}
+.day-photo img{width:100%; height:100%; object-fit:cover}
+.photo-credit{font-size:11px; color:var(--ink-3); margin-top:6px}
+.photo-credit a{color:inherit}
+.stay-line{display:flex; gap:12px; align-items:center; padding:12px 16px; border-radius:var(--r-box); background:var(--surface-2); font-size:14px}
+.stay-line .ic{font-size:22px; color:var(--c)}
+.stay-line b{display:block}
+.day-route{font-size:14px; color:var(--ink-2); display:flex; gap:8px; align-items:flex-start}
+.day-route .ic{color:var(--c); margin-top:5px; font-size:16px}
+.day-route b{color:var(--ink)}
+@media (max-width:999px){
+  .day-photo .ph{aspect-ratio:5 / 2}
+  .day-aside .photo-credit{margin-top:4px}
+}
+@media (min-width:640px) and (max-width:999px){
+  .day-aside{grid-template-columns:minmax(0,1fr) minmax(0,1fr); align-items:start}
+  .day-aside .sign{grid-row:span 2}
+  .day-photo .ph{aspect-ratio:16 / 10}
+  .day-aside .day-route,.day-aside .stay-line{grid-column:1 / -1}
+}
+.day-body{display:grid; gap:18px; min-width:0; align-content:start}
+
+/* ---------- timeline ---------- */
+.tl{list-style:none; margin:0; padding:0; background:var(--surface); border:1px solid var(--line); border-radius:var(--r-box); box-shadow:var(--shadow)}
+.tl li{display:grid; grid-template-columns:76px minmax(0,1fr); gap:16px; padding:14px 18px; position:relative}
+.tl li + li{border-top:1px solid var(--line)}
+.tl .t{font-family:var(--f-num); font-size:19px; font-weight:600; line-height:1.45; font-variant-numeric:tabular-nums}
+.tl .e{min-width:0}
+.tl .e strong{font-weight:900; font-size:16px}
+.tl .e p{font-size:15px; color:var(--ink-2); margin-top:3px}
+.tl .e .where{display:block; font-size:13px; color:var(--ink-3); margin-top:2px}
+.tl .tags{display:inline-flex; gap:5px; margin-left:6px; vertical-align:2px; flex-wrap:wrap}
+.tg{font-size:11px; font-weight:700; letter-spacing:.04em; padding:1px 8px; border-radius:999px; white-space:nowrap; background:var(--surface-2); color:var(--ink-2)}
+.tg.core{background:var(--accent); color:var(--accent-ink)}
+.tg.cash{background:var(--caution-wash); color:var(--caution)}
+.tg.book{background:var(--accent-wash); color:var(--accent)}
+.tg.ok{background:var(--tip-wash); color:var(--tip)}
+.tl li.key{background:var(--accent-wash)}
+.tl li.key::before{content:""; position:absolute; left:0; top:12px; bottom:12px; width:4px; border-radius:0 4px 4px 0; background:var(--accent)}
+.tl li.key .t{color:var(--accent)}
+.tl li.must{background:var(--caution-wash)}
+.tl li.must .t{color:var(--caution)}
+.tl li.mv{padding-block:9px; background:transparent}
+.tl li.mv .t{display:flex; justify-content:flex-end; align-items:center; color:var(--c); font-size:18px; padding-right:2px}
+.tl li.mv .e{font-size:13.5px; color:var(--ink-2); display:flex; flex-wrap:wrap; align-items:center; gap:4px 10px}
+.tl li.mv .dur{display:inline-flex; align-items:center; font-family:var(--f-num); font-size:14px; font-weight:600; padding:0 9px; border-radius:999px; border:1px solid color-mix(in srgb, var(--c) 45%, var(--line)); color:var(--c); white-space:nowrap}
+.tl li:first-child{border-radius:var(--r-box) var(--r-box) 0 0}
+.tl li:last-child{border-radius:0 0 var(--r-box) var(--r-box)}
+.tl li.now{box-shadow:inset 0 0 0 2px var(--accent)}
+.tl li.now .t::after{content:"現在"; display:block; width:max-content; margin-top:4px; font-family:var(--f-body); font-size:11px; font-weight:700; padding:1px 8px; border-radius:999px; background:var(--accent); color:var(--accent-ink)}
+@media (max-width:560px){.tl li{grid-template-columns:58px minmax(0,1fr); gap:12px; padding:12px 14px} .tl .t{font-size:17px}}
+
+a.pin{color:var(--park); text-decoration:none; font-weight:700; border-bottom:1px dashed currentColor}
+a.tel{color:var(--tip); text-decoration:none; font-weight:700; white-space:nowrap; font-family:var(--f-num); font-size:1.08em; letter-spacing:.02em}
+
+/* ---------- callouts ---------- */
+.callouts{display:grid; gap:12px}
+@media (min-width:1180px){.callouts.two{grid-template-columns:1fr 1fr}}
+.call{display:grid; grid-template-columns:34px minmax(0,1fr); gap:12px; padding:16px 18px; border-radius:var(--r-box); background:var(--surface); border:1px solid var(--line); font-size:15px}
+.call .ci{width:34px; height:34px; border-radius:var(--r-badge); display:grid; place-items:center; font-size:19px; font-weight:900}
+.call h4{font-size:15px; font-weight:900; margin-bottom:4px}
+.call p{color:var(--ink-2)}
+.call p strong{color:var(--ink)}
+.call p + p{margin-top:6px}
+.call .sub{font-size:13px; color:var(--ink-2); margin-top:6px}
+.call.warn{background:var(--caution-wash); border-color:transparent}
+.call.warn .ci{background:var(--caution); color:var(--caution-wash)}
+.call.warn h4{color:var(--caution)}
+.call.park{background:var(--park-wash); border-color:transparent}
+.call.park .ci{background:var(--park); color:#FFF; font-family:var(--f-num); font-size:23px}
+:root[data-theme="dark"] .call.park .ci{color:#0D1317}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .call.park .ci{color:#0D1317}}
+.call.park h4{color:var(--park)}
+.call.tip{background:var(--tip-wash); border-color:transparent}
+.call.tip .ci{background:var(--tip); color:var(--tip-wash)}
+.call.tip h4{color:var(--tip)}
+.call.info .ci{background:var(--accent-wash); color:var(--accent)}
+.call strong{font-weight:700}
+
+/* ---------- picks ---------- */
+.picks-h{font-size:17px; font-weight:900; display:flex; align-items:center; gap:8px; margin-top:6px}
+.picks-h .ic{color:var(--accent); font-size:20px}
+.picks{display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,210px),1fr)); gap:12px}
+.picks.p4{grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr))}
+.pick{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-box); padding:16px 16px 14px; display:grid; gap:8px; align-content:start; transition:transform .3s var(--ease), box-shadow .3s var(--ease)}
+@media (hover:hover){.pick:hover{transform:translateY(-2px); box-shadow:var(--shadow)}}
+.pick .slot{font-family:var(--f-num); font-size:13px; font-weight:600; letter-spacing:.06em; color:var(--c)}
+.pick h5{font-size:17px; font-weight:900; line-height:1.35}
+.pick .kind{font-size:13px; color:var(--ink-2); margin-top:-4px}
+.pick dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:2px 10px; font-size:13px}
+.pick dt{color:var(--ink-3)}
+.pick dd{margin:0; font-weight:500}
+.pick .note{font-size:13px; color:var(--ink-2)}
+.pick .tagrow{display:flex; flex-wrap:wrap; gap:5px}
+
+/* ---------- stays & car ---------- */
+.stays{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr)); gap:12px}
+.stay{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-box); padding:18px; display:grid; gap:10px; align-content:start; position:relative; overflow:hidden}
+.stay::before{content:""; position:absolute; left:0; right:0; top:0; height:4px; background:var(--c)}
+.stay .night{display:flex; align-items:baseline; gap:10px}
+.stay .night b{font-family:var(--f-num); font-size:38px; line-height:1; color:var(--c)}
+.stay .night span{font-size:13px; color:var(--ink-3)}
+.stay h4{font-size:17px; font-weight:900}
+.stay .where{font-size:13px; color:var(--ink-2); margin-top:-6px}
+.stay dl{margin:0; display:grid; grid-template-columns:auto 1fr; gap:3px 12px; font-size:13.5px}
+.stay dt{color:var(--ink-3)} .stay dd{margin:0}
+.stay ul{list-style:none; margin:0; padding:0; display:flex; flex-wrap:wrap; gap:6px}
+.stay li{font-size:12px; font-weight:700; padding:2px 10px; border-radius:999px; background:var(--surface-2); color:var(--ink-2)}
+.stay li.ok{background:var(--tip-wash); color:var(--tip)}
+.stay li.dl{background:var(--caution-wash); color:var(--caution)}
+
+.ticket{border-radius:var(--r-box); background:var(--surface); border:1px solid var(--line); box-shadow:var(--shadow); overflow:hidden}
+.ticket-head{display:flex; align-items:center; gap:10px; padding:14px 18px; background:var(--ink); color:var(--bg)}
+.ticket-head .ic{font-size:21px}
+.ticket-head b{font-size:16px}
+.ticket-head .ok{margin-left:auto; font-size:12px; font-weight:700; padding:2px 10px; border-radius:999px; background:var(--accent); color:var(--accent-ink)}
+.ticket-body{padding:16px 18px; display:grid; gap:14px}
+.ticket-grid{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,180px),1fr)); gap:10px 16px}
+.ticket-grid div{display:grid}
+.ticket-grid span{font-size:12px; color:var(--ink-3)}
+.ticket-grid b{font-size:15.5px}
+.ticket-grid .big{font-family:var(--f-num); font-size:26px; line-height:1.15; letter-spacing:.02em}
+.steps{list-style:none; margin:14px 0 0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr)); gap:12px}
+.steps li{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-box); padding:16px; display:grid; gap:6px; align-content:start}
+.steps .k{font-family:var(--f-num); font-weight:700; font-size:24px; color:var(--accent); line-height:1}
+.steps b{font-size:16px}
+.steps p{font-size:14px; color:var(--ink-2)}
+.panel .phrase{font-size:clamp(21px,3.4vw,28px); font-weight:900; letter-spacing:.04em; margin:6px 0 2px; line-height:1.4}
+.panel .phrase-sub{font-size:13px; color:var(--ink-2)}
+
+/* ---------- panels ---------- */
+.prac{display:grid; grid-template-columns:repeat(12,minmax(0,1fr)); gap:16px}
+.prac > *{grid-column:span 12}
+@media (min-width:900px){.prac .w7{grid-column:span 7} .prac .w5{grid-column:span 5} .prac .w6{grid-column:span 6} .prac .w4{grid-column:span 4} .prac .w8{grid-column:span 8}}
+.panel{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-box); padding:20px; min-width:0}
+.panel h3{font-size:18px; font-weight:900; display:flex; align-items:center; gap:8px; margin-bottom:12px}
+.panel h3 .ic{color:var(--accent); font-size:22px}
+.panel > p{font-size:14px; color:var(--ink-2)}
+.panel.tint{background:var(--surface-2); border-color:transparent}
+ul.plain{margin:0; padding-left:1.1em; display:grid; gap:7px; font-size:15px}
+ul.plain li::marker{color:var(--accent)}
+ul.plain b{font-weight:700}
+.emerg{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px}
+.emerg div{padding:12px 14px; border-radius:10px; background:var(--surface)}
+.emerg span{display:block; font-size:12px; color:var(--ink-3)}
+.emerg b{font-family:var(--f-num); font-size:22px; line-height:1.25; display:block}
+.emerg b a{text-decoration:none}
+.emerg small{display:block; font-size:12px; color:var(--ink-2)}
+
+/* ---------- food board ---------- */
+.fboard .board-row{grid-template-columns:92px minmax(0,1.5fr) minmax(0,1.2fr) 150px}
+.fboard .tg{font-size:12px; padding:2px 10px}
+@media (max-width:760px){.fboard .board-row{grid-template-columns:62px minmax(0,1fr)}}
+
+/* ---------- checklist ---------- */
+.todo{border:1px solid var(--line); border-radius:var(--r-box); background:var(--surface); padding:4px 18px; box-shadow:var(--shadow)}
+.todo label{display:grid; grid-template-columns:22px 1fr; gap:12px; align-items:start; padding:13px 0; cursor:pointer; font-size:15px; line-height:1.65}
+.todo label + label{border-top:1px solid var(--line)}
+.todo input{appearance:none; -webkit-appearance:none; width:22px; height:22px; margin:1px 0 0; border:2px solid var(--line); border-radius:7px; background:var(--surface); cursor:pointer; display:grid; place-items:center; transition:background .2s, border-color .2s}
+.todo input::after{content:""; width:6px; height:11px; border:solid var(--accent-ink); border-width:0 2.5px 2.5px 0; transform:rotate(42deg) translate(-1px,-1px) scale(0); transition:transform .25s var(--ease)}
+.todo input:checked{background:var(--accent); border-color:var(--accent)}
+.todo input:checked::after{transform:rotate(42deg) translate(-1px,-1px) scale(1)}
+.todo input:checked + span{color:var(--ink-3); text-decoration:line-through; text-decoration-color:var(--line)}
+.todo span b{font-weight:700}
+.todo-foot{display:flex; justify-content:space-between; align-items:center; gap:12px; padding:12px 0; border-top:1px solid var(--line); font-size:13px; color:var(--ink-3)}
+.todo-meter{flex:1; height:6px; border-radius:3px; background:var(--surface-2); overflow:hidden; max-width:220px}
+.todo-meter i{display:block; height:100%; width:0; background:var(--accent); border-radius:3px; transition:width .5s var(--ease)}
+.linkbtn{background:none; border:1px solid var(--line); color:var(--ink-3); font:inherit; font-size:12.5px; padding:4px 12px; border-radius:999px; cursor:pointer}
+.linkbtn:hover{color:var(--ink); border-color:var(--ink-3)}
+
+.deadlines{display:grid; gap:0; border:1px solid var(--line); border-radius:var(--r-box); background:var(--surface); overflow:hidden}
+.deadlines div{display:grid; grid-template-columns:86px 1fr auto; gap:14px; align-items:center; padding:13px 18px}
+.deadlines div + div{border-top:1px solid var(--line)}
+.deadlines b.num{font-size:24px; color:var(--caution)}
+.deadlines span{font-size:14px}
+.deadlines span small{display:block; color:var(--ink-3); font-size:12.5px}
+.deadlines em{font-style:normal; font-size:12px; font-weight:700; padding:2px 10px; border-radius:999px; background:var(--caution-wash); color:var(--caution); white-space:nowrap}
+.deadlines .past b.num{color:var(--ink-3)}
+.deadlines .past em{background:var(--surface-2); color:var(--ink-3)}
+
+/* ---------- places ---------- */
+.band{position:relative; margin:0 0 20px; border-radius:var(--r-box); overflow:hidden; background:var(--surface-2); isolation:isolate}
+.band img{width:100%; aspect-ratio:21 / 8; object-fit:cover}
+.band::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg, transparent 45%, rgb(var(--scrim) / .72)); pointer-events:none}
+.band figcaption{position:absolute; left:20px; right:20px; bottom:14px; z-index:1; color:#F4F6F7; display:flex; justify-content:space-between; align-items:flex-end; gap:4px 12px; flex-wrap:wrap}
+.band figcaption b{font-size:clamp(18px,2.6vw,24px); font-weight:900; letter-spacing:.04em; text-shadow:0 1px 14px rgb(0 0 0 / .4)}
+.band figcaption small{font-size:11px; opacity:.85}
+.band figcaption a{color:inherit}
+@media (max-width:640px){.band img{aspect-ratio:16 / 10} .band figcaption{left:14px; right:14px; bottom:10px}}
+.places-group + .places-group{margin-top:32px}
+.places-group > h3{font-size:18px; font-weight:900; margin-bottom:12px; display:flex; align-items:center; gap:8px}
+.places-group > h3 .ic{color:var(--accent)}
+.places{display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr)); gap:12px}
+.place{background:var(--surface); border:1px solid var(--line); border-radius:var(--r-box); padding:16px; display:grid; gap:8px; align-content:start}
+.place-top{display:flex; align-items:center; gap:8px; flex-wrap:wrap}
+.place .when{font-family:var(--f-num); font-size:13px; font-weight:600; letter-spacing:.06em; padding:1px 10px; border-radius:999px; background:var(--c); color:var(--on-line)}
+.place .role{font-size:12px; color:var(--ink-3)}
+.place h4{font-size:17px; font-weight:900; line-height:1.4}
+.place .addr{font-size:13px; color:var(--ink-2); user-select:all; -webkit-user-select:all}
+.place .note{font-size:13px; color:var(--ink-2); padding-top:8px; border-top:1px dashed var(--line)}
+.copy.done{background:var(--tip-wash); color:var(--tip); border-color:transparent}
+
+/* ---------- footer ---------- */
+.foot{margin-top:clamp(64px,10vw,120px); padding-block:40px calc(40px + env(safe-area-inset-bottom,0px)); border-top:1px solid var(--line); font-size:13px; color:var(--ink-3)}
+.foot-in{display:grid; gap:18px}
+.foot .sig{font-size:20px; font-weight:900; color:var(--ink); letter-spacing:.06em}
+.foot .credits{display:grid; gap:3px}
+.foot .credits a{color:inherit}
+.foot h4{font-size:13px; color:var(--ink-2)}
+
+/* ---------- reveal ---------- */
+@media (prefers-reduced-motion: no-preference){
+  .js .rv{opacity:0; transform:translateY(18px); transition:opacity .8s var(--ease), transform .8s var(--ease)}
+  .js .rv.in{opacity:1; transform:none}
+  .hero img{animation:settle 2.2s var(--ease) both}
+  .hero-in > *{animation:rise .9s var(--ease) both}
+  .hero-in > *:nth-child(2){animation-delay:.12s}
+  .hero-in > *:nth-child(3){animation-delay:.24s}
+  .hero-in > *:nth-child(4){animation-delay:.36s}
+}
+@keyframes settle{from{transform:scale(1.08)} to{transform:none}}
+@keyframes rise{from{opacity:0; transform:translateY(16px)} to{opacity:1; transform:none}}
+
+@media print{
+  .topbar,.btns,.progress,.iconbtn,.linkbtn{display:none !important}
+  .hero{min-height:0; color:var(--ink); background:none} .hero img,.hero::after{display:none}
+  .hero .over em,.chip-count{border-color:var(--line)}
+  .day-aside{position:static}
+  .day{break-inside:avoid-page}
+  body{background:#fff}
+  .js .rv{opacity:1 !important; transform:none !important}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M3.5 16.5V12l2-5.2A2 2 0 0 1 7.4 5.5h9.2a2 2 0 0 1 1.9 1.3l2 5.2v4.5"/><path d="M3.5 12h17"/><path d="M3.5 16.5h17"/><path d="M5.5 16.5v2M18.5 16.5v2"/><circle cx="7.5" cy="14.2" r=".6"/><circle cx="16.5" cy="14.2" r=".6"/></symbol>
+  <symbol id="i-train" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="14" rx="4"/><path d="M5 10h14"/><path d="M9 6.5h6"/><circle cx="8.6" cy="13.5" r=".6"/><circle cx="15.4" cy="13.5" r=".6"/><path d="M8.5 17l-2 4M15.5 17l2 4"/></symbol>
+  <symbol id="i-walk" viewBox="0 0 24 24"><circle cx="13" cy="4.5" r="1.8"/><path d="M10 21l2.4-6.2L15 17v4"/><path d="M8 11.5l2.5-3.5h3l2 3.5 2.5 1"/><path d="M12.4 14.8l-1-4.6"/></symbol>
+  <symbol id="i-plane" viewBox="0 0 24 24"><path d="M21 12c0-.8-.7-1.4-1.6-1.4H14L9.6 3.5H7.8l2.3 7.1H5.6L3.8 8.3H2.5l1.1 3.7-1.1 3.7h1.3l1.8-2.3h4.5l-2.3 7.1h1.8L14 13.4h5.4c.9 0 1.6-.6 1.6-1.4z"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path d="M3 19V6"/><path d="M3 15h18v4"/><path d="M21 15v-3a3 3 0 0 0-3-3h-7v6"/><circle cx="7" cy="11.5" r="2"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-6.5-5.4-6.5-11A6.5 6.5 0 0 1 18.5 10c0 5.6-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></symbol>
+  <symbol id="i-nav" viewBox="0 0 24 24"><path d="M3.5 11L20.5 3.5 13 20.5l-2-7.5z"/></symbol>
+  <symbol id="i-phone" viewBox="0 0 24 24"><path d="M5 4h3.5l1.8 4.5-2.3 1.4a11 11 0 0 0 6.1 6.1l1.4-2.3L20 15.5V19a1.5 1.5 0 0 1-1.6 1.5A16 16 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></symbol>
+  <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.5" y="8.5" width="11" height="11" rx="2.2"/><path d="M15.5 8.5V6.2a1.7 1.7 0 0 0-1.7-1.7H6.2a1.7 1.7 0 0 0-1.7 1.7v7.6a1.7 1.7 0 0 0 1.7 1.7h2.3"/></symbol>
+  <symbol id="i-warn" viewBox="0 0 24 24"><path d="M12 4l9 16H3z"/><path d="M12 10v4.2"/><circle cx="12" cy="17.2" r=".5"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.7.6 1.1 1.3 1.1 2.2h5c0-.9.4-1.6 1.1-2.2A6 6 0 0 0 12 3z"/></symbol>
+  <symbol id="i-food" viewBox="0 0 24 24"><path d="M7 3v8M4.5 3v5a2.5 2.5 0 0 0 5 0V3M7 11v10"/><path d="M17 21V3c-2 1-3.5 3.6-3.5 7v3H17"/></symbol>
+  <symbol id="i-cup" viewBox="0 0 24 24"><path d="M4 9h13v4.5A5.5 5.5 0 0 1 11.5 19h-2A5.5 5.5 0 0 1 4 13.5z"/><path d="M17 10.5h1.5a2.5 2.5 0 0 1 0 5H17"/><path d="M8 3.5c-.6.8-.6 1.7 0 2.5M12 3.5c-.6.8-.6 1.7 0 2.5"/></symbol>
+  <symbol id="i-bag" viewBox="0 0 24 24"><path d="M5 8h14l-1 12.5H6z"/><path d="M9 10V6.5a3 3 0 0 1 6 0V10"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M4.5 12.5l4.5 4.5 10.5-10.5"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M21.5 12h-2.2M4.7 12H2.5M18.7 5.3l-1.6 1.6M6.9 17.1l-1.6 1.6M18.7 18.7l-1.6-1.6M6.9 6.9L5.3 5.3"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20.5 14.3A8.6 8.6 0 0 1 9.7 3.5a8.6 8.6 0 1 0 10.8 10.8z"/></symbol>
+  <symbol id="i-route" viewBox="0 0 24 24"><circle cx="6" cy="18" r="2.2"/><circle cx="18" cy="6" r="2.2"/><path d="M8.2 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.8"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4.5"/><path d="M11.2 11.8L20 3M16.5 6.5l2.5 2.5M14 9l2 2"/></symbol>
+  <symbol id="i-lifebuoy" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5"/><path d="M5.9 5.9l3.6 3.6M14.5 14.5l3.6 3.6M18.1 5.9l-3.6 3.6M9.5 14.5l-3.6 3.6"/></symbol>
+  <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M8.5 3.5L3.5 6l1.8 4.5 2.2-.9V20.5h9V9.6l2.2.9L20.5 6l-5-2.5a3.5 3.5 0 0 1-7 0z"/></symbol>
+  <symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-2.5-1.6L13 21l-2.5-1.6L8 21l-2-1.3z" transform="translate(0 0)"/><path d="M9 8h6M9 12h6M9 16h3"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+  <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><path d="M2.5 9c2 0 2-1.5 4-1.5s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 3-1.5"/><path d="M2.5 15c2 0 2-1.5 4-1.5s2 1.5 4 1.5 2-1.5 4-1.5 2 1.5 4 1.5 2-1.5 3-1.5"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <a class="mark" href="#top"><i>沖</i><span>沖繩 2026</span></a>
+    <nav class="daytabs" aria-label="每日行程">
+      <a class="d1" href="#d1"><b>D1</b><span>那霸</span></a>
+      <a class="d2" href="#d2"><b>D2</b><span>美麗海</span></a>
+      <a class="d3" href="#d3"><b>D3</b><span>山原</span></a>
+      <a class="d4" href="#d4"><b>D4</b><span>南城</span></a>
+      <a class="d5" href="#d5"><b>D5</b><span>回程</span></a>
+    </nav>
+    <button class="iconbtn" id="themeToggle" type="button" aria-label="切換深淺色">
+      <svg class="ic i-moon"><use href="#i-moon"/></svg><svg class="ic i-sun"><use href="#i-sun"/></svg>
+    </button>
+    <a class="toplink" href="#nav"><svg class="ic"><use href="#i-nav"/></svg><span>導航</span></a>
+  </div>
+  <div class="progress" aria-hidden="true"></div>
+</header>
+
+<main id="top">
+<section class="hero" aria-labelledby="title">
+  <img src="img/hero-kouri.jpg" alt="從高處俯瞰古宇利大橋橫跨翡翠色海面" fetchpriority="high">
+  <div class="wrap hero-in">
+    <p class="over"><span>2026.11.11 → 11.15</span><em>兩人自駕・定案版</em></p>
+    <h1 id="title">沖繩本島<br>五天四夜自駕</h1>
+    <p class="lede">西岸北上、山原折返、東岸南下。那霸 1 晚 → 名護 2 晚 → 那霸 1 晚，每天核心行程不超過兩個，開車盡量在天黑前結束。</p>
+    <div class="hero-row">
+      <span class="chip-count" id="countdown" hidden></span>
+      <a class="btn btn-solid" id="cta-today" href="#d1"><svg class="ic"><use href="#i-route"/></svg><span>從 Day 1 開始</span></a>
+      <a class="btn" href="#nav"><svg class="ic"><use href="#i-nav"/></svg>導航速查</a>
+    </div>
+  </div>
+  <p class="credit-hero">照片：古宇利大橋 · Takuya ASADA · <a href="https://commons.wikimedia.org/wiki/File:Kouri_Bridge_(15130568259).jpg" target="_blank" rel="noopener">CC BY 2.0</a></p>
+</section>
+
+<!-- 01 基本資訊 -->
+<section class="sec" id="info" aria-labelledby="info-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="n">01</span>
+      <h2 id="info-h">基本資訊</h2>
+      <p>機票、租車、三間住宿全部訂好了。整趟只有兩個時間不能動：11/12 09:00 取車、11/14 15:30 還車。</p>
+    </div>
+
+    <div class="passes">
+      <article class="pass rv">
+        <div class="pass-main">
+          <div class="pass-top"><span>去程 · 樂桃航空</span><b>MM930</b></div>
+          <div class="pass-legs">
+            <div class="city"><span class="code">TPE</span><small>桃園 T1</small></div>
+            <div class="path"><svg class="ic"><use href="#i-plane"/></svg></div>
+            <div class="city"><span class="code">OKA</span><small>那霸</small></div>
+          </div>
+          <div class="pass-times"><span>18:20</span><span>20:50</span></div>
+          <p class="pass-note">只有<b>隨身 7 kg</b>，不含託運。回程有買東西就上官網加購託運。</p>
+        </div>
+        <div class="pass-stub"><div><span>出發</span><b>11/11</b><span>週三</span></div></div>
+      </article>
+      <article class="pass ret rv">
+        <div class="pass-main">
+          <div class="pass-top"><span>回程 · 樂桃航空</span><b>MM921</b></div>
+          <div class="pass-legs">
+            <div class="city"><span class="code">OKA</span><small>那霸</small></div>
+            <div class="path"><svg class="ic"><use href="#i-plane"/></svg></div>
+            <div class="city"><span class="code">TPE</span><small>桃園</small></div>
+          </div>
+          <div class="pass-times"><span>08:15</span><span>08:55</span></div>
+          <p class="pass-note">報到<b>起飛前 50 分鐘截止</b>，也就是 07:25。06:40 到機場。</p>
+        </div>
+        <div class="pass-stub"><div><span>回程</span><b>11/15</b><span>週日</span></div></div>
+      </article>
+    </div>
+
+    <dl class="facts rv">
+      <div><dt><svg class="ic"><use href="#i-key"/></svg>租車</dt><dd>ORIX 旭橋站西店<small>SA CLASS 小型車 · 預約號 ••••3845</small></dd></div>
+      <div><dt><svg class="ic"><use href="#i-bed"/></svg>住宿</dt><dd>那霸 → 名護 ×2 → 那霸<small>三間都在 15:00 後入住</small></dd></div>
+      <div><dt><svg class="ic"><use href="#i-car"/></svg>自駕</dt><dd>3 天 · 約 340 km<small>高速只走三段，夜路只有 D2 燒肉後 30 分</small></dd></div>
+      <div><dt><svg class="ic"><use href="#i-train"/></svg>不開車的日子</dt><dd>D1、D4 晚上、D5<small>那霸市區全靠單軌電車</small></dd></div>
+    </dl>
+    <p class="lead-box rv"><strong>行程主軸</strong>　落地休息 → 魚大統領早午餐 → 美麗海鯨鯊 → 花人逢夕陽 → 本部牛燒肉 → 本島最北端邊戶岬 → 古宇利大橋 → 阿古豬涮涮鍋 → 海中道路 → 浜辺の茶屋 → 國際通採買 → 早班機回家。</p>
+  </div>
+</section>
+
+<!-- 02 路線總覽 -->
+<section class="sec" id="route" aria-labelledby="route-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="n">02</span>
+      <h2 id="route-h">路線總覽</h2>
+      <p>逆時針繞本島一圈，每天一種顏色。邊戶岬到古宇利是唯一往回開的一段。點站名可以直接跳到那一天。</p>
+    </div>
+
+    <nav class="linemap rv" aria-label="路線圖">
+      <ol>
+        <li class="air d1" style="--i:0"><span class="stop"></span><a href="#d1"><span class="d">11/11</span><b>那霸空港</b><small>落地</small></a></li>
+        <li class="night d1" style="--i:1"><span class="stop"></span><a href="#d1"><span class="d">DAY 1</span><b>那霸</b><small>Nest Hotel</small></a></li>
+        <li class="d2" style="--i:2"><span class="stop"></span><a href="#d2"><span class="d">DAY 2</span><b>本部</b><small>美麗海</small></a></li>
+        <li class="night d2" style="--i:3"><span class="stop"></span><a href="#d2"><span class="d">DAY 2</span><b>名護</b><small>Yugaf Inn</small></a></li>
+        <li class="d3" style="--i:4"><span class="stop"></span><a href="#d3"><span class="d">DAY 3</span><b>邊戶岬</b><small>本島最北</small></a></li>
+        <li class="d3" style="--i:5"><span class="stop"></span><a href="#d3"><span class="d">DAY 3</span><b>古宇利</b><small>跨海大橋</small></a></li>
+        <li class="night d3" style="--i:6"><span class="stop"></span><a href="#d3"><span class="d">DAY 3</span><b>名護</b><small>連住</small></a></li>
+        <li class="d4" style="--i:7"><span class="stop"></span><a href="#d4"><span class="d">DAY 4</span><b>海中道路</b><small>海上兜風</small></a></li>
+        <li class="d4" style="--i:8"><span class="stop"></span><a href="#d4"><span class="d">DAY 4</span><b>南城</b><small>浜辺の茶屋</small></a></li>
+        <li class="night d4" style="--i:9"><span class="stop"></span><a href="#d4"><span class="d">DAY 4</span><b>那霸</b><small>KIYAZA · 還車</small></a></li>
+        <li class="air d5" style="--i:10"><span class="stop"></span><a href="#d5"><span class="d">11/15</span><b>那霸空港</b><small>回程</small></a></li>
+      </ol>
+      <div class="lm-legend">
+        <span class="d1"><i></i>不開車・單軌</span>
+        <span class="d2"><i></i>D2 西岸北上</span>
+        <span class="d3"><i></i>D3 山原</span>
+        <span class="d4"><i></i>D4 東岸南下</span>
+        <span><i class="dot"></i>過夜</span>
+      </div>
+    </nav>
+
+    <div class="board rv">
+      <div class="board-row board-head" aria-hidden="true"><span>日期</span><span>主線</span><span>住宿</span><span>晚餐</span></div>
+      <a class="board-row d1" href="#d1">
+        <span class="when"><b>D1</b><small>11/11 三</small></span>
+        <span class="what">桃園 → 那霸 · 落地就休息<small>不開車，單軌到旭橋</small></span>
+        <span class="meta"><span class="lbl">住</span>那霸 Nest Hotel</span>
+        <span class="meta"><span class="lbl">晚餐</span>旭橋周邊隨意</span>
+      </a>
+      <a class="board-row d2" href="#d2">
+        <span class="when"><b>D2</b><small>11/12 四</small></span>
+        <span class="what">取車 → 魚大統領 → 美麗海 → 花人逢 → 本部牛燒肉<small>西岸北上，看日落</small></span>
+        <span class="meta"><span class="lbl">住</span>名護 Yugaf Inn</span>
+        <span class="meta"><span class="lbl">晚餐</span>もとぶ牧場 本部店</span>
+      </a>
+      <a class="board-row d3" href="#d3">
+        <span class="when"><b>D3</b><small>11/13 五</small></span>
+        <span class="what">邊戶岬 → 笑味の店 → 古宇利島<small>山原最北端，回同一間飯店</small></span>
+        <span class="meta"><span class="lbl">住</span>名護 Yugaf Inn（連住）</span>
+        <span class="meta"><span class="lbl">晚餐</span><span class="must">松の古民家 必訂</span></span>
+      </a>
+      <a class="board-row d4" href="#d4">
+        <span class="when"><b>D4</b><small>11/14 六</small></span>
+        <span class="what">海中道路 → 奧武島 → 浜辺の茶屋 → 還車 → 國際通<small>東岸南下，主購物日</small></span>
+        <span class="meta"><span class="lbl">住</span>那霸 KIYAZA EAST</span>
+        <span class="meta"><span class="lbl">晚餐</span>牧志公設市場</span>
+      </a>
+      <a class="board-row d5" href="#d5">
+        <span class="when"><b>D5</b><small>11/15 日</small></span>
+        <span class="what">06:20 單軌到機場 → 08:15 起飛<small>9 點前回到桃園</small></span>
+        <span class="meta"><span class="lbl">住</span>—</span>
+        <span class="meta"><span class="lbl">晚餐</span>—</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- 03 逐日行程 -->
+<section class="sec" id="days" aria-labelledby="days-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="n">03</span>
+      <h2 id="days-h">逐日行程</h2>
+      <p>左邊是每天的站牌：今天在哪、從哪來、往哪去。旅途中打開，今天的站牌和現在進行到的那一格會自動標出來。</p>
+    </div>
+
+    <!-- ========== D1 ========== -->
+    <article class="day d1" id="d1" aria-label="Day 1">
+      <aside class="day-aside">
+        <div class="sign" data-day="1">
+          <div class="sign-top">
+            <div class="badge"><span>DAY</span><b>1</b></div>
+            <div class="sign-name"><h3>那霸</h3><div class="kana">なは</div></div>
+          </div>
+          <div class="sign-bar"><span><svg class="ic"><use href="#i-back"/></svg>桃園</span><span>本部<svg class="ic"><use href="#i-arrow"/></svg></span></div>
+          <div class="sign-foot"><span class="date">2026/11/11<small>週三</small><span class="stamp">今天</span></span><span class="theme">落地就休息</span></div>
+        </div>
+        <figure class="day-photo">
+          <div class="ph"><img loading="lazy" src="img/d1-kokusai-night.jpg" alt="那霸國際通夜景"></div>
+          <figcaption class="photo-credit">照片：那霸夜色 · TurnOnTheNight · <a href="https://commons.wikimedia.org/wiki/File:Night_at_Kokusai-dori_20250503183151.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></figcaption>
+        </figure>
+        <p class="day-route"><svg class="ic"><use href="#i-train"/></svg><span>那霸空港站 → 旭橋站 · 單軌約 12 分 · 今天不開車</span></p>
+        <div class="stay-line"><svg class="ic"><use href="#i-bed"/></svg><div><b>今晚住 Nest Hotel 那霸西</b>旭橋站步行 5 分 · 明早取車處也是 5 分</div></div>
+      </aside>
+      <div class="day-body">
+        <ol class="tl">
+          <li data-t="18:20"><span class="t">18:20</span><div class="e"><strong>樂桃 MM930 桃園起飛</strong><p>只有隨身行李，液體和行動電源照一般規定。</p></div></li>
+          <li class="key" data-t="20:50"><span class="t">20:50</span><div class="e"><strong>抵達那霸機場國際線</strong><p>入境加海關約 40 分鐘。沒有託運行李，出關會很快。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-train"/></svg></span><div class="e">單軌 那霸空港站 → 旭橋站<span class="dur">約 12 分</span></div></li>
+          <li data-t="22:00"><span class="t">22:00</span><div class="e"><strong>入住 Nest Hotel 那霸西</strong><span class="where">那霸市西 1-20-19 · 15:00 起可入住</span><p>宵夜在旭橋、久茂地一帶的居酒屋隨意吃，睡飽才是今天的重點。</p></div></li>
+        </ol>
+        <div class="callouts">
+          <div class="call tip"><span class="ci"><svg class="ic"><use href="#i-bulb"/></svg></span><div><h4>今晚不排店</h4><p>落地已經九點多，吃什麼都好。明天 08:45 退房，走 5 分鐘就到租車櫃檯。</p></div></div>
+        </div>
+      </div>
+    </article>
+
+    <!-- ========== D2 ========== -->
+    <article class="day d2" id="d2" aria-label="Day 2">
+      <aside class="day-aside">
+        <div class="sign" data-day="2">
+          <div class="sign-top">
+            <div class="badge"><span>DAY</span><b>2</b></div>
+            <div class="sign-name"><h3>本部</h3><div class="kana">もとぶ</div></div>
+          </div>
+          <div class="sign-bar"><span><svg class="ic"><use href="#i-back"/></svg>那霸</span><span>山原<svg class="ic"><use href="#i-arrow"/></svg></span></div>
+          <div class="sign-foot"><span class="date">2026/11/12<small>週四</small><span class="stamp">今天</span></span><span class="theme">西岸北上 · 美麗海、日落、本部牛</span></div>
+        </div>
+        <figure class="day-photo">
+          <div class="ph"><img loading="lazy" src="img/d2-whale-shark.jpg" alt="美麗海水族館黑潮之海大水槽裡的鯨鯊"></div>
+          <figcaption class="photo-credit">照片：黑潮之海的鯨鯊 · pelican from Tokyo · <a href="https://commons.wikimedia.org/wiki/File:Whale_Shark_-_Churaumi_aquarium,_Okinawa,_Japan.jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a></figcaption>
+        </figure>
+        <p class="day-route"><svg class="ic"><use href="#i-car"/></svg><span>那霸 → 本部 → 名護 · 開車合計約 2 小時 50 分，燒肉後 19:15 開回名護</span></p>
+        <div class="stay-line"><svg class="ic"><use href="#i-bed"/></svg><div><b>今晚住 Hotel Yugaf Inn Okinawa</b>名護市宮里 · 連住兩晚，行李不用再搬</div></div>
+      </aside>
+      <div class="day-body">
+        <ol class="tl">
+          <li data-t="08:45"><span class="t">08:45</span><div class="e"><strong>退房，走到 ORIX 旭橋站西店</strong><p>約 5 分鐘，走外語對應專用櫃檯。</p></div></li>
+          <li class="must" data-t="09:00"><span class="t">09:00</span><div class="e"><strong>取車</strong><span class="where">預約號 ••••3845 · 那霸市西 2-3-1</span><p>上路前做三件事：問 ETC 卡要不要租、看油量、車身既有刮痕拍照存證。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">西町 → 港町<span class="dur">約 12 分</span></div></li>
+          <li class="key" data-t="09:55"><span class="t">09:55</span><div class="e"><strong>漁師食堂 魚大統領</strong><span class="tags"><span class="tg">海鮮</span></span><span class="where">那霸市港町 3-1-17 · 10:00 開門</span><p>漁港旁的食堂，鮪魚下巴、生魚片丼、炸魚定食份量都大。提早幾分鐘到，排第一輪。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">10:50 出發 · 那霸 IC → 許田 IC → 本部<span class="dur">約 1 小時 35 分</span></div></li>
+          <li data-t="12:30"><span class="t">12:30</span><div class="e"><strong>備瀨福木林道 散步</strong><span class="where">本部町備瀨 · 免費 · 離水族館約 10 分</span><p>老聚落裡的福木防風林，綠蔭成拱。走 40 分鐘消化一下，順便避開水族館的正午人潮。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">備瀨 → 水族館 P7 停車場<span class="dur">約 10 分</span></div></li>
+          <li class="key" data-t="13:40"><span class="t">13:40</span><div class="e"><strong>沖繩美麗海水族館</strong><span class="tags"><span class="tg core">核心</span></span><span class="where">本部町石川 424 · 08:30–18:30（17:30 停止入館）</span><p>主角是黑潮之海大水槽的鯨鯊。停車場下來有一段長手扶梯，下行時整片海在眼前展開，留點時間拍照。逛到 16:00。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">上坡往山里<span class="dur">約 10 分</span></div></li>
+          <li class="key" data-t="16:20"><span class="t">16:20</span><div class="e"><strong>花人逢 山頂古民家</strong><span class="tags"><span class="tg core">核心</span><span class="tg cash">只收現金</span></span><span class="where">本部町山里 1153-2 · 11:30–19:00（18:30 LO）</span><p>紅瓦古民家俯瞰伊江島，17:40 日落前光線最好。<b>只點飲料</b>，留胃給晚上的燒肉。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">17:45 看完日落出發 · 下山往本部港一帶<span class="dur">約 15 分</span></div></li>
+          <li class="key" data-t="18:00"><span class="t">18:00</span><div class="e"><strong>燒肉 もとぶ牧場 本部店</strong><span class="tags"><span class="tg">本部牛</span><span class="tg book">建議訂位</span></span><span class="where">本部町大浜 881-1 · 17:00–22:00（21:30 LO）· 無休 · 停車場 40 台</span><p>本部牛的牧場直營本店，同一個牧場在那霸的分店晚餐要貴一倍。點「もとぶ牛食べ比べ」一次吃 8 種部位，再加一盤和牛內臟。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">19:15 出發 · 本部 → 名護（天黑，走國道主線）<span class="dur">約 30 分</span></div></li>
+          <li data-t="19:45"><span class="t">19:45</span><div class="e"><strong>入住 Hotel Yugaf Inn Okinawa</strong><p>車停飯店，連住兩晚，明早直接出發。</p></div></li>
+        </ol>
+        <div class="callouts two">
+          <div class="call park"><span class="ci">P</span><div><h4>美麗海停車</h4><p>導航設<strong>水族館 P7 立體停車場</strong>，離入口最近。整個海洋博公園停車都免費。</p></div></div>
+          <div class="call warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span><div><h4>今晚司機不喝酒</h4><p>燒肉後還要開 30 分鐘回名護。日本酒駕零容忍，乘客明知駕駛喝了酒還同車也會受罰。想喝的那位可以喝，開車的那位點烏龍茶。</p></div></div>
+        </div>
+        <div class="callouts">
+          <div class="call tip"><span class="ci"><svg class="ic"><use href="#i-bulb"/></svg></span><div><h4>水族館先衝大水槽</h4><p>下午是人潮高峰。想拍黑潮之海就先直奔大水槽，其他展區回頭再看。花人逢最後一段是窄坡道，下山時天色漸暗，會車慢慢來。</p></div></div>
+        </div>
+
+        <h4 class="picks-h"><svg class="ic"><use href="#i-food"/></svg>今天吃這三家</h4>
+        <div class="picks">
+          <article class="pick">
+            <span class="slot">早午 · 09:55</span>
+            <h5>漁師食堂 おーばんぶるまい 魚大統領</h5>
+            <div class="kind">港邊海鮮定食</div>
+            <dl><dt>營業</dt><dd>週四 10:00–21:00</dd><dt>電話</dt><dd><a class="tel" href="tel:+81988948636">098-894-8636</a></dd></dl>
+            <p class="note">先在券売機買餐券，沒有英文菜單。中午後常排 30 分鐘以上。</p>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E6%BC%81%E5%B8%AB%E9%A3%9F%E5%A0%82%20%E9%AD%9A%E5%A4%A7%E7%B5%B1%E9%A0%98%20%E9%82%A3%E8%A6%87%E5%B8%82%E6%B8%AF%E7%94%BA3-1-17"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+          </article>
+          <article class="pick">
+            <span class="slot">下午茶 · 16:20</span>
+            <h5>ピザ喫茶 花人逢</h5>
+            <div class="kind">古民家海景・披薩</div>
+            <dl><dt>營業</dt><dd>11:30–19:00 · 週二三休</dd><dt>電話</dt><dd><a class="tel" href="tel:+81980475537">0980-47-5537</a></dd></dl>
+            <div class="tagrow"><span class="tg cash">只收現金</span><span class="tg ok">不收訂位</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E8%8A%B1%E4%BA%BA%E9%80%A2%20%E6%9C%AC%E9%83%A8%E7%94%BA%E5%B1%B1%E9%87%8C1153-2"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+          </article>
+          <article class="pick">
+            <span class="slot">晚餐 · 18:00</span>
+            <h5>焼肉 もとぶ牧場 もとぶ店</h5>
+            <div class="kind">本部牛燒肉・牧場直營本店</div>
+            <dl><dt>營業</dt><dd>17:00–22:00（21:30 LO）· 無休</dd><dt>電話</dt><dd><a class="tel" href="tel:+815054847152">050-5484-7152</a></dd><dt>必點</dt><dd>もとぶ牛食べ比べ（8 種部位）</dd></dl>
+            <p class="note">名護店週四公休，11/12 剛好週四，所以吃本部店。可網路訂位。</p>
+            <div class="tagrow"><span class="tg book">建議訂位</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E3%82%82%E3%81%A8%E3%81%B6%E7%89%A7%E5%A0%B4%20%E3%82%82%E3%81%A8%E3%81%B6%E5%BA%97%20%E6%9C%AC%E9%83%A8%E7%94%BA%E5%A4%A7%E6%B5%9C881-1"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+          </article>
+        </div>
+      </div>
+    </article>
+
+    <!-- ========== D3 ========== -->
+    <article class="day d3" id="d3" aria-label="Day 3">
+      <aside class="day-aside">
+        <div class="sign" data-day="3">
+          <div class="sign-top">
+            <div class="badge"><span>DAY</span><b>3</b></div>
+            <div class="sign-name"><h3>山原</h3><div class="kana">やんばる</div></div>
+          </div>
+          <div class="sign-bar"><span><svg class="ic"><use href="#i-back"/></svg>本部</span><span>南城<svg class="ic"><use href="#i-arrow"/></svg></span></div>
+          <div class="sign-foot"><span class="date">2026/11/13<small>週五</small><span class="stamp">今天</span></span><span class="theme">本島最北端 · 古宇利島</span></div>
+        </div>
+        <figure class="day-photo">
+          <div class="ph"><img loading="lazy" src="img/d3-cape-hedo.jpg" alt="邊戶岬的珊瑚礁斷崖與太平洋"></div>
+          <figcaption class="photo-credit">照片：邊戶岬 · Kugel · <a href="https://commons.wikimedia.org/wiki/File:Cape_Hedo_202011.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></figcaption>
+        </figure>
+        <p class="day-route"><svg class="ic"><use href="#i-car"/></svg><span>名護 → 邊戶岬 → 大宜味 → 古宇利 → 名護 · 開車合計約 3 小時</span></p>
+        <div class="stay-line"><svg class="ic"><use href="#i-bed"/></svg><div><b>今晚住 Hotel Yugaf Inn Okinawa</b>同一間，連住第二晚</div></div>
+      </aside>
+      <div class="day-body">
+        <ol class="tl">
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">09:00 出發 · 國道 58 號沿海北上<span class="dur">約 65 分</span></div></li>
+          <li class="key" data-t="10:05"><span class="t">10:05</span><div class="e"><strong>邊戶岬 本島最北端</strong><span class="tags"><span class="tg core">核心</span></span><span class="where">國頭村邊戶 · 免費 · 24 小時</span><p>隆起珊瑚礁斷崖，太平洋與東海在腳下交會。步道平緩，散步 40 分鐘，天氣好看得到與論島。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">原路南下（繞東岸多 40 分，不划算）<span class="dur">約 35 分</span></div></li>
+          <li data-t="11:40"><span class="t">11:40</span><div class="e"><strong>笑味の店 長壽村午餐</strong><span class="tags"><span class="tg cash">只收現金</span><span class="tg book">先預約</span></span><span class="where">大宜味村大兼久 61 · 餐點 11:30–15:00 LO · 週二三四休</span><p>長壽村在地食材做的定食，清爽不油，替晚上的阿古豬留胃。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">大宜味 → 古宇利大橋<span class="dur">約 40 分</span></div></li>
+          <li class="key" data-t="13:30"><span class="t">13:30</span><div class="e"><strong>古宇利大橋與島上午茶</strong><span class="tags"><span class="tg core">核心</span><span class="tg">咖啡</span></span><span class="where">BRULEE＆COFFEE PARITTHI · 今歸仁村古宇利 2829-1 · 08:00–16:00</span><p>開過跨海大橋時海水是漸層的。別只是開過去，找停車位下來走一段，再去海景露台吃現烤布蕾配咖啡。島上抓 2 小時。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">古宇利 → 名護（17:40 日落前到）<span class="dur">約 45 分</span></div></li>
+          <li data-t="16:30"><span class="t">16:30</span><div class="e"><strong>回飯店休息</strong><p>不用搬行李。要洗衣服的話，名護市區有自助洗衣店，開車 10 分鐘內。</p></div></li>
+          <li class="key" data-t="18:30"><span class="t">18:30</span><div class="e"><strong>やんばるダイニング 松の古民家</strong><span class="tags"><span class="tg">阿古豬</span><span class="tg book">務必訂位</span></span><span class="where">名護市大南 2-14-5 · 17:30–22:00（21:00 LO）· 搭計程車</span><p>七十年屋齡的古民家，島黑阿古豬涮涮鍋，整趟最好的一餐。</p></div></li>
+        </ol>
+        <div class="callouts two">
+          <div class="call warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span><div><h4>松の古民家一定要先訂</h4><p>營業時間電話不好打通，<strong>12:00–16:30 打</strong>最容易接通。<strong>當天取消收全額</strong>，超過預約時間 15 分鐘視同取消。週日公休，11/13 是週五沒問題。</p></div></div>
+          <div class="call warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span><div><h4>笑味の店先打電話</h4><p>只開週五到週一。部分介紹寫餐點要前一天預約，出發前打 <a class="tel" href="tel:+81980443220">0980-44-3220</a> 確認並訂位。</p></div></div>
+        </div>
+        <div class="callouts">
+          <div class="call tip"><span class="ci"><svg class="ic"><use href="#i-bulb"/></svg></span><div><h4>想更鬆的版本</h4><p>不去邊戶岬，改在古宇利、備瀨一帶慢慢晃，開車時間從 3 小時降到 1.5 小時。岬角風大，薄外套帶著。PARITTHI 熱門品項下午會賣完，15:30 前進店。</p></div></div>
+        </div>
+
+        <h4 class="picks-h"><svg class="ic"><use href="#i-food"/></svg>今天吃這三家</h4>
+        <div class="picks">
+          <article class="pick">
+            <span class="slot">午餐 · 11:40</span>
+            <h5>笑味の店</h5>
+            <div class="kind">大宜味長壽村定食</div>
+            <dl><dt>營業</dt><dd>週五至週一 · 餐點 11:30–15:00</dd><dt>電話</dt><dd><a class="tel" href="tel:+81980443220">0980-44-3220</a></dd></dl>
+            <div class="tagrow"><span class="tg cash">只收現金</span><span class="tg book">先預約</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%AC%91%E5%91%B3%E3%81%AE%E5%BA%97%20%E5%A4%A7%E5%AE%9C%E5%91%B3%E6%9D%91%E5%A4%A7%E5%85%BC%E4%B9%8561"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+          </article>
+          <article class="pick">
+            <span class="slot">下午茶 · 13:30</span>
+            <h5>BRULEE＆COFFEE PARITTHI</h5>
+            <div class="kind">古宇利海景露台・現烤布蕾</div>
+            <dl><dt>營業</dt><dd>08:00–16:00</dd><dt>提醒</dt><dd>15:30 前進店</dd></dl>
+            <div class="tagrow"><span class="tg ok">不用訂</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=PARITTHI%20%E4%BB%8A%E5%B8%B0%E4%BB%81%E6%9D%91%E5%8F%A4%E5%AE%87%E5%88%A92829-1"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+          </article>
+          <article class="pick">
+            <span class="slot">晚餐 · 18:30</span>
+            <h5>やんばるダイニング 松の古民家</h5>
+            <div class="kind">島黑阿古豬涮涮鍋</div>
+            <dl><dt>營業</dt><dd>17:30–22:00 · 週日休</dd><dt>電話</dt><dd><a class="tel" href="tel:+815054858909">050-5485-8909</a></dd></dl>
+            <div class="tagrow"><span class="tg book">務必訂位</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E3%82%84%E3%82%93%E3%81%B0%E3%82%8B%E3%83%80%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0%20%E6%9D%BE%E3%81%AE%E5%8F%A4%E6%B0%91%E5%AE%B6%20%E5%90%8D%E8%AD%B7%E5%B8%82%E5%A4%A7%E5%8D%972-14-5"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+          </article>
+        </div>
+      </div>
+    </article>
+
+    <!-- ========== D4 ========== -->
+    <article class="day d4" id="d4" aria-label="Day 4">
+      <aside class="day-aside">
+        <div class="sign" data-day="4">
+          <div class="sign-top">
+            <div class="badge"><span>DAY</span><b>4</b></div>
+            <div class="sign-name"><h3>南城</h3><div class="kana">なんじょう</div></div>
+          </div>
+          <div class="sign-bar"><span><svg class="ic"><use href="#i-back"/></svg>山原</span><span>那霸空港<svg class="ic"><use href="#i-arrow"/></svg></span></div>
+          <div class="sign-foot"><span class="date">2026/11/14<small>週六</small><span class="stamp">今天</span></span><span class="theme">東岸南下 · 海景咖啡 · 國際通</span></div>
+        </div>
+        <figure class="day-photo">
+          <div class="ph"><img loading="lazy" src="img/d4-ou-island.jpg" alt="南城市奧武島與周邊海岸"></div>
+          <figcaption class="photo-credit">照片：南城 奧武島 · Kugel · <a href="https://commons.wikimedia.org/wiki/File:Ou_Island_Nanjo_202208.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></figcaption>
+        </figure>
+        <p class="day-route"><svg class="ic"><use href="#i-car"/></svg><span>名護 → 海中道路 → 奧武島 → 豐崎 → 那霸 · 開車約 2 小時 50 分，<b>15:30 還車</b></span></p>
+        <div class="stay-line"><svg class="ic"><use href="#i-bed"/></svg><div><b>今晚住 KIYAZA Resort 沖繩 EAST</b>那霸市東町 · 還車處步行 8 分</div></div>
+      </aside>
+      <div class="day-body">
+        <ol class="tl">
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">08:45 退房出發 · 許田 IC → 沖繩北 IC → 海中道路<span class="dur">約 55 分</span></div></li>
+          <li data-t="09:45"><span class="t">09:45</span><div class="e"><strong>海中道路 兜風</strong><span class="where">うるま市 · 海の駅あやはし館 Road Park · 免費停車</span><p>整條海上公路開過去，中段 Road Park 停 20 到 30 分鐘拍照就走。滿潮時兩側都是海最漂亮。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">沖繩北 IC → 南風原南 IC → 奧武島<span class="dur">約 55 分</span></div></li>
+          <li data-t="11:30"><span class="t">11:30</span><div class="e"><strong>奧武島 いまいゆ市場＋中本鮮魚天婦羅</strong><span class="tags"><span class="tg">海鮮</span></span><span class="where">南城市玉城奧武 · 中本 10:00–18:00、週四休</span><p>市場買刺身拼盤和魚湯在港邊吃，隔壁中本外帶一包現炸魚天婦羅，兩個人吃很飽。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">奧武島 → 玉城<span class="dur">約 5 分</span></div></li>
+          <li class="key" data-t="12:50"><span class="t">12:50</span><div class="e"><strong>浜辺の茶屋</strong><span class="tags"><span class="tg core">核心</span><span class="tg">咖啡</span></span><span class="where">南城市玉城玉城 2-1 · 08:00 起，週末營業到 19:00 · 無休</span><p>沖繩海景咖啡的元祖，搶窗邊長吧台。點琉球花紅茶配手作司康或紫芋起司蛋糕，13:30 起身。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">南城 → 豐崎<span class="dur">約 35 分</span></div></li>
+          <li data-t="14:05"><span class="t">14:05</span><div class="e"><strong>SPORTS DEPO 豐崎店：買 On 鞋</strong><span class="tags"><span class="tg">購物</span></span><span class="where">豐見城市豐崎 1-411 · 10:00–21:00 · 免費停車</span><p>只有 50 分鐘，直接試穿目標型號，<b>14:55 一定要走</b>。正對面的 ASHIBINAA 暢貨中心這次沒時間逛。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">14:55 出發 · 途中加滿油 → ORIX 旭橋站西店<span class="dur">約 20 分</span></div></li>
+          <li class="must" data-t="15:30"><span class="t">15:30</span><div class="e"><strong>還車</strong><span class="where">那霸市西 2-3-1 · 預約 ••••3845</span><p>預約時間寫死在 15:30，15:25 前到店。滿油還車並保留加油收據，費用現場結清。</p></div></li>
+          <li data-t="15:50"><span class="t">15:50</span><div class="e"><strong>入住 KIYAZA Resort 沖繩 EAST</strong><span class="where">那霸市東町 19-13 · 入住 15:00–22:00</span><p>從還車處走 8 分鐘。行李、鞋盒全部放好，兩手空空出門。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-train"/></svg></span><div class="e">16:20 旭橋站 → 牧志站<span class="dur">約 6 分</span></div></li>
+          <li data-t="16:35"><span class="t">16:35</span><div class="e"><strong>豬肉蛋飯糰 牧志市場店</strong><span class="tags"><span class="tg">外帶</span></span><span class="where">那霸市松尾 2-8-35 · 07:00–17:30 · 週三休</span><p>沖繩名物，傍晚就打烊，所以一到牧志先來買。當下午點心，或留一顆明早在機場吃。</p></div></li>
+          <li class="key" data-t="16:50"><span class="t">16:50</span><div class="e"><strong>國際通與市場商圈</strong><span class="tags"><span class="tg core">核心</span><span class="tg">購物</span></span><span class="where">牧志站下車，一路往西逛</span><p>國際通買伴手禮、紅芋塔、泡盛、黑糖 → 轉進平和通與市場本通的有頂商店街，藥妝比大街便宜 → 壺屋やちむん通挑陶器 → 回到公設市場。</p></div></li>
+          <li data-t="18:45"><span class="t">18:45</span><div class="e"><strong>第一牧志公設市場「持ち上げ」</strong><span class="tags"><span class="tg">海鮮</span></span><span class="where">那霸市松尾 2-10-1 · 2 樓食堂 20:00 最後點餐</span><p>1 樓鮮魚攤挑魚、夜光貝、龍蝦，拿上 2 樓請店家做成刺身、煎或煮。最後一晚吃好吃滿。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-train"/></svg></span><div class="e">牧志站 → 旭橋站，走回飯店<span class="dur">約 15 分</span></div></li>
+          <li data-t="20:30"><span class="t">20:30</span><div class="e"><strong>回飯店整理行李</strong><p>把戰利品打包好，明天 06:20 出門。櫃檯 22:00 關，時間綽綽有餘。</p></div></li>
+        </ol>
+        <div class="callouts two">
+          <div class="call warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span><div><h4>15:25 前到 ORIX</h4><p>豐崎一定 14:55 離開。加油站選還車路線上的，收據留著，櫃檯可能要看。</p></div></div>
+          <div class="call tip"><span class="ci"><svg class="ic"><use href="#i-bag"/></svg></span><div><h4>伴手禮今天買齊</h4><p>明天 06:40 就到機場，沒有時間採買。陶器請店家包好，隨身帶上飛機。</p></div></div>
+        </div>
+
+        <h4 class="picks-h"><svg class="ic"><use href="#i-food"/></svg>今天吃這四家</h4>
+        <div class="picks p4">
+          <article class="pick">
+            <span class="slot">午餐 · 11:30</span>
+            <h5>中本鮮魚天婦羅＋いまいゆ市場</h5>
+            <div class="kind">奧武島 現炸天婦羅・刺身</div>
+            <dl><dt>營業</dt><dd>10:00–18:00 · 週四休</dd><dt>電話</dt><dd><a class="tel" href="tel:+81989483583">098-948-3583</a></dd></dl>
+            <div class="tagrow"><span class="tg ok">不用訂</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E6%9C%AC%E9%AE%AE%E9%AD%9A%E3%81%A6%E3%82%93%E3%81%B7%E3%82%89%E5%BA%97%20%E5%A5%A5%E6%AD%A6%E5%B3%B6"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+          </article>
+          <article class="pick">
+            <span class="slot">下午茶 · 12:50</span>
+            <h5>浜辺の茶屋</h5>
+            <div class="kind">海景長吧台・紅茶司康</div>
+            <dl><dt>營業</dt><dd>08:00 起 · 無休</dd><dt>電話</dt><dd><a class="tel" href="tel:+81989482073">098-948-2073</a></dd></dl>
+            <div class="tagrow"><span class="tg ok">不用訂</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E6%B5%9C%E8%BE%BA%E3%81%AE%E8%8C%B6%E5%B1%8B%20%E5%8D%97%E5%9F%8E%E5%B8%82%E7%8E%89%E5%9F%8E%E7%8E%89%E5%9F%8E2-1"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+          </article>
+          <article class="pick">
+            <span class="slot">點心 · 16:35</span>
+            <h5>ポークたまごおにぎり 牧志市場店</h5>
+            <div class="kind">豬肉蛋飯糰・外帶</div>
+            <dl><dt>營業</dt><dd>07:00–17:30 · 週三休</dd><dt>電話</dt><dd><a class="tel" href="tel:+81988679550">098-867-9550</a></dd></dl>
+            <div class="tagrow"><span class="tg ok">不用訂</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%83%BC%E3%82%AF%E3%81%9F%E3%81%BE%E3%81%94%E3%81%8A%E3%81%AB%E3%81%8E%E3%82%8A%20%E7%89%A7%E5%BF%97%E5%B8%82%E5%A0%B4%E5%BA%97"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+          </article>
+          <article class="pick">
+            <span class="slot">晚餐 · 18:45</span>
+            <h5>第一牧志公設市場</h5>
+            <div class="kind">樓下挑魚、樓上代工</div>
+            <dl><dt>營業</dt><dd>2 樓食堂 20:00 LO</dd><dt>位置</dt><dd>國際通旁，牧志站步行</dd></dl>
+            <div class="tagrow"><span class="tg ok">不用訂</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%AC%AC%E4%B8%80%E7%89%A7%E5%BF%97%E5%85%AC%E8%A8%AD%E5%B8%82%E5%A0%B4"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+          </article>
+        </div>
+      </div>
+    </article>
+
+    <!-- ========== D5 ========== -->
+    <article class="day d5" id="d5" aria-label="Day 5">
+      <aside class="day-aside">
+        <div class="sign" data-day="5">
+          <div class="sign-top">
+            <div class="badge"><span>DAY</span><b>5</b></div>
+            <div class="sign-name"><h3>那霸空港</h3><div class="kana">なはくうこう</div></div>
+          </div>
+          <div class="sign-bar"><span><svg class="ic"><use href="#i-back"/></svg>南城</span><span>桃園<svg class="ic"><use href="#i-arrow"/></svg></span></div>
+          <div class="sign-foot"><span class="date">2026/11/15<small>週日</small><span class="stamp">今天</span></span><span class="theme">早班機返台</span></div>
+        </div>
+        <figure class="day-photo">
+          <div class="ph"><img loading="lazy" src="img/d5-monorail.jpg" alt="停靠旭橋站的沖繩單軌電車"></div>
+          <figcaption class="photo-credit">照片：旭橋站的單軌電車 · Mk2010 · <a href="https://commons.wikimedia.org/wiki/File:Okinawa_Monorail_1203%2B1103_at_Asahibashi_Station_20111127.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></figcaption>
+        </figure>
+        <p class="day-route"><svg class="ic"><use href="#i-train"/></svg><span>KIYAZA → 旭橋站 → 那霸空港站 · 全程單軌，不開車</span></p>
+      </aside>
+      <div class="day-body">
+        <ol class="tl">
+          <li data-t="06:10"><span class="t">06:10</span><div class="e"><strong>退房</strong><p>櫃檯 06:00 起辦理。行李前一晚就打包完。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-walk"/></svg></span><div class="e">06:20 出門 · 走到旭橋站<span class="dur">約 4 分</span></div></li>
+          <li class="key" data-t="06:25"><span class="t">06:25</span><div class="e"><strong>單軌 旭橋站 → 那霸空港站</strong><p>約 11 分鐘。首班車 6 點過後發車，出發前查官網時刻表。萬一睡過頭，計程車約 15 分鐘到機場。</p></div></li>
+          <li data-t="06:40"><span class="t">06:40</span><div class="e"><strong>抵達機場國際線，報到</strong><p>時間很寬裕，買杯咖啡配昨天的飯糰。</p></div></li>
+          <li class="must" data-t="07:25"><span class="t">07:25</span><div class="e"><strong>報到截止</strong><p>樂桃在起飛前 50 分鐘關櫃，晚一分鐘都不能上。</p></div></li>
+          <li class="key" data-t="08:15"><span class="t">08:15</span><div class="e"><strong>MM921 起飛</strong><p>08:55 抵達桃園，9 點前就到家。</p></div></li>
+        </ol>
+        <div class="callouts">
+          <div class="call info"><span class="ci"><svg class="ic"><use href="#i-receipt"/></svg></span><div><h4>要辦退稅就 06:00 出門</h4><p>11/1 起的新制要在機場海關確認商品後才退款，早班機排隊時間難抓。金額不大就別辦了，詳見「購物與退稅」。</p></div></div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- 04 住宿與租車 -->
+<section class="sec" id="stay" aria-labelledby="stay-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="n">04</span>
+      <h2 id="stay-h">住宿與租車</h2>
+      <p>三間住宿都是 2 位成人、1 間房，全部訂好了。取消期限列在下面，要改行程就在期限前決定。</p>
+    </div>
+
+    <div class="stays">
+      <article class="stay d1 rv">
+        <div class="night"><b>1</b><span>11/11 三 · 1 晚</span></div>
+        <h4>Nest Hotel 那霸西</h4>
+        <p class="where">那霸市西 1-20-19</p>
+        <dl><dt>入住</dt><dd>15:00 起</dd><dt>退房</dt><dd>11/12 11:00 前</dd><dt>步行</dt><dd>旭橋站 5 分 · ORIX 5 分</dd></dl>
+        <ul><li class="ok">已訂</li><li class="dl">免費取消至 11/11 14:00</li></ul>
+      </article>
+      <article class="stay d2 rv">
+        <div class="night"><b>2–3</b><span>11/12–11/14 · 2 晚</span></div>
+        <h4>Hotel Yugaf Inn Okinawa</h4>
+        <p class="where">名護市宮里 453-1 · <a class="tel" href="tel:+81980530031">0980-53-0031</a></p>
+        <dl><dt>入住</dt><dd>15:00 起</dd><dt>退房</dt><dd>11/14 11:00 前</dd><dt>位置</dt><dd>濱海，鄰 21 世紀之森公園，國道 58 號旁</dd></dl>
+        <ul><li class="ok">已訂</li><li>連住不換房</li><li class="dl">免費取消至 11/9</li></ul>
+      </article>
+      <article class="stay d4 rv">
+        <div class="night"><b>4</b><span>11/14 六 · 1 晚</span></div>
+        <h4>KIYAZA Resort 沖繩 EAST</h4>
+        <p class="where">那霸市東町 19-13</p>
+        <dl><dt>入住</dt><dd>15:00–22:00</dd><dt>退房</dt><dd>11/15 06:00–10:00</dd><dt>步行</dt><dd>旭橋站 4 分 · ORIX 8 分</dd></dl>
+        <ul><li class="ok">已訂</li><li class="dl">免費取消至 11/11</li></ul>
+      </article>
+    </div>
+
+    <h3 class="sub-h"><svg class="ic"><use href="#i-key"/></svg>租車</h3>
+    <div class="ticket rv">
+      <div class="ticket-head"><svg class="ic"><use href="#i-car"/></svg><b>ORIX 租車 · 旭橋站西店</b><span class="ok">已預約</span></div>
+      <div class="ticket-body">
+        <div class="ticket-grid">
+          <div><span>預約號碼</span><b class="big num">••••3845</b></div>
+          <div><span>取車</span><b class="big num">11/12 09:00</b></div>
+          <div><span>還車（同店）</span><b class="big num">11/14 15:30</b></div>
+          <div><span>車型</span><b>SA CLASS 小型車・禁菸</b></div>
+          <div><span>保險</span><b>事故免責險＋NOC 安心制度</b></div>
+          <div><span>地址</span><b>那霸市西 2-3-1</b></div>
+        </div>
+        <div class="btns">
+          <a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E3%82%AA%E3%83%AA%E3%83%83%E3%82%AF%E3%82%B9%E3%83%AC%E3%83%B3%E3%82%BF%E3%82%AB%E3%83%BC%20%E6%97%AD%E6%A9%8B%E9%A7%85%E8%A5%BF%E5%BA%97%20%E9%82%A3%E8%A6%87%E5%B8%82%E8%A5%BF2-3-1"><svg class="ic"><use href="#i-pin"/></svg>地圖</a>
+        </div>
+      </div>
+    </div>
+    <ol class="steps">
+      <li class="rv"><span class="k num">01</span><b>帶齊三樣證件</b><p>台灣駕照正本＋監理站日文譯本＋護照，<strong>缺一樣就不交車</strong>。</p></li>
+      <li class="rv"><span class="k num">02</span><b>外語對應專用櫃檯</b><p>報預約號 ••••3845，已加購快速取車，手續較快。</p></li>
+      <li class="rv"><span class="k num">03</span><b>上路前檢查</b><p>ETC 卡預約單沒列，當場問要不要租。看油量、車身刮痕拍照。</p></li>
+      <li class="rv"><span class="k num">04</span><b>還車</b><p>11/14 15:25 前到。滿油，收據留著。費用在店舖現場結帳，可刷卡。</p></li>
+    </ol>
+    <div class="panel tint rv" style="margin-top:12px">
+      <h3><svg class="ic"><use href="#i-car"/></svg>加油小抄</h3>
+      <p>把手機給店員看就好（一般汽油，加滿）：</p>
+      <p class="phrase">レギュラー、満タンで<br>お願いします</p>
+      <p class="phrase-sub">沖繩加油站多半是自助式，也有全套服務。自助式先選「レギュラー（紅色油槍）」。</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 餐飲訂位 -->
+<section class="sec" id="food" aria-labelledby="food-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="n">05</span>
+      <h2 id="food-h">吃什麼、要不要訂</h2>
+      <p>海鮮 3 餐、本部牛燒肉 1 餐、阿古豬 1 餐、海景咖啡 3 次。真正非訂不可的只有一家，另外兩家建議先訂。</p>
+    </div>
+    <figure class="band rv">
+      <img loading="lazy" src="img/band-market.jpg" alt="第一牧志公設市場鮮魚攤上的龍蝦與螃蟹">
+      <figcaption><b>樓下挑、樓上煮：最後一晚的公設市場</b><small>照片：KQuhen · <a href="https://commons.wikimedia.org/wiki/File:Seafood_stall_Makishi_First_Public_Market_03.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></small></figcaption>
+    </figure>
+    <div class="board fboard rv">
+      <div class="board-row board-head" aria-hidden="true"><span>時段</span><span>店名</span><span>吃什麼</span><span>訂位</span></div>
+      <a class="board-row d2" href="#d2"><span class="when"><b>D2</b><small>早午</small></span><span class="what">漁師食堂 魚大統領</span><span class="meta">港邊定食，券売機自助</span><span class="meta"><span class="lbl">訂位</span><span class="tg">開門就到</span></span></a>
+      <a class="board-row d2" href="#d2"><span class="when"><b>D2</b><small>下午</small></span><span class="what">花人逢</span><span class="meta">古民家海景，只點飲料</span><span class="meta"><span class="lbl">訂位</span><span class="tg">不收訂位</span></span></a>
+      <a class="board-row d2" href="#d2"><span class="when"><b>D2</b><small>晚</small></span><span class="what">燒肉 もとぶ牧場 本部店</span><span class="meta">本部牛 8 部位食べ比べ</span><span class="meta"><span class="lbl">訂位</span><span class="tg book">建議・網路可訂</span></span></a>
+      <a class="board-row d3" href="#d3"><span class="when"><b>D3</b><small>午</small></span><span class="what">笑味の店</span><span class="meta">長壽村定食</span><span class="meta"><span class="lbl">訂位</span><span class="tg book">先預約</span></span></a>
+      <a class="board-row d3" href="#d3"><span class="when"><b>D3</b><small>下午</small></span><span class="what">BRULEE＆COFFEE PARITTHI</span><span class="meta">古宇利海景、現烤布蕾</span><span class="meta"><span class="lbl">訂位</span><span class="tg ok">不用訂</span></span></a>
+      <a class="board-row d3" href="#d3"><span class="when"><b>D3</b><small>晚</small></span><span class="what">松の古民家</span><span class="meta">島黑阿古豬涮涮鍋</span><span class="meta"><span class="lbl">訂位</span><span class="tg core">務必訂位</span></span></a>
+      <a class="board-row d4" href="#d4"><span class="when"><b>D4</b><small>午</small></span><span class="what">奧武島 中本＋いまいゆ市場</span><span class="meta">刺身、現炸天婦羅</span><span class="meta"><span class="lbl">訂位</span><span class="tg ok">不用訂</span></span></a>
+      <a class="board-row d4" href="#d4"><span class="when"><b>D4</b><small>下午</small></span><span class="what">浜辺の茶屋</span><span class="meta">海景長吧台、紅茶司康</span><span class="meta"><span class="lbl">訂位</span><span class="tg ok">不用訂</span></span></a>
+      <a class="board-row d4" href="#d4"><span class="when"><b>D4</b><small>點心</small></span><span class="what">豬肉蛋飯糰 牧志市場店</span><span class="meta">外帶，17:30 打烊</span><span class="meta"><span class="lbl">訂位</span><span class="tg ok">不用訂</span></span></a>
+      <a class="board-row d4" href="#d4"><span class="when"><b>D4</b><small>晚</small></span><span class="what">第一牧志公設市場</span><span class="meta">樓下挑魚、樓上代工</span><span class="meta"><span class="lbl">訂位</span><span class="tg ok">不用訂</span></span></a>
+    </div>
+    <div class="callouts rv" style="margin-top:14px">
+      <div class="call info"><span class="ci"><svg class="ic"><use href="#i-food"/></svg></span><div><h4>備案</h4><p>D4 午餐可改糸滿「港町パーラー」海鮮丼（11:00–15:00，賣完為止）；D4 下午咖啡可改「山の茶屋 楽水」（週三四休）。<strong>只收現金</strong>的是花人逢和笑味の店，路邊小攤和在地老店也多半只收現金。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 購物與退稅 -->
+<section class="sec" id="shop" aria-labelledby="shop-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="n">06</span>
+      <h2 id="shop-h">購物與退稅</h2>
+      <p>購物全部集中在 D4 下午到晚上。退稅制度 11/1 剛改，先看清楚再決定要不要辦。</p>
+    </div>
+    <figure class="band rv">
+      <img loading="lazy" src="img/band-kokusai.jpg" alt="白天的那霸國際通，椰子樹與伴手禮店">
+      <figcaption><b>國際通 1.6 公里，伴手禮一次買齊</b><small>照片：663highland · <a href="https://commons.wikimedia.org/wiki/File:Kokusai-dori08s3s4440.jpg" target="_blank" rel="noopener">CC BY 2.5</a></small></figcaption>
+    </figure>
+    <div class="prac">
+      <div class="call warn w7 rv"><span class="ci"><svg class="ic"><use href="#i-receipt"/></svg></span><div>
+        <h4>退稅新制：11/1 起改成「先付含稅、出境退款」</h4>
+        <p>店內付含稅價，出境時在<strong>保安檢查前的海關</strong>確認商品，而且要在託運行李之前完成，確認後才退款。退款用的信用卡要先登記，建議出發前在 Visit Japan Web 登錄。新制同時取消消耗品的密封包裝與 50 萬圓上限。</p>
+        <p><strong>但這班機太早了。</strong>11/15 08:15 起飛、06:40 才到機場，加上早班機人潮，很可能來不及。金額不大就別辦；真要辦，出門時間提前到 06:00。</p>
+      </div></div>
+      <div class="panel w5 rv">
+        <h3><svg class="ic"><use href="#i-bag"/></svg>D4 採買路線</h3>
+        <ul class="plain">
+          <li><b>國際通</b>：伴手禮、紅芋塔、泡盛、黑糖。唐吉訶德 24 小時營業。</li>
+          <li><b>平和通・市場本通</b>：有頂商店街，藥妝比大街便宜。</li>
+          <li><b>壺屋やちむん通</b>：陶器，請店家包好隨身帶。</li>
+          <li><b>On 鞋</b>：SPORTS DEPO 豐崎店，14:05–14:55。</li>
+        </ul>
+      </div>
+      <div class="panel tint w12 rv" style="grid-column:1 / -1">
+        <h3><svg class="ic"><use href="#i-bulb"/></svg>幾個容易忘的細節</h3>
+        <ul class="plain">
+          <li><b>店家優惠券和退稅是兩回事。</b>唐吉訶德、BicCamera、Alpen 的觀光客折價券當場折抵，不受新制影響。券要存<b>原圖</b>給店員掃，截圖無效。</li>
+          <li><b>On 鞋備案</b>：從牧志搭單軌 2 站到おもろまち的 San-A 那霸 Main Place（ABC-MART GRAND STAGE、BUNRINDO SPORTS，營業到 22:00），有沒有 On 要先打電話問。</li>
+          <li><b>行李</b>：隨身只有 7 kg，陶器、泡盛、鞋盒很快就超重，回程在樂桃官網加購託運。</li>
+          <li><b>付款</b>：多數店可用 PayPay 和信用卡。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 出發前 -->
+<section class="sec" id="todo" aria-labelledby="todo-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="n">07</span>
+      <h2 id="todo-h">出發前待辦</h2>
+      <p>勾選狀態只存在這支手機（或這台電腦）的瀏覽器裡。</p>
+    </div>
+    <div class="prac">
+      <div class="todo w7 rv">
+        <label><input type="checkbox" data-k="t1"><span><b>監理站辦駕照日文譯本</b>，出發帶正本＋譯本＋護照。沒有譯本 ORIX 不交車</span></label>
+        <label><input type="checkbox" data-k="t2"><span>樂桃官網<b>加購回程託運行李</b></span></label>
+        <label><input type="checkbox" data-k="t3"><span>訂位：<b>松の古民家</b> 11/13 18:30（務必，12:00–16:30 打）</span></label>
+        <label><input type="checkbox" data-k="t4"><span>訂位：<b>笑味の店</b> 11/13 午餐、<b>もとぶ牧場 本部店</b> 11/12 18:00（網路可訂）</span></label>
+        <label><input type="checkbox" data-k="t5"><span>打 <a class="tel" href="tel:+81988511150">098-851-1150</a> 問 SPORTS DEPO 豐崎店 On 鞋型號與尺寸庫存</span></label>
+        <label><input type="checkbox" data-k="t6"><span>準備日圓現金（花人逢、笑味の店只收現金）</span></label>
+        <label><input type="checkbox" data-k="t7"><span>Visit Japan Web 登錄，並登記退稅用信用卡</span></label>
+        <label><input type="checkbox" data-k="t8"><span>把店家優惠券存成<b>手機原圖</b>（截圖無效）</span></label>
+        <label><input type="checkbox" data-k="t9"><span>確認手機網路或 eSIM，PayPay 可用</span></label>
+        <label><input type="checkbox" data-k="t10"><span>查 11/14 潮汐，海中道路滿潮最美</span></label>
+        <label><input type="checkbox" data-k="t11"><span>出發前一週複查各店營業時間與公休</span></label>
+        <div class="todo-foot"><span id="todoCount">尚未開始</span><span class="todo-meter" aria-hidden="true"><i id="todoBar"></i></span><button class="linkbtn" type="button" id="resetTodo">全部清除</button></div>
+      </div>
+      <div class="w5 rv" style="display:grid; gap:12px; align-content:start">
+        <h3 class="sub-h" style="margin:0"><svg class="ic"><use href="#i-cal"/></svg>住宿取消期限</h3>
+        <div class="deadlines" id="deadlines">
+          <div data-until="2026-11-09T23:59:00+09:00"><b class="num">11/9</b><span>Yugaf Inn<small>三筆裡最早的一筆</small></span><em>入住前 3 天</em></div>
+          <div data-until="2026-11-11T23:59:00+09:00"><b class="num">11/11</b><span>KIYAZA Resort EAST<small>D4 晚上那霸</small></span><em>出發當天</em></div>
+          <div data-until="2026-11-11T14:00:00+09:00"><b class="num">11/11</b><span>Nest Hotel 那霸西<small>14:00 前</small></span><em>出發當天</em></div>
+        </div>
+        <p style="font-size:13px; color:var(--ink-3)">過了期限取消就收全額。要改行程就在這些日子之前決定。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 08 現場提醒 -->
+<section class="sec" id="tips" aria-labelledby="tips-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="n">08</span>
+      <h2 id="tips-h">現場提醒</h2>
+      <p>天氣、開車、禮儀，和萬一需要的電話。</p>
+    </div>
+    <div class="prac">
+      <div class="panel w6 rv">
+        <h3><svg class="ic"><use href="#i-shirt"/></svg>11 月中的沖繩</h3>
+        <ul class="plain">
+          <li>白天約 20–25°C，短袖就好；晚上和冷氣房要薄外套。</li>
+          <li><b>飯店和租車的冷氣都開很強</b>，邊戶岬、岬角一帶風也大。</li>
+          <li>日落約 17:40。只有 D2 燒肉後要開 30 分鐘夜路回名護，其他天都在天黑前結束移動。</li>
+          <li>自然景點多半沒有販賣部，車上放礦泉水和小點心。</li>
+        </ul>
+      </div>
+      <div class="panel w6 rv">
+        <h3><svg class="ic"><use href="#i-car"/></svg>開車</h3>
+        <ul class="plain">
+          <li>導航用<b>電話號碼或 MapCode</b> 輸入最準，地址常找不到。下方速查表的電話可直接用。</li>
+          <li>高速只走三段：那霸 IC ↔ 許田 IC（D2、D4）、沖繩北 IC ↔ 南風原南 IC（D4）。</li>
+          <li><b>日本酒駕零容忍。</b>D2 燒肉那晚司機不喝；D3 晚餐搭計程車。</li>
+          <li>還車前加滿油並留收據。</li>
+        </ul>
+      </div>
+      <div class="panel tint w12 rv" style="grid-column:1 / -1">
+        <h3><svg class="ic"><use href="#i-lifebuoy"/></svg>緊急聯絡</h3>
+        <div class="emerg">
+          <div><span>警察 / 救護車・消防</span><b><a href="tel:110">110</a> / <a href="tel:119">119</a></b><small>日本境內直撥</small></div>
+          <div><span>台北駐日經濟文化代表處 那霸分處</span><b><a href="tel:+81988627008">098-862-7008</a></b><small>上班時間</small></div>
+          <div><span>那霸分處 急難專線</span><b><a href="tel:+818080560122">080-8056-0122</a></b><small>重大急難才撥，台灣手機撥 +81-80-8056-0122</small></div>
+          <div><span>外交部旅外急難</span><b><a href="tel:+886800085095">+886-800-085-095</a></b><small>24 小時</small></div>
+          <div><span>JAF 道路救援</span><b><a href="tel:%238139">#8139</a></b><small>車子拋錨、爆胎；先聯絡 ORIX</small></div>
+        </div>
+      </div>
+      <div class="call tip w12 rv" style="grid-column:1 / -1"><span class="ci"><svg class="ic"><use href="#i-wave"/></svg></span><div><h4>海邊禮儀</h4><p>沙灘上的貝殼、珊瑚不可撿拾帶走，違規會開罰；垃圾隨身帶走。</p></div></div>
+      <div class="call info w12 rv" style="grid-column:1 / -1"><span class="ci"><svg class="ic"><use href="#i-route"/></svg></span><div><h4>評估後沒排的三個點</h4><p><strong>美國村</strong>：晚上點燈才好逛，但 11/14 15:30 就還車，晚上沒車。<strong>鳳梨園</strong>：偏親子團客，D3 回程已接近閉園。<strong>PARCO CITY</strong>：在浦添，還車後單軌到不了，要去只能擠掉 On 鞋或國際通。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 09 導航速查 -->
+<section class="sec" id="nav" aria-labelledby="nav-h">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <span class="n">09</span>
+      <h2 id="nav-h">導航速查表</h2>
+      <p>按「地圖」開 Google Maps，「路線」直接開始導航，「撥號」直接打。「複製」會把日文名稱、地址和電話一起複製，貼進車上導航或傳給對方。</p>
+    </div>
+
+    <div class="places-group">
+      <h3><svg class="ic"><use href="#i-bed"/></svg>住宿與租車</h3>
+      <div class="places">
+        <article class="place d1"><div class="place-top"><span class="when">DAY 1</span><span class="role">住宿</span></div><h4>ネストホテル那覇西</h4><p class="addr">沖縄県那覇市西1-20-19</p><p class="note">Nest Hotel 那霸西 · 旭橋站步行 5 分</p><div class="btns" data-q="ネストホテル那覇西 沖縄県那覇市西1-20-19"></div></article>
+        <article class="place d2"><div class="place-top"><span class="when">DAY 2</span><span class="role">取車・還車</span></div><h4>オリックスレンタカー 旭橋駅西店</h4><p class="addr">沖縄県那覇市西2-3-1</p><p class="note">預約號 ••••3845 · 取車 11/12 09:00 · 還車 11/14 15:30</p><div class="btns" data-q="オリックスレンタカー 旭橋駅西店 沖縄県那覇市西2-3-1"></div></article>
+        <article class="place d2"><div class="place-top"><span class="when">DAY 2–3</span><span class="role">住宿</span></div><h4>ホテルゆがふいんおきなわ</h4><p class="addr">沖縄県名護市宮里453-1</p><p class="note">Hotel Yugaf Inn Okinawa · 連住 2 晚</p><div class="btns" data-q="ホテルゆがふいんおきなわ 沖縄県名護市宮里453-1" data-tel="0980-53-0031"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">住宿</span></div><h4>KIYAZA Resort 沖縄 EAST</h4><p class="addr">沖縄県那覇市東町19-13</p><p class="note">入住 15:00–22:00 · 退房 06:00 起</p><div class="btns" data-q="KIYAZA Resort Okinawa EAST 沖縄県那覇市東町19-13"></div></article>
+      </div>
+    </div>
+
+    <div class="places-group">
+      <h3><svg class="ic"><use href="#i-pin"/></svg>景點</h3>
+      <div class="places">
+        <article class="place d2"><div class="place-top"><span class="when">DAY 2</span><span class="role">散步</span></div><h4>備瀬のフクギ並木</h4><p class="addr">沖縄県国頭郡本部町備瀬</p><p class="note">備瀨福木林道 · 12:30 · 離水族館 10 分</p><div class="btns" data-q="備瀬のフクギ並木"></div></article>
+        <article class="place d2"><div class="place-top"><span class="when">DAY 2</span><span class="role">核心</span></div><h4>沖縄美ら海水族館（P7 駐車場）</h4><p class="addr">沖縄県国頭郡本部町石川424</p><p class="note">導航設 P7 立體停車場，離入口最近</p><div class="btns" data-q="沖縄美ら海水族館 P7駐車場" data-tel="0980-48-3748"></div></article>
+        <article class="place d3"><div class="place-top"><span class="when">DAY 3</span><span class="role">核心</span></div><h4>辺戸岬</h4><p class="addr">沖縄県国頭郡国頭村辺戸</p><p class="note">本島最北端 · 免費 · 24 小時</p><div class="btns" data-q="辺戸岬 沖縄県国頭郡国頭村辺戸"></div></article>
+        <article class="place d3"><div class="place-top"><span class="when">DAY 3</span><span class="role">核心</span></div><h4>古宇利大橋</h4><p class="addr">沖縄県国頭郡今帰仁村古宇利</p><p class="note">橋頭兩端都有停車場，下車走一段</p><div class="btns" data-q="古宇利大橋"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">兜風</span></div><h4>海中道路（海の駅あやはし館）</h4><p class="addr">沖縄県うるま市与那城屋平4</p><p class="note">中段 Road Park 免費停車 · 停 20–30 分</p><div class="btns" data-q="海の駅あやはし館 うるま市"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">購物</span></div><h4>スポーツデポ 豊崎店</h4><p class="addr">沖縄県豊見城市豊崎1-411</p><p class="note">On 鞋 · 14:05–14:55 · 免費停車</p><div class="btns" data-q="スポーツデポ 豊崎店 沖縄県豊見城市豊崎1-411" data-tel="098-851-1150"></div></article>
+      </div>
+    </div>
+
+    <div class="places-group">
+      <h3><svg class="ic"><use href="#i-food"/></svg>餐廳</h3>
+      <div class="places">
+        <article class="place d2"><div class="place-top"><span class="when">DAY 2</span><span class="role">早午</span></div><h4>漁師食堂 おーばんぶるまい 魚大統領</h4><p class="addr">沖縄県那覇市港町3-1-17</p><p class="note">10:00 開門 · 券売機自助</p><div class="btns" data-q="漁師食堂 魚大統領 那覇市港町3-1-17" data-tel="098-894-8636"></div></article>
+        <article class="place d2"><div class="place-top"><span class="when">DAY 2</span><span class="role">下午茶</span></div><h4>ピザ喫茶 花人逢</h4><p class="addr">沖縄県国頭郡本部町山里1153-2</p><p class="note">只收現金 · 最後一段窄坡道</p><div class="btns" data-q="ピザ喫茶 花人逢 本部町山里1153-2" data-tel="0980-47-5537"></div></article>
+        <article class="place d2"><div class="place-top"><span class="when">DAY 2</span><span class="role">晚餐・開車</span></div><h4>焼肉 もとぶ牧場 もとぶ店</h4><p class="addr">沖縄県国頭郡本部町字大浜881-1</p><p class="note">18:00 · 停車場 40 台 · 吃完開 30 分回名護</p><div class="btns" data-q="焼肉もとぶ牧場 もとぶ店 本部町大浜881-1" data-tel="050-5484-7152"></div></article>
+        <article class="place d3"><div class="place-top"><span class="when">DAY 3</span><span class="role">午餐</span></div><h4>笑味の店</h4><p class="addr">沖縄県国頭郡大宜味村大兼久61</p><p class="note">只收現金 · 先預約</p><div class="btns" data-q="笑味の店 大宜味村大兼久61" data-tel="0980-44-3220"></div></article>
+        <article class="place d3"><div class="place-top"><span class="when">DAY 3</span><span class="role">下午茶</span></div><h4>BRULEE＆COFFEE PARITTHI</h4><p class="addr">沖縄県国頭郡今帰仁村古宇利2829-1</p><p class="note">08:00–16:00 · 15:30 前進店</p><div class="btns" data-q="PARITTHI 今帰仁村古宇利2829-1"></div></article>
+        <article class="place d3"><div class="place-top"><span class="when">DAY 3</span><span class="role">晚餐・計程車</span></div><h4>やんばるダイニング 松の古民家</h4><p class="addr">沖縄県名護市大南2-14-5</p><p class="note">務必訂位 · 17:30–22:00 · 週日休</p><div class="btns" data-q="やんばるダイニング 松の古民家 名護市大南2-14-5" data-tel="050-5485-8909"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">午餐</span></div><h4>中本鮮魚てんぷら店</h4><p class="addr">沖縄県南城市玉城奥武9</p><p class="note">10:00–18:00 · 週四休 · 隔壁いまいゆ市場</p><div class="btns" data-q="中本鮮魚てんぷら店 南城市玉城奥武" data-tel="098-948-3583"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">下午茶</span></div><h4>浜辺の茶屋</h4><p class="addr">沖縄県南城市玉城玉城2-1</p><p class="note">08:00 起 · 無休</p><div class="btns" data-q="浜辺の茶屋 南城市玉城玉城2-1" data-tel="098-948-2073"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">點心・步行</span></div><h4>ポークたまごおにぎり 牧志市場店</h4><p class="addr">沖縄県那覇市松尾2-8-35</p><p class="note">17:30 打烊 · 週三休</p><div class="btns" data-q="ポークたまごおにぎり 牧志市場店 那覇市松尾2-8-35" data-tel="098-867-9550"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">晚餐・步行</span></div><h4>第一牧志公設市場</h4><p class="addr">沖縄県那覇市松尾2-10-1</p><p class="note">2 樓食堂 20:00 LO</p><div class="btns" data-q="第一牧志公設市場 那覇市松尾2-10-1"></div></article>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div class="sig">いってらっしゃい。</div>
+    <p>營業時間為 2026 年 10 月查詢的資料，出發前一週再確認一次。行程時間是建議節奏，可以依當天狀況調整。</p>
+    <div class="credits">
+      <h4>照片來源（Wikimedia Commons）</h4>
+      <span>古宇利大橋 · Takuya ASADA · <a href="https://commons.wikimedia.org/wiki/File:Kouri_Bridge_(15130568259).jpg" target="_blank" rel="noopener">CC BY 2.0</a></span>
+      <span>國際通夜景 · TurnOnTheNight · <a href="https://commons.wikimedia.org/wiki/File:Night_at_Kokusai-dori_20250503183151.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+      <span>美麗海水族館鯨鯊 · pelican from Tokyo · <a href="https://commons.wikimedia.org/wiki/File:Whale_Shark_-_Churaumi_aquarium,_Okinawa,_Japan.jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a></span>
+      <span>邊戶岬 · Kugel · <a href="https://commons.wikimedia.org/wiki/File:Cape_Hedo_202011.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+      <span>奧武島 · Kugel · <a href="https://commons.wikimedia.org/wiki/File:Ou_Island_Nanjo_202208.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+      <span>牧志公設市場鮮魚攤 · KQuhen · <a href="https://commons.wikimedia.org/wiki/File:Seafood_stall_Makishi_First_Public_Market_03.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+      <span>國際通 · 663highland · <a href="https://commons.wikimedia.org/wiki/File:Kokusai-dori08s3s4440.jpg" target="_blank" rel="noopener">CC BY 2.5</a></span>
+      <span>旭橋站單軌電車 · Mk2010 · <a href="https://commons.wikimedia.org/wiki/File:Okinawa_Monorail_1203%2B1103_at_Asahibashi_Station_20111127.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const root = document.documentElement;
+  root.classList.add('js');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Theme: follow the system until the toggle is used, then remember the choice.
+  const TKEY = 'okinawa-hb-theme';
+  const metas = [...document.querySelectorAll('meta[name="theme-color"]')];
+  const syncThemeColor = t => metas.forEach(m => { m.content = t === 'dark' ? '#0D1317' : '#F4F2EE'; });
+  try { const s = localStorage.getItem(TKEY); if (s === 'light' || s === 'dark') { root.dataset.theme = s; syncThemeColor(s); } } catch (e) {}
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    const sysDark = matchMedia('(prefers-color-scheme: dark)').matches;
+    const next = (root.dataset.theme || (sysDark ? 'dark' : 'light')) === 'dark' ? 'light' : 'dark';
+    root.dataset.theme = next;
+    syncThemeColor(next);
+    try { localStorage.setItem(TKEY, next); } catch (e) {}
+  });
+
+  // Progress bar fallback where scroll-driven animations are unsupported.
+  const bar = document.querySelector('.progress');
+  if (!CSS.supports('animation-timeline: scroll()') && bar) {
+    let ticking = false;
+    const upd = () => {
+      const h = document.documentElement.scrollHeight - innerHeight;
+      bar.style.transform = `scaleX(${h > 0 ? Math.min(1, scrollY / h) : 0})`;
+      ticking = false;
+    };
+    addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(upd); } }, { passive: true });
+    upd();
+  }
+
+  // Reveal on scroll: content stays visible without JS; with JS it eases in once.
+  const revealables = document.querySelectorAll('.rv, .linemap');
+  if (reduce || !('IntersectionObserver' in window)) {
+    revealables.forEach(el => el.classList.add('in'));
+  } else {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+    revealables.forEach(el => io.observe(el));
+  }
+
+  // Highlight the day tab for the section in view.
+  const tabs = [...document.querySelectorAll('.daytabs a')];
+  const days = tabs.map(t => document.querySelector(t.getAttribute('href'))).filter(Boolean);
+  if ('IntersectionObserver' in window) {
+    const so = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        tabs.forEach(t => {
+          const on = t.getAttribute('href') === '#' + e.target.id;
+          t.setAttribute('aria-current', on ? 'true' : 'false');
+          if (on) { const nav = t.parentElement; nav.scrollTo({ left: nav.scrollLeft + t.getBoundingClientRect().left - nav.getBoundingClientRect().left - 8, behavior: reduce ? 'auto' : 'smooth' }); }
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    days.forEach(d => so.observe(d));
+    // Non-day sections clear the highlight so it never points at the wrong day.
+    document.querySelectorAll('main > section').forEach(s => { if (!days.some(d => s.contains(d))) so.observe(s); });
+  }
+
+  // Trip clock in Japan time: countdown before, "today" + "now" during.
+  const tripDays = { '2026-11-11': 1, '2026-11-12': 2, '2026-11-13': 3, '2026-11-14': 4, '2026-11-15': 5 };
+  const jst = new Date(Date.now() + 9 * 3600e3);
+  const ymd = jst.toISOString().slice(0, 10);
+  const hm = jst.toISOString().slice(11, 16);
+  const daysLeft = Math.round((Date.UTC(2026, 10, 11) - Date.UTC(jst.getUTCFullYear(), jst.getUTCMonth(), jst.getUTCDate())) / 864e5);
+  const chip = document.getElementById('countdown');
+  const cta = document.getElementById('cta-today');
+  const n = tripDays[ymd];
+  if (n) {
+    document.querySelectorAll(`.sign[data-day="${n}"]`).forEach(s => s.classList.add('is-today'));
+    const tab = tabs.find(t => t.getAttribute('href') === '#d' + n);
+    if (tab) tab.insertAdjacentHTML('beforeend', '<span class="today">今天</span>');
+    chip.innerHTML = `今天是 <b>DAY ${n}</b>`; chip.hidden = false;
+    cta.href = '#d' + n; cta.lastElementChild.textContent = '看今天行程';
+    // Mark the timeline row that is happening now.
+    const rows = [...document.querySelectorAll(`#d${n} .tl li[data-t]`)];
+    let cur = null;
+    rows.forEach(r => { if (r.dataset.t <= hm) cur = r; });
+    if (cur) cur.classList.add('now');
+  } else if (daysLeft > 0) {
+    chip.innerHTML = `出發倒數 <b>${daysLeft}</b> 天`; chip.hidden = false;
+  }
+
+  // Cancellation deadlines that have already passed fade out.
+  document.querySelectorAll('#deadlines [data-until]').forEach(d => {
+    if (Date.now() > Date.parse(d.dataset.until)) { d.classList.add('past'); d.querySelector('em').textContent = '已過期限'; }
+  });
+
+  // Build map / route / call / copy buttons for the navigation cards.
+  const icon = id => `<svg class="ic"><use href="#i-${id}"/></svg>`;
+  document.querySelectorAll('.place .btns[data-q]').forEach(b => {
+    const q = encodeURIComponent(b.dataset.q);
+    const tel = b.dataset.tel;
+    const card = b.closest('.place');
+    const copyText = [card.querySelector('h4').textContent, card.querySelector('.addr').textContent, tel].filter(Boolean).join(' ');
+    b.innerHTML =
+      `<a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${q}">${icon('pin')}地圖</a>` +
+      `<a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${q}">${icon('nav')}路線</a>` +
+      (tel ? `<a class="btn btn-sm" href="tel:+81${tel.replace(/^0/, '').replace(/-/g, '')}">${icon('phone')}${tel}</a>` : '') +
+      `<button class="btn btn-sm copy" type="button" data-copy="${copyText.replace(/"/g, '&quot;')}">${icon('copy')}<span>複製</span></button>`;
+  });
+  document.addEventListener('click', e => {
+    const btn = e.target.closest('.copy');
+    if (!btn) return;
+    const label = btn.querySelector('span');
+    const done = () => {
+      btn.classList.add('done'); label.textContent = '已複製';
+      setTimeout(() => { btn.classList.remove('done'); label.textContent = '複製'; }, 1800);
+    };
+    const fallback = () => {
+      const addr = btn.closest('.place')?.querySelector('.addr');
+      if (!addr) return;
+      const r = document.createRange(); r.selectNodeContents(addr);
+      const sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+      label.textContent = '已選取地址';
+    };
+    if (navigator.clipboard?.writeText) navigator.clipboard.writeText(btn.dataset.copy).then(done, fallback);
+    else fallback();
+  });
+
+  // Checklist, stored per device.
+  const CK = 'okinawa-hb-todo';
+  let state = {};
+  try { state = JSON.parse(localStorage.getItem(CK) || '{}') || {}; } catch (e) {}
+  const boxes = [...document.querySelectorAll('.todo input[data-k]')];
+  const counter = document.getElementById('todoCount');
+  const meter = document.getElementById('todoBar');
+  const save = () => { try { localStorage.setItem(CK, JSON.stringify(state)); } catch (e) {} };
+  const render = () => {
+    const done = boxes.filter(b => b.checked).length;
+    counter.textContent = done === 0 ? '尚未開始' : done === boxes.length ? '全部完成，可以出發了' : `已完成 ${done} / ${boxes.length}`;
+    meter.style.width = (done / boxes.length * 100) + '%';
+  };
+  boxes.forEach(b => {
+    if (state[b.dataset.k]) b.checked = true;
+    b.addEventListener('change', () => { state[b.dataset.k] = b.checked; save(); render(); });
+  });
+  render();
+  document.getElementById('resetTodo').addEventListener('click', () => {
+    boxes.forEach(b => { b.checked = false; }); state = {}; save(); render();
+  });
+})();
+</script>
+</body>
+</html>
