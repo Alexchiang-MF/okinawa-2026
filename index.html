@@ -474,7 +474,22 @@ ul.plain b{font-weight:700}
 .band figcaption small{font-size:11px; opacity:.85}
 .band figcaption a{color:inherit}
 @media (max-width:640px){.band img{aspect-ratio:16 / 10} .band figcaption{left:14px; right:14px; bottom:10px}}
-.places-group + .places-group{margin-top:32px}
+.places-group + .places-group{margin-top:36px}
+.places-group > h3 .gday{font-family:var(--f-num); font-size:15px; font-weight:700; letter-spacing:.08em; padding:2px 11px; border-radius:var(--r-badge); background:var(--c); color:var(--on-line)}
+.places-group > h3{padding-bottom:10px; border-bottom:4px solid var(--c)}
+.spots{display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:12px}
+.spot{margin:0; position:relative; border-radius:var(--r-box); overflow:hidden; background:var(--surface-2); isolation:isolate}
+.spot img{width:100%; aspect-ratio:4 / 3; object-fit:cover; transition:transform .8s var(--ease)}
+@media (hover:hover){.spot:hover img{transform:scale(1.04)}}
+.spots.one .spot img{aspect-ratio:21 / 9}
+.spot figcaption{position:absolute; left:0; right:0; bottom:0; padding:34px 14px 10px; background:linear-gradient(180deg, transparent, rgb(var(--scrim) / .8)); color:#F4F6F7; display:grid; gap:1px}
+.spot figcaption b{font-size:15px; font-weight:900; letter-spacing:.02em}
+.spot figcaption small{font-size:10.5px; opacity:.85}
+.spot figcaption a{color:inherit}
+.opts{display:grid; gap:7px; margin-top:8px}
+.opts p{display:grid; grid-template-columns:24px minmax(0,1fr); gap:9px; font-size:14px; color:var(--ink-2); margin:0}
+.opts .k{width:24px; height:24px; border-radius:var(--r-badge); background:var(--c); color:var(--on-line); display:grid; place-items:center; font-family:var(--f-num); font-size:14px; font-weight:700; margin-top:1px}
+.opts p span b{color:var(--ink)}
 .places-group > h3{font-size:18px; font-weight:900; margin-bottom:12px; display:flex; align-items:center; gap:8px}
 .places-group > h3 .ic{color:var(--accent)}
 .places{display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,320px),1fr)); gap:12px}
@@ -485,6 +500,8 @@ ul.plain b{font-weight:700}
 .place h4{font-size:17px; font-weight:900; line-height:1.4}
 .place .addr{font-size:13px; color:var(--ink-2); user-select:all; -webkit-user-select:all}
 .place .note{font-size:13px; color:var(--ink-2); padding-top:8px; border-top:1px dashed var(--line)}
+.mask{font-family:var(--f-num); letter-spacing:.06em; white-space:nowrap}
+:lang(ja){word-break:auto-phrase}
 .copy.done{background:var(--tip-wash); color:var(--tip); border-color:transparent}
 
 /* ---------- footer ---------- */
@@ -555,9 +572,9 @@ ul.plain b{font-weight:700}
     <a class="mark" href="#top"><i>沖</i><span>沖繩 2026</span></a>
     <nav class="daytabs" aria-label="每日行程">
       <a class="d1" href="#d1"><b>D1</b><span>那霸</span></a>
-      <a class="d2" href="#d2"><b>D2</b><span>美麗海</span></a>
+      <a class="d2" href="#d2"><b>D2</b><span>今歸仁</span></a>
       <a class="d3" href="#d3"><b>D3</b><span>山原</span></a>
-      <a class="d4" href="#d4"><b>D4</b><span>南城</span></a>
+      <a class="d4" href="#d4"><b>D4</b><span>來客夢</span></a>
       <a class="d5" href="#d5"><b>D5</b><span>回程</span></a>
     </nav>
     <button class="iconbtn" id="themeToggle" type="button" aria-label="切換深淺色">
@@ -574,7 +591,7 @@ ul.plain b{font-weight:700}
   <div class="wrap hero-in">
     <p class="over"><span>2026.11.11 → 11.15</span><em>兩人自駕・定案版</em></p>
     <h1 id="title">沖繩本島<br>五天四夜自駕</h1>
-    <p class="lede">西岸北上、山原折返、東岸南下。那霸 1 晚 → 名護 2 晚 → 那霸 1 晚，每天核心行程不超過兩個，開車盡量在天黑前結束。</p>
+    <p class="lede">西岸北上、山原折返、東岸南下。那霸 1 晚 → 名護 2 晚 → 那霸 1 晚，名護兩晚住有廚房的公寓式飯店，天黑前收車，晚上都走路或在住宿處吃。</p>
     <div class="hero-row">
       <span class="chip-count" id="countdown" hidden></span>
       <a class="btn btn-solid" id="cta-today" href="#d1"><svg class="ic"><use href="#i-route"/></svg><span>從 Day 1 開始</span></a>
@@ -623,12 +640,12 @@ ul.plain b{font-weight:700}
     </div>
 
     <dl class="facts rv">
-      <div><dt><svg class="ic"><use href="#i-key"/></svg>租車</dt><dd>ORIX 旭橋站西店<small>SA CLASS 小型車 · 預約號 ••••3845</small></dd></div>
-      <div><dt><svg class="ic"><use href="#i-bed"/></svg>住宿</dt><dd>那霸 → 名護 ×2 → 那霸<small>三間都在 15:00 後入住</small></dd></div>
-      <div><dt><svg class="ic"><use href="#i-car"/></svg>自駕</dt><dd>3 天 · 約 340 km<small>高速只走三段，夜路只有 D2 燒肉後 30 分</small></dd></div>
+      <div><dt><svg class="ic"><use href="#i-key"/></svg>租車</dt><dd>ORIX 旭橋站西店<small>SA CLASS 小型車 · 預約號 <span class="mask">••••3845</span></small></dd></div>
+      <div><dt><svg class="ic"><use href="#i-bed"/></svg>住宿</dt><dd>那霸 → 名護 ×2 → 那霸<small>名護兩晚有廚房和洗衣機</small></dd></div>
+      <div><dt><svg class="ic"><use href="#i-car"/></svg>自駕</dt><dd>3 天 · 約 330 km<small>每天天黑前收車，不開夜路</small></dd></div>
       <div><dt><svg class="ic"><use href="#i-train"/></svg>不開車的日子</dt><dd>D1、D4 晚上、D5<small>那霸市區全靠單軌電車</small></dd></div>
     </dl>
-    <p class="lead-box rv"><strong>行程主軸</strong>　落地休息 → 魚大統領早午餐 → 美麗海鯨鯊 → 花人逢夕陽 → 本部牛燒肉 → 本島最北端邊戶岬 → 古宇利大橋 → 阿古豬涮涮鍋 → 海中道路 → 浜辺の茶屋 → 國際通採買 → 早班機回家。</p>
+    <p class="lead-box rv"><strong>行程主軸</strong>　落地休息 → 魚大統領 → 許田休息站 → 備瀨福木 → 今歸仁城跡 → 超市採買、第一晚自煮 → 本島最北端邊戶岬 → 古宇利大橋 → 焼肉こうちゃん → 海中道路 → 來客夢 → On 鞋 → 國際通拉麵 → 早班機回家。</p>
   </div>
 </section>
 
@@ -638,28 +655,28 @@ ul.plain b{font-weight:700}
     <div class="sec-head rv">
       <span class="n">02</span>
       <h2 id="route-h">路線總覽</h2>
-      <p>逆時針繞本島一圈，每天一種顏色。邊戶岬到古宇利是唯一往回開的一段。點站名可以直接跳到那一天。</p>
+      <p>西岸北上、山原折返、中部購物後回那霸，每天一種顏色。點站名可以直接跳到那一天。</p>
     </div>
 
     <nav class="linemap rv" aria-label="路線圖">
       <ol>
         <li class="air d1" style="--i:0"><span class="stop"></span><a href="#d1"><span class="d">11/11</span><b>那霸空港</b><small>落地</small></a></li>
         <li class="night d1" style="--i:1"><span class="stop"></span><a href="#d1"><span class="d">DAY 1</span><b>那霸</b><small>Nest Hotel</small></a></li>
-        <li class="d2" style="--i:2"><span class="stop"></span><a href="#d2"><span class="d">DAY 2</span><b>本部</b><small>美麗海</small></a></li>
-        <li class="night d2" style="--i:3"><span class="stop"></span><a href="#d2"><span class="d">DAY 2</span><b>名護</b><small>Yugaf Inn</small></a></li>
+        <li class="d2" style="--i:2"><span class="stop"></span><a href="#d2"><span class="d">DAY 2</span><b>今歸仁</b><small>城跡・備瀨</small></a></li>
+        <li class="night d2" style="--i:3"><span class="stop"></span><a href="#d2"><span class="d">DAY 2</span><b>名護</b><small>Little Island</small></a></li>
         <li class="d3" style="--i:4"><span class="stop"></span><a href="#d3"><span class="d">DAY 3</span><b>邊戶岬</b><small>本島最北</small></a></li>
         <li class="d3" style="--i:5"><span class="stop"></span><a href="#d3"><span class="d">DAY 3</span><b>古宇利</b><small>跨海大橋</small></a></li>
         <li class="night d3" style="--i:6"><span class="stop"></span><a href="#d3"><span class="d">DAY 3</span><b>名護</b><small>連住</small></a></li>
         <li class="d4" style="--i:7"><span class="stop"></span><a href="#d4"><span class="d">DAY 4</span><b>海中道路</b><small>海上兜風</small></a></li>
-        <li class="d4" style="--i:8"><span class="stop"></span><a href="#d4"><span class="d">DAY 4</span><b>南城</b><small>浜辺の茶屋</small></a></li>
-        <li class="night d4" style="--i:9"><span class="stop"></span><a href="#d4"><span class="d">DAY 4</span><b>那霸</b><small>KIYAZA · 還車</small></a></li>
+        <li class="d4" style="--i:8"><span class="stop"></span><a href="#d4"><span class="d">DAY 4</span><b>來客夢</b><small>逛街・午餐</small></a></li>
+        <li class="night d4" style="--i:9"><span class="stop"></span><a href="#d4"><span class="d">DAY 4</span><b>那霸</b><small>On 鞋・還車</small></a></li>
         <li class="air d5" style="--i:10"><span class="stop"></span><a href="#d5"><span class="d">11/15</span><b>那霸空港</b><small>回程</small></a></li>
       </ol>
       <div class="lm-legend">
         <span class="d1"><i></i>不開車・單軌</span>
         <span class="d2"><i></i>D2 西岸北上</span>
         <span class="d3"><i></i>D3 山原</span>
-        <span class="d4"><i></i>D4 東岸南下</span>
+        <span class="d4"><i></i>D4 中部購物</span>
         <span><i class="dot"></i>過夜</span>
       </div>
     </nav>
@@ -674,21 +691,21 @@ ul.plain b{font-weight:700}
       </a>
       <a class="board-row d2" href="#d2">
         <span class="when"><b>D2</b><small>11/12 四</small></span>
-        <span class="what">取車 → 魚大統領 → 美麗海 → 花人逢 → 本部牛燒肉<small>西岸北上，看日落</small></span>
-        <span class="meta"><span class="lbl">住</span>名護 Yugaf Inn</span>
-        <span class="meta"><span class="lbl">晚餐</span>もとぶ牧場 本部店</span>
+        <span class="what">取車 → 魚大統領 → 許田 → 備瀨 → 今歸仁城跡 → 超市<small>西岸北上，16:45 收車</small></span>
+        <span class="meta"><span class="lbl">住</span>名護 Little Island</span>
+        <span class="meta"><span class="lbl">晚餐</span>住宿自煮</span>
       </a>
       <a class="board-row d3" href="#d3">
         <span class="when"><b>D3</b><small>11/13 五</small></span>
-        <span class="what">邊戶岬 → 笑味の店 → 古宇利島<small>山原最北端，回同一間飯店</small></span>
-        <span class="meta"><span class="lbl">住</span>名護 Yugaf Inn（連住）</span>
-        <span class="meta"><span class="lbl">晚餐</span><span class="must">松の古民家 必訂</span></span>
+        <span class="what">邊戶岬 → 國頭午餐三選一 → 古宇利島<small>山原最北端，回同一間住宿</small></span>
+        <span class="meta"><span class="lbl">住</span>名護 Little Island（連住）</span>
+        <span class="meta"><span class="lbl">晚餐</span><span class="ok">焼肉こうちゃん 已訂</span></span>
       </a>
       <a class="board-row d4" href="#d4">
         <span class="when"><b>D4</b><small>11/14 六</small></span>
-        <span class="what">海中道路 → 奧武島 → 浜辺の茶屋 → 還車 → 國際通<small>東岸南下，主購物日</small></span>
+        <span class="what">海中道路 → 來客夢 → 豐崎 On 鞋 → 還車 → 國際通<small>主購物日，15:30 還車</small></span>
         <span class="meta"><span class="lbl">住</span>那霸 KIYAZA EAST</span>
-        <span class="meta"><span class="lbl">晚餐</span>牧志公設市場</span>
+        <span class="meta"><span class="lbl">晚餐</span>國際通拉麵五選一</span>
       </a>
       <a class="board-row d5" href="#d5">
         <span class="when"><b>D5</b><small>11/15 日</small></span>
@@ -717,7 +734,7 @@ ul.plain b{font-weight:700}
             <div class="badge"><span>DAY</span><b>1</b></div>
             <div class="sign-name"><h3>那霸</h3><div class="kana">なは</div></div>
           </div>
-          <div class="sign-bar"><span><svg class="ic"><use href="#i-back"/></svg>桃園</span><span>本部<svg class="ic"><use href="#i-arrow"/></svg></span></div>
+          <div class="sign-bar"><span><svg class="ic"><use href="#i-back"/></svg>桃園</span><span>今歸仁<svg class="ic"><use href="#i-arrow"/></svg></span></div>
           <div class="sign-foot"><span class="date">2026/11/11<small>週三</small><span class="stamp">今天</span></span><span class="theme">落地就休息</span></div>
         </div>
         <figure class="day-photo">
@@ -746,69 +763,70 @@ ul.plain b{font-weight:700}
         <div class="sign" data-day="2">
           <div class="sign-top">
             <div class="badge"><span>DAY</span><b>2</b></div>
-            <div class="sign-name"><h3>本部</h3><div class="kana">もとぶ</div></div>
+            <div class="sign-name"><h3>今歸仁</h3><div class="kana">なきじん</div></div>
           </div>
           <div class="sign-bar"><span><svg class="ic"><use href="#i-back"/></svg>那霸</span><span>山原<svg class="ic"><use href="#i-arrow"/></svg></span></div>
-          <div class="sign-foot"><span class="date">2026/11/12<small>週四</small><span class="stamp">今天</span></span><span class="theme">西岸北上 · 美麗海、日落、本部牛</span></div>
+          <div class="sign-foot"><span class="date">2026/11/12<small>週四</small><span class="stamp">今天</span></span><span class="theme">西岸北上 · 世界遺產 · 第一晚自煮</span></div>
         </div>
         <figure class="day-photo">
-          <div class="ph"><img loading="lazy" src="img/d2-whale-shark.jpg" alt="美麗海水族館黑潮之海大水槽裡的鯨鯊"></div>
-          <figcaption class="photo-credit">照片：黑潮之海的鯨鯊 · pelican from Tokyo · <a href="https://commons.wikimedia.org/wiki/File:Whale_Shark_-_Churaumi_aquarium,_Okinawa,_Japan.jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a></figcaption>
+          <div class="ph"><img loading="lazy" src="img/d2-nakijin.jpg" alt="今歸仁城跡沿著山脊蜿蜒的石牆"></div>
+          <figcaption class="photo-credit">照片：今歸仁城跡 · Suicasmo · <a href="https://commons.wikimedia.org/wiki/File:Nakijin_Castle_20221229-2.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></figcaption>
         </figure>
-        <p class="day-route"><svg class="ic"><use href="#i-car"/></svg><span>那霸 → 本部 → 名護 · 開車合計約 2 小時 50 分，燒肉後 19:15 開回名護</span></p>
-        <div class="stay-line"><svg class="ic"><use href="#i-bed"/></svg><div><b>今晚住 Hotel Yugaf Inn Okinawa</b>名護市宮里 · 連住兩晚，行李不用再搬</div></div>
+        <p class="day-route"><svg class="ic"><use href="#i-car"/></svg><span>那霸 → 許田 → 備瀨 → 今歸仁 → 名護為又 · 開車合計約 2 小時 40 分，16:45 收車</span></p>
+        <div class="stay-line"><svg class="ic"><use href="#i-bed"/></svg><div><b>今晚住 Little Island Okinawa Nago</b>名護市為又 · 連住兩晚 · 有廚房和洗衣機</div></div>
       </aside>
       <div class="day-body">
         <ol class="tl">
           <li data-t="08:45"><span class="t">08:45</span><div class="e"><strong>退房，走到 ORIX 旭橋站西店</strong><p>約 5 分鐘，走外語對應專用櫃檯。</p></div></li>
-          <li class="must" data-t="09:00"><span class="t">09:00</span><div class="e"><strong>取車</strong><span class="where">預約號 ••••3845 · 那霸市西 2-3-1</span><p>上路前做三件事：問 ETC 卡要不要租、看油量、車身既有刮痕拍照存證。</p></div></li>
+          <li class="must" data-t="09:00"><span class="t">09:00</span><div class="e"><strong>取車</strong><span class="where">預約號 <span class="mask">••••3845</span> · 那霸市西 2-3-1</span><p>上路前做三件事：問 ETC 卡要不要租、看油量、車身既有刮痕拍照存證。</p></div></li>
           <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">西町 → 港町<span class="dur">約 12 分</span></div></li>
-          <li class="key" data-t="09:55"><span class="t">09:55</span><div class="e"><strong>漁師食堂 魚大統領</strong><span class="tags"><span class="tg">海鮮</span></span><span class="where">那霸市港町 3-1-17 · 10:00 開門</span><p>漁港旁的食堂，鮪魚下巴、生魚片丼、炸魚定食份量都大。提早幾分鐘到，排第一輪。</p></div></li>
-          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">10:50 出發 · 那霸 IC → 許田 IC → 本部<span class="dur">約 1 小時 35 分</span></div></li>
-          <li data-t="12:30"><span class="t">12:30</span><div class="e"><strong>備瀨福木林道 散步</strong><span class="where">本部町備瀨 · 免費 · 離水族館約 10 分</span><p>老聚落裡的福木防風林，綠蔭成拱。走 40 分鐘消化一下，順便避開水族館的正午人潮。</p></div></li>
-          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">備瀨 → 水族館 P7 停車場<span class="dur">約 10 分</span></div></li>
-          <li class="key" data-t="13:40"><span class="t">13:40</span><div class="e"><strong>沖繩美麗海水族館</strong><span class="tags"><span class="tg core">核心</span></span><span class="where">本部町石川 424 · 08:30–18:30（17:30 停止入館）</span><p>主角是黑潮之海大水槽的鯨鯊。停車場下來有一段長手扶梯，下行時整片海在眼前展開，留點時間拍照。逛到 16:00。</p></div></li>
-          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">上坡往山里<span class="dur">約 10 分</span></div></li>
-          <li class="key" data-t="16:20"><span class="t">16:20</span><div class="e"><strong>花人逢 山頂古民家</strong><span class="tags"><span class="tg core">核心</span><span class="tg cash">只收現金</span></span><span class="where">本部町山里 1153-2 · 11:30–19:00（18:30 LO）</span><p>紅瓦古民家俯瞰伊江島，17:40 日落前光線最好。<b>只點飲料</b>，留胃給晚上的燒肉。</p></div></li>
-          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">17:45 看完日落出發 · 下山往本部港一帶<span class="dur">約 15 分</span></div></li>
-          <li class="key" data-t="18:00"><span class="t">18:00</span><div class="e"><strong>燒肉 もとぶ牧場 本部店</strong><span class="tags"><span class="tg">本部牛</span><span class="tg book">建議訂位</span></span><span class="where">本部町大浜 881-1 · 17:00–22:00（21:30 LO）· 無休 · 停車場 40 台</span><p>本部牛的牧場直營本店，同一個牧場在那霸的分店晚餐要貴一倍。點「もとぶ牛食べ比べ」一次吃 8 種部位，再加一盤和牛內臟。</p></div></li>
-          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">19:15 出發 · 本部 → 名護（天黑，走國道主線）<span class="dur">約 30 分</span></div></li>
-          <li data-t="19:45"><span class="t">19:45</span><div class="e"><strong>入住 Hotel Yugaf Inn Okinawa</strong><p>車停飯店，連住兩晚，明早直接出發。</p></div></li>
+          <li class="key" data-t="09:55"><span class="t">09:55</span><div class="e"><strong>漁師食堂 魚大統領</strong><span class="tags"><span class="tg ">海鮮</span></span><span class="where">那霸市港町 3-1-17 · 10:00 開門</span><p>漁港旁的食堂，鮪魚下巴、生魚片丼、炸魚定食份量都大。提早幾分鐘到，排第一輪。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">10:50 出發 · 那霸 IC → 許田 IC<span class="dur">約 55 分</span></div></li>
+          <li data-t="11:45"><span class="t">11:45</span><div class="e"><strong>道の駅許田 休息站</strong><span class="where">名護市許田 · 導航碼 HX29+WJ · 24 小時 · 免費停車</span><p>下交流道就到。上廁所、伸伸腳，逛逛山原物產和點心，停約 25 分。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">12:10 出發 · 國道 58 號 → 本部半島<span class="dur">約 40 分</span></div></li>
+          <li data-t="12:50"><span class="t">12:50</span><div class="e"><strong>備瀨福木林道 散步</strong><span class="where">本部町備瀨 · 免費</span><p>老聚落裡的福木防風林，綠蔭成拱，走到盡頭就是海。散步約 40 分。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">備瀨 → 今歸仁城跡<span class="dur">約 15 分</span></div></li>
+          <li class="key" data-t="13:45"><span class="t">13:45</span><div class="e"><strong>今歸仁城跡</strong><span class="tags"><span class="tg core">核心</span><span class="tg ">世界遺產</span></span><span class="where">今歸仁村今泊 5101 · 08:00–18:00 · 無休</span><p>琉球王國時代的山城，世界遺產。石牆沿著山脊起伏，站上城牆可以眺望東海，天氣好看得到明天要去的古宇利島。慢慢逛到 15:30。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">15:30 出發 · 今歸仁 → 名護為又<span class="dur">約 30 分</span></div></li>
+          <li class="key" data-t="16:00"><span class="t">16:00</span><div class="e"><strong>サンエー為又シティ 採買晚餐</strong><span class="tags"><span class="tg core">核心</span><span class="tg ok">自煮</span></span><span class="where">名護市為又 904-5 · 營業到 22:00 · 免費停車</span><p>沖繩在地連鎖超市，買今晚的火鍋料、島豆腐、沖繩蔬菜、Orion 啤酒和明天的早餐。同棟有大創、松本清。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">超市 → 住宿<span class="dur">約 5 分</span></div></li>
+          <li data-t="16:45"><span class="t">16:45</span><div class="e"><strong>入住 Little Island Okinawa Nago</strong><span class="where">名護市為又 1219-376 · 入住 15:00–23:30</span><p>車停好就不再開了。先丟洗衣機，再開始煮。</p></div></li>
+          <li data-t="17:40"><span class="t">17:40</span><div class="e"><strong>日落 · 房間晚餐</strong><p>今晚兩個人都可以喝。缺東西就去 24 小時的マックスバリュ，開車 4 分。</p></div></li>
         </ol>
-        <div class="callouts two">
-          <div class="call park"><span class="ci">P</span><div><h4>美麗海停車</h4><p>導航設<strong>水族館 P7 立體停車場</strong>，離入口最近。整個海洋博公園停車都免費。</p></div></div>
-          <div class="call warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span><div><h4>今晚司機不喝酒</h4><p>燒肉後還要開 30 分鐘回名護。日本酒駕零容忍，乘客明知駕駛喝了酒還同車也會受罰。想喝的那位可以喝，開車的那位點烏龍茶。</p></div></div>
+        <div class="spots">
+          <figure class="spot"><img loading="lazy" src="img/s-kyoda.jpg" alt="道の駅許田的物產店"><figcaption><b>11:45 道の駅許田</b><small>照片：道の駅許田 · kamiosaki · <a href="https://commons.wikimedia.org/wiki/File:Michinoeki_-_Kyoda_-_panoramio.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></small></figcaption></figure>
+          <figure class="spot"><img loading="lazy" src="img/s-bise.jpg" alt="備瀨福木林道清晨的步道"><figcaption><b>12:50 備瀨福木林道</b><small>照片：備瀨福木林道 · cyawan · <a href="https://commons.wikimedia.org/wiki/File:%E6%8E%83%E3%81%8D%E6%B8%85%E3%82%81%E3%82%89%E3%82%8C%E3%81%9F%E6%9C%9D%E3%81%AE%E9%81%93.jpg" target="_blank" rel="noopener">CC BY 2.0</a></small></figcaption></figure>
         </div>
-        <div class="callouts">
-          <div class="call tip"><span class="ci"><svg class="ic"><use href="#i-bulb"/></svg></span><div><h4>水族館先衝大水槽</h4><p>下午是人潮高峰。想拍黑潮之海就先直奔大水槽，其他展區回頭再看。花人逢最後一段是窄坡道，下山時天色漸暗，會車慢慢來。</p></div></div>
+        <div class="callouts two">
+          <div class="call park"><span class="ci">P</span><div><h4>許田休息站停車</h4><p>導航直接貼 <strong>HX29+WJ</strong>（Google 導航碼），比地址準。北上車道靠海那一側的停車場，左轉就能進；Google 標示有矛盾，以現場告示為準。</p></div></div>
+          <div class="call tip"><span class="ci"><svg class="ic"><use href="#i-shirt"/></svg></span><div><h4>今歸仁城跡穿好走的鞋</h4><p>石階和斜坡不少，城門內幾乎都是石子路。售票口在入口的グスク交流センター。</p></div></div>
         </div>
 
-        <h4 class="picks-h"><svg class="ic"><use href="#i-food"/></svg>今天吃這三家</h4>
+        <h4 class="picks-h"><svg class="ic"><use href="#i-food"/></svg>今天吃這裡</h4>
         <div class="picks">
           <article class="pick">
             <span class="slot">早午 · 09:55</span>
-            <h5>漁師食堂 おーばんぶるまい 魚大統領</h5>
+            <h5 lang="ja">漁師食堂 おーばんぶるまい 魚大統領</h5>
             <div class="kind">港邊海鮮定食</div>
             <dl><dt>營業</dt><dd>週四 10:00–21:00</dd><dt>電話</dt><dd><a class="tel" href="tel:+81988948636">098-894-8636</a></dd></dl>
             <p class="note">先在券売機買餐券，沒有英文菜單。中午後常排 30 分鐘以上。</p>
             <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E6%BC%81%E5%B8%AB%E9%A3%9F%E5%A0%82%20%E9%AD%9A%E5%A4%A7%E7%B5%B1%E9%A0%98%20%E9%82%A3%E8%A6%87%E5%B8%82%E6%B8%AF%E7%94%BA3-1-17"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
           </article>
           <article class="pick">
-            <span class="slot">下午茶 · 16:20</span>
-            <h5>ピザ喫茶 花人逢</h5>
-            <div class="kind">古民家海景・披薩</div>
-            <dl><dt>營業</dt><dd>11:30–19:00 · 週二三休</dd><dt>電話</dt><dd><a class="tel" href="tel:+81980475537">0980-47-5537</a></dd></dl>
-            <div class="tagrow"><span class="tg cash">只收現金</span><span class="tg ok">不收訂位</span></div>
-            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E8%8A%B1%E4%BA%BA%E9%80%A2%20%E6%9C%AC%E9%83%A8%E7%94%BA%E5%B1%B1%E9%87%8C1153-2"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+            <span class="slot">晚餐採買 · 16:00</span>
+            <h5 lang="ja">サンエー為又シティ</h5>
+            <div class="kind">沖繩在地超市＋大創、藥妝</div>
+            <dl><dt>營業</dt><dd>到 22:00</dd><dt>電話</dt><dd><a class="tel" href="tel:+81980540222">0980-54-0222</a></dd><dt>距離</dt><dd>住宿開車約 5 分</dd></dl>
+            <div class="tagrow"><span class="tg ok">主要採買</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B5%E3%83%B3%E3%82%A8%E3%83%BC%E7%82%BA%E5%8F%88%E3%82%B7%E3%83%86%E3%82%A3%20%E5%90%8D%E8%AD%B7%E5%B8%82%E7%82%BA%E5%8F%88904-5"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
           </article>
           <article class="pick">
-            <span class="slot">晚餐 · 18:00</span>
-            <h5>焼肉 もとぶ牧場 もとぶ店</h5>
-            <div class="kind">本部牛燒肉・牧場直營本店</div>
-            <dl><dt>營業</dt><dd>17:00–22:00（21:30 LO）· 無休</dd><dt>電話</dt><dd><a class="tel" href="tel:+815054847152">050-5484-7152</a></dd><dt>必點</dt><dd>もとぶ牛食べ比べ（8 種部位）</dd></dl>
-            <p class="note">名護店週四公休，11/12 剛好週四，所以吃本部店。可網路訂位。</p>
-            <div class="tagrow"><span class="tg book">建議訂位</span></div>
-            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E3%82%82%E3%81%A8%E3%81%B6%E7%89%A7%E5%A0%B4%20%E3%82%82%E3%81%A8%E3%81%B6%E5%BA%97%20%E6%9C%AC%E9%83%A8%E7%94%BA%E5%A4%A7%E6%B5%9C881-1"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+            <span class="slot">24 小時備援</span>
+            <h5 lang="ja">マックスバリュなご店</h5>
+            <div class="kind">AEON 集團食品超市</div>
+            <dl><dt>營業</dt><dd>24 小時</dd><dt>電話</dt><dd><a class="tel" href="tel:+81980532111">0980-53-2111</a></dd><dt>距離</dt><dd>住宿開車約 4 分</dd></dl>
+            <div class="tagrow"><span class="tg ">半夜、清晨補貨</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9E%E3%83%83%E3%82%AF%E3%82%B9%E3%83%90%E3%83%AA%E3%83%A5%E3%81%AA%E3%81%94%E5%BA%97%20%E5%90%8D%E8%AD%B7%E5%B8%82%E5%AE%AE%E9%87%8C1592"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
           </article>
         </div>
       </div>
@@ -822,44 +840,68 @@ ul.plain b{font-weight:700}
             <div class="badge"><span>DAY</span><b>3</b></div>
             <div class="sign-name"><h3>山原</h3><div class="kana">やんばる</div></div>
           </div>
-          <div class="sign-bar"><span><svg class="ic"><use href="#i-back"/></svg>本部</span><span>南城<svg class="ic"><use href="#i-arrow"/></svg></span></div>
-          <div class="sign-foot"><span class="date">2026/11/13<small>週五</small><span class="stamp">今天</span></span><span class="theme">本島最北端 · 古宇利島</span></div>
+          <div class="sign-bar"><span><svg class="ic"><use href="#i-back"/></svg>今歸仁</span><span>海中道路<svg class="ic"><use href="#i-arrow"/></svg></span></div>
+          <div class="sign-foot"><span class="date">2026/11/13<small>週五</small><span class="stamp">今天</span></span><span class="theme">本島最北端 · 古宇利島 · 燒肉之夜</span></div>
         </div>
         <figure class="day-photo">
           <div class="ph"><img loading="lazy" src="img/d3-cape-hedo.jpg" alt="邊戶岬的珊瑚礁斷崖與太平洋"></div>
           <figcaption class="photo-credit">照片：邊戶岬 · Kugel · <a href="https://commons.wikimedia.org/wiki/File:Cape_Hedo_202011.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></figcaption>
         </figure>
-        <p class="day-route"><svg class="ic"><use href="#i-car"/></svg><span>名護 → 邊戶岬 → 大宜味 → 古宇利 → 名護 · 開車合計約 3 小時</span></p>
-        <div class="stay-line"><svg class="ic"><use href="#i-bed"/></svg><div><b>今晚住 Hotel Yugaf Inn Okinawa</b>同一間，連住第二晚</div></div>
+        <p class="day-route"><svg class="ic"><use href="#i-car"/></svg><span>名護為又 → 邊戶岬 → 國頭午餐 → 古宇利 → 名護為又 · 開車合計約 3 小時</span></p>
+        <div class="stay-line"><svg class="ic"><use href="#i-bed"/></svg><div><b>今晚住 Little Island Okinawa Nago</b>同一間，連住第二晚</div></div>
       </aside>
       <div class="day-body">
         <ol class="tl">
-          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">09:00 出發 · 國道 58 號沿海北上<span class="dur">約 65 分</span></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">09:00 出發 · 國道 58 號沿海北上<span class="dur">約 70 分</span></div></li>
           <li class="key" data-t="10:05"><span class="t">10:05</span><div class="e"><strong>邊戶岬 本島最北端</strong><span class="tags"><span class="tg core">核心</span></span><span class="where">國頭村邊戶 · 免費 · 24 小時</span><p>隆起珊瑚礁斷崖，太平洋與東海在腳下交會。步道平緩，散步 40 分鐘，天氣好看得到與論島。</p></div></li>
-          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">原路南下（繞東岸多 40 分，不划算）<span class="dur">約 35 分</span></div></li>
-          <li data-t="11:40"><span class="t">11:40</span><div class="e"><strong>笑味の店 長壽村午餐</strong><span class="tags"><span class="tg cash">只收現金</span><span class="tg book">先預約</span></span><span class="where">大宜味村大兼久 61 · 餐點 11:30–15:00 LO · 週二三四休</span><p>長壽村在地食材做的定食，清爽不油，替晚上的阿古豬留胃。</p></div></li>
-          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">大宜味 → 古宇利大橋<span class="dur">約 40 分</span></div></li>
-          <li class="key" data-t="13:30"><span class="t">13:30</span><div class="e"><strong>古宇利大橋與島上午茶</strong><span class="tags"><span class="tg core">核心</span><span class="tg">咖啡</span></span><span class="where">BRULEE＆COFFEE PARITTHI · 今歸仁村古宇利 2829-1 · 08:00–16:00</span><p>開過跨海大橋時海水是漸層的。別只是開過去，找停車位下來走一段，再去海景露台吃現烤布蕾配咖啡。島上抓 2 小時。</p></div></li>
-          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">古宇利 → 名護（17:40 日落前到）<span class="dur">約 45 分</span></div></li>
-          <li data-t="16:30"><span class="t">16:30</span><div class="e"><strong>回飯店休息</strong><p>不用搬行李。要洗衣服的話，名護市區有自助洗衣店，開車 10 分鐘內。</p></div></li>
-          <li class="key" data-t="18:30"><span class="t">18:30</span><div class="e"><strong>やんばるダイニング 松の古民家</strong><span class="tags"><span class="tg">阿古豬</span><span class="tg book">務必訂位</span></span><span class="where">名護市大南 2-14-5 · 17:30–22:00（21:00 LO）· 搭計程車</span><p>七十年屋齡的古民家，島黑阿古豬涮涮鍋，整趟最好的一餐。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">10:50 原路南下<span class="dur">約 20–40 分，看選哪家</span></div></li>
+          <li data-t="11:30"><span class="t">11:30</span><div class="e"><strong>午餐三選一，看當天心情</strong><span class="tags"><span class="tg">未定案</span></span>
+            <div class="opts">
+              <p><b class="k">A</b><span><b>國頭港食堂</b>：漁港直送刺身定食，招牌刺身五點盛＋地魚炸物。11:30 開門就到，晚了要排隊。</span></p>
+              <p><b class="k">B</b><span><b>山原食事處 くにがみ亭</b>：在地家常定食，炸物、苦瓜炒、三層肉丼都有，選擇最多、不用排。</span></p>
+              <p><b class="k">C</b><span><b>笑味の店</b>：長壽村島野菜料理，清爽少油。要前一天電話預約、只收現金。</span></p>
+            </div></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">國頭 → 古宇利大橋<span class="dur">約 40–60 分</span></div></li>
+          <li class="key" data-t="13:30"><span class="t">13:30</span><div class="e"><strong>古宇利大橋兜風＋島上下午茶</strong><span class="tags"><span class="tg core">核心</span><span class="tg ">咖啡</span></span><span class="where">今歸仁村古宇利 · PARITTHI 08:00–16:00</span><p>開過跨海大橋時海水是漸層的。找停車位下來走一段，再去 PARITTHI 海景露台吃現烤布蕾。島上抓 2 小時。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">15:30 出發 · 古宇利 → 名護為又<span class="dur">約 30 分</span></div></li>
+          <li data-t="16:00"><span class="t">16:00</span><div class="e"><strong>車停回住宿 · 休息、洗衣服</strong><p>今天的車到這裡為止，晚上走路去吃。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-walk"/></svg></span><div class="e">17:55 從住宿走過去（450 m，幾乎平路）<span class="dur">約 5 分</span></div></li>
+          <li class="key" data-t="18:00"><span class="t">18:00</span><div class="e"><strong>焼肉こうちゃん</strong><span class="tags"><span class="tg ">燒肉</span><span class="tg ok">已訂</span></span><span class="where">名護市為又 1219-163 · 已訂 18:00 · 2 位 · 用餐 90 分</span><p>在地人氣燒肉，牛舌、里肌、橫膈膜、阿古豬都受好評，肉切得厚。兩個人都可以喝。</p></div></li>
         </ol>
-        <div class="callouts two">
-          <div class="call warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span><div><h4>松の古民家一定要先訂</h4><p>營業時間電話不好打通，<strong>12:00–16:30 打</strong>最容易接通。<strong>當天取消收全額</strong>，超過預約時間 15 分鐘視同取消。週日公休，11/13 是週五沒問題。</p></div></div>
-          <div class="call warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span><div><h4>笑味の店先打電話</h4><p>只開週五到週一。部分介紹寫餐點要前一天預約，出發前打 <a class="tel" href="tel:+81980443220">0980-44-3220</a> 確認並訂位。</p></div></div>
+        <div class="spots one">
+          <figure class="spot"><img loading="lazy" src="img/s-kouri.jpg" alt="古宇利大橋橋面與兩側的海"><figcaption><b>13:30 古宇利大橋</b><small>照片：古宇利大橋 · Kugel · <a href="https://commons.wikimedia.org/wiki/File:Kouri_Bridge_202006.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></small></figcaption></figure>
         </div>
-        <div class="callouts">
-          <div class="call tip"><span class="ci"><svg class="ic"><use href="#i-bulb"/></svg></span><div><h4>想更鬆的版本</h4><p>不去邊戶岬，改在古宇利、備瀨一帶慢慢晃，開車時間從 3 小時降到 1.5 小時。岬角風大，薄外套帶著。PARITTHI 熱門品項下午會賣完，15:30 前進店。</p></div></div>
+        <div class="callouts two">
+          <div class="call warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span><div><h4>午餐的小提醒</h4><p>國頭港食堂人氣高，開門半小時就客滿；客滿就改附近的くにがみ亭。想吃笑味の店要<strong>前一天</strong>打 <a class="tel" href="tel:+81980443220">0980-44-3220</a> 預約，記得帶現金。</p></div></div>
+          <div class="call tip"><span class="ci"><svg class="ic"><use href="#i-bulb"/></svg></span><div><h4>燒肉 19:30 結束</h4><p>預約號 <span class="mask">••••ZLMC</span>，用餐限 1 小時 30 分。走路 5 分鐘回住宿，不用叫車。</p></div></div>
         </div>
 
-        <h4 class="picks-h"><svg class="ic"><use href="#i-food"/></svg>今天吃這三家</h4>
+        <h4 class="picks-h"><svg class="ic"><use href="#i-food"/></svg>今天吃這裡</h4>
         <div class="picks">
           <article class="pick">
-            <span class="slot">午餐 · 11:40</span>
-            <h5>笑味の店</h5>
-            <div class="kind">大宜味長壽村定食</div>
+            <span class="slot">午餐 A · 11:30</span>
+            <h5>国頭港食堂</h5>
+            <div class="kind">漁港刺身定食</div>
+            <dl><dt>午餐</dt><dd>11:30–14:00（週五有開）</dd><dt>電話</dt><dd><a class="tel" href="tel:+81980501660">0980-50-1660</a></dd></dl>
+            <p class="note">公休日兩個資料來源寫的不一致，出發前再確認。</p>
+            <div class="tagrow"><span class="tg ">要排隊</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%9B%BD%E9%A0%AD%E6%B8%AF%E9%A3%9F%E5%A0%82%20%E5%9B%BD%E9%A0%AD%E6%9D%91%E6%B5%9C477-1"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+          </article>
+          <article class="pick">
+            <span class="slot">午餐 B · 11:30</span>
+            <h5 lang="ja">山原食事処 くにがみ亭</h5>
+            <div class="kind">在地家常定食</div>
+            <dl><dt>營業</dt><dd>11:00–21:00</dd><dt>電話</dt><dd><a class="tel" href="tel:+81980435520">0980-43-5520</a></dd></dl>
+            <p class="note">Google 4.4，炸物綜合定食和三層肉丼評價好。</p>
+            <div class="tagrow"><span class="tg ok">不用排</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%B1%B1%E5%8E%9F%E9%A3%9F%E4%BA%8B%E5%87%A6%20%E3%81%8F%E3%81%AB%E3%81%8C%E3%81%BF%E4%BA%AD%20%E5%9B%BD%E9%A0%AD%E6%9D%91%E5%8D%8A%E5%9C%B09-1"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+          </article>
+          <article class="pick">
+            <span class="slot">午餐 C · 11:30</span>
+            <h5 lang="ja">笑味の店</h5>
+            <div class="kind">長壽村島野菜料理</div>
             <dl><dt>營業</dt><dd>週五至週一 · 餐點 11:30–15:00</dd><dt>電話</dt><dd><a class="tel" href="tel:+81980443220">0980-44-3220</a></dd></dl>
-            <div class="tagrow"><span class="tg cash">只收現金</span><span class="tg book">先預約</span></div>
+            <div class="tagrow"><span class="tg cash">只收現金</span><span class="tg book">前一天預約</span></div>
             <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%AC%91%E5%91%B3%E3%81%AE%E5%BA%97%20%E5%A4%A7%E5%AE%9C%E5%91%B3%E6%9D%91%E5%A4%A7%E5%85%BC%E4%B9%8561"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
           </article>
           <article class="pick">
@@ -871,12 +913,13 @@ ul.plain b{font-weight:700}
             <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=PARITTHI%20%E4%BB%8A%E5%B8%B0%E4%BB%81%E6%9D%91%E5%8F%A4%E5%AE%87%E5%88%A92829-1"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
           </article>
           <article class="pick">
-            <span class="slot">晚餐 · 18:30</span>
-            <h5>やんばるダイニング 松の古民家</h5>
-            <div class="kind">島黑阿古豬涮涮鍋</div>
-            <dl><dt>營業</dt><dd>17:30–22:00 · 週日休</dd><dt>電話</dt><dd><a class="tel" href="tel:+815054858909">050-5485-8909</a></dd></dl>
-            <div class="tagrow"><span class="tg book">務必訂位</span></div>
-            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E3%82%84%E3%82%93%E3%81%B0%E3%82%8B%E3%83%80%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0%20%E6%9D%BE%E3%81%AE%E5%8F%A4%E6%B0%91%E5%AE%B6%20%E5%90%8D%E8%AD%B7%E5%B8%82%E5%A4%A7%E5%8D%972-14-5"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+            <span class="slot">晚餐 · 18:00</span>
+            <h5 lang="ja">焼肉こうちゃん</h5>
+            <div class="kind">在地燒肉・走路 5 分</div>
+            <dl><dt>預約</dt><dd>11/13 18:00 · 2 位</dd><dt>電話</dt><dd><a class="tel" href="tel:+81980439820">0980-43-9820</a></dd></dl>
+            <p class="note">Google 4.5（376 則）。</p>
+            <div class="tagrow"><span class="tg ok">已訂</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%E3%81%93%E3%81%86%E3%81%A1%E3%82%83%E3%82%93%20%E5%90%8D%E8%AD%B7%E5%B8%82%E7%82%BA%E5%8F%881219-163"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
           </article>
         </div>
       </div>
@@ -888,76 +931,93 @@ ul.plain b{font-weight:700}
         <div class="sign" data-day="4">
           <div class="sign-top">
             <div class="badge"><span>DAY</span><b>4</b></div>
-            <div class="sign-name"><h3>南城</h3><div class="kana">なんじょう</div></div>
+            <div class="sign-name"><h3>海中道路</h3><div class="kana">かいちゅうどうろ</div></div>
           </div>
           <div class="sign-bar"><span><svg class="ic"><use href="#i-back"/></svg>山原</span><span>那霸空港<svg class="ic"><use href="#i-arrow"/></svg></span></div>
-          <div class="sign-foot"><span class="date">2026/11/14<small>週六</small><span class="stamp">今天</span></span><span class="theme">東岸南下 · 海景咖啡 · 國際通</span></div>
+          <div class="sign-foot"><span class="date">2026/11/14<small>週六</small><span class="stamp">今天</span></span><span class="theme">海上兜風 · 來客夢 · On 鞋 · 國際通</span></div>
         </div>
         <figure class="day-photo">
-          <div class="ph"><img loading="lazy" src="img/d4-ou-island.jpg" alt="南城市奧武島與周邊海岸"></div>
-          <figcaption class="photo-credit">照片：南城 奧武島 · Kugel · <a href="https://commons.wikimedia.org/wiki/File:Ou_Island_Nanjo_202208.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></figcaption>
+          <div class="ph"><img loading="lazy" src="img/d4-kaichu.jpg" alt="海中道路筆直延伸在藍色海面上"></div>
+          <figcaption class="photo-credit">照片：海中道路 · N · <a href="https://commons.wikimedia.org/wiki/File:Kaichu-Doro.jpg" target="_blank" rel="noopener">Public domain</a></figcaption>
         </figure>
-        <p class="day-route"><svg class="ic"><use href="#i-car"/></svg><span>名護 → 海中道路 → 奧武島 → 豐崎 → 那霸 · 開車約 2 小時 50 分，<b>15:30 還車</b></span></p>
+        <p class="day-route"><svg class="ic"><use href="#i-car"/></svg><span>名護為又 → 海中道路 → 來客夢 → 豐崎 → 那霸 · 開車合計約 2 小時 45 分，<b>15:30 還車</b></span></p>
         <div class="stay-line"><svg class="ic"><use href="#i-bed"/></svg><div><b>今晚住 KIYAZA Resort 沖繩 EAST</b>那霸市東町 · 還車處步行 8 分</div></div>
       </aside>
       <div class="day-body">
         <ol class="tl">
-          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">08:45 退房出發 · 許田 IC → 沖繩北 IC → 海中道路<span class="dur">約 55 分</span></div></li>
-          <li data-t="09:45"><span class="t">09:45</span><div class="e"><strong>海中道路 兜風</strong><span class="where">うるま市 · 海の駅あやはし館 Road Park · 免費停車</span><p>整條海上公路開過去，中段 Road Park 停 20 到 30 分鐘拍照就走。滿潮時兩側都是海最漂亮。</p></div></li>
-          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">沖繩北 IC → 南風原南 IC → 奧武島<span class="dur">約 55 分</span></div></li>
-          <li data-t="11:30"><span class="t">11:30</span><div class="e"><strong>奧武島 いまいゆ市場＋中本鮮魚天婦羅</strong><span class="tags"><span class="tg">海鮮</span></span><span class="where">南城市玉城奧武 · 中本 10:00–18:00、週四休</span><p>市場買刺身拼盤和魚湯在港邊吃，隔壁中本外帶一包現炸魚天婦羅，兩個人吃很飽。</p></div></li>
-          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">奧武島 → 玉城<span class="dur">約 5 分</span></div></li>
-          <li class="key" data-t="12:50"><span class="t">12:50</span><div class="e"><strong>浜辺の茶屋</strong><span class="tags"><span class="tg core">核心</span><span class="tg">咖啡</span></span><span class="where">南城市玉城玉城 2-1 · 08:00 起，週末營業到 19:00 · 無休</span><p>沖繩海景咖啡的元祖，搶窗邊長吧台。點琉球花紅茶配手作司康或紫芋起司蛋糕，13:30 起身。</p></div></li>
-          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">南城 → 豐崎<span class="dur">約 35 分</span></div></li>
-          <li data-t="14:05"><span class="t">14:05</span><div class="e"><strong>SPORTS DEPO 豐崎店：買 On 鞋</strong><span class="tags"><span class="tg">購物</span></span><span class="where">豐見城市豐崎 1-411 · 10:00–21:00 · 免費停車</span><p>只有 50 分鐘，直接試穿目標型號，<b>14:55 一定要走</b>。正對面的 ASHIBINAA 暢貨中心這次沒時間逛。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">08:45 退房出發 · 許田 IC → 沖繩北 IC → 海中道路<span class="dur">約 60 分</span></div></li>
+          <li data-t="09:45"><span class="t">09:45</span><div class="e"><strong>海中道路 兜風</strong><span class="where">うるま市 · 海の駅あやはし館 · 免費停車</span><p>整條海上公路開過去，中段 Road Park 停 20 分鐘拍照就走。滿潮時兩側都是海最漂亮。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">10:15 出發 · 海中道路 → 北中城<span class="dur">約 35 分</span></div></li>
+          <li class="key" data-t="10:50"><span class="t">10:50</span><div class="e"><strong>AEON Mall 沖繩來客夢 逛街＋午餐</strong><span class="tags"><span class="tg core">核心</span><span class="tg ">購物</span></span><span class="where">北中城村ライカム 1 · 10:00–22:00 · 停車場約 4,000 台</span><p>沖繩最大的購物中心。先上 3F 的 ABC-MART GRAND STAGE 看 On，再慢慢逛，午餐在館內解決。</p></div></li>
+          <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">13:10 出發 · 來客夢 → 豐崎<span class="dur">約 50 分</span></div></li>
+          <li class="key" data-t="14:05"><span class="t">14:05</span><div class="e"><strong>SPORTS DEPO 豐崎店：買 On 鞋</strong><span class="tags"><span class="tg core">必買</span></span><span class="where">豐見城市豐崎 1-411 · 10:00–21:00 · 免費停車</span><p>直接試穿出發前確認好的型號，<b>14:55 一定要走</b>。</p></div></li>
           <li class="mv"><span class="t"><svg class="ic"><use href="#i-car"/></svg></span><div class="e">14:55 出發 · 途中加滿油 → ORIX 旭橋站西店<span class="dur">約 20 分</span></div></li>
-          <li class="must" data-t="15:30"><span class="t">15:30</span><div class="e"><strong>還車</strong><span class="where">那霸市西 2-3-1 · 預約 ••••3845</span><p>預約時間寫死在 15:30，15:25 前到店。滿油還車並保留加油收據，費用現場結清。</p></div></li>
-          <li data-t="15:50"><span class="t">15:50</span><div class="e"><strong>入住 KIYAZA Resort 沖繩 EAST</strong><span class="where">那霸市東町 19-13 · 入住 15:00–22:00</span><p>從還車處走 8 分鐘。行李、鞋盒全部放好，兩手空空出門。</p></div></li>
+          <li class="must" data-t="15:30"><span class="t">15:30</span><div class="e"><strong>還車</strong><span class="where">那霸市西 2-3-1 · 預約 <span class="mask">••••3845</span></span><p>預約時間寫死在 15:30，15:25 前到店。滿油還車並保留加油收據，費用現場結清。</p></div></li>
+          <li data-t="15:50"><span class="t">15:50</span><div class="e"><strong>入住 KIYAZA Resort 沖繩 EAST</strong><span class="where">那霸市東町 19-13 · 入住 15:00–22:00</span><p>從還車處走 8 分鐘。鞋盒和戰利品放好，兩手空空出門。</p></div></li>
           <li class="mv"><span class="t"><svg class="ic"><use href="#i-train"/></svg></span><div class="e">16:20 旭橋站 → 牧志站<span class="dur">約 6 分</span></div></li>
-          <li data-t="16:35"><span class="t">16:35</span><div class="e"><strong>豬肉蛋飯糰 牧志市場店</strong><span class="tags"><span class="tg">外帶</span></span><span class="where">那霸市松尾 2-8-35 · 07:00–17:30 · 週三休</span><p>沖繩名物，傍晚就打烊，所以一到牧志先來買。當下午點心，或留一顆明早在機場吃。</p></div></li>
-          <li class="key" data-t="16:50"><span class="t">16:50</span><div class="e"><strong>國際通與市場商圈</strong><span class="tags"><span class="tg core">核心</span><span class="tg">購物</span></span><span class="where">牧志站下車，一路往西逛</span><p>國際通買伴手禮、紅芋塔、泡盛、黑糖 → 轉進平和通與市場本通的有頂商店街，藥妝比大街便宜 → 壺屋やちむん通挑陶器 → 回到公設市場。</p></div></li>
-          <li data-t="18:45"><span class="t">18:45</span><div class="e"><strong>第一牧志公設市場「持ち上げ」</strong><span class="tags"><span class="tg">海鮮</span></span><span class="where">那霸市松尾 2-10-1 · 2 樓食堂 20:00 最後點餐</span><p>1 樓鮮魚攤挑魚、夜光貝、龍蝦，拿上 2 樓請店家做成刺身、煎或煮。最後一晚吃好吃滿。</p></div></li>
+          <li class="key" data-t="16:30"><span class="t">16:30</span><div class="e"><strong>國際通、第一牧志公設市場</strong><span class="tags"><span class="tg core">核心</span><span class="tg ">購物</span></span><span class="where">牧志站下車，一路往西逛</span><p>國際通買伴手禮 → 轉進平和通、市場本通的有頂商店街（藥妝比大街便宜）→ 壺屋やちむん通挑陶器 → 第一牧志公設市場逛逛。</p></div></li>
+          <li data-t="18:30"><span class="t">18:30</span><div class="e"><strong>晚餐：國際通拉麵五選一</strong><span class="tags"><span class="tg ">未定案</span></span><span class="where">都在國際通走路範圍</span><p>暖暮、琉家、おがわら、丸幸、康，看當天想吃什麼口味。詳見下方卡片。</p></div></li>
           <li class="mv"><span class="t"><svg class="ic"><use href="#i-train"/></svg></span><div class="e">牧志站 → 旭橋站，走回飯店<span class="dur">約 15 分</span></div></li>
-          <li data-t="20:30"><span class="t">20:30</span><div class="e"><strong>回飯店整理行李</strong><p>把戰利品打包好，明天 06:20 出門。櫃檯 22:00 關，時間綽綽有餘。</p></div></li>
+          <li data-t="20:30"><span class="t">20:30</span><div class="e"><strong>回飯店整理行李</strong><p>把戰利品打包好，明天 06:20 出門。</p></div></li>
         </ol>
+        <div class="spots">
+          <figure class="spot"><img loading="lazy" src="img/s-rycom.jpg" alt="AEON Mall 沖繩來客夢的挑高中庭"><figcaption><b>10:50 AEON Mall 沖繩來客夢</b><small>照片：來客夢中庭 · Kugel · <a href="https://commons.wikimedia.org/wiki/File:AEON_Mall_Okinawa_Rycom_06.JPG" target="_blank" rel="noopener">CC BY-SA 4.0</a></small></figcaption></figure>
+          <figure class="spot"><img loading="lazy" src="img/s-danbo.jpg" alt="那霸牧志的暖暮拉麵店門口"><figcaption><b>18:30 國際通拉麵</b><small>照片：暖暮 牧志店 · Hsu Luke · <a href="https://commons.wikimedia.org/wiki/File:Naha_Makishi_Store,_Ramen_Danbo_20190217.jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a></small></figcaption></figure>
+        </div>
         <div class="callouts two">
+          <div class="call warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span><div><h4>On 鞋一定要買到</h4><p>出發前一週打給 SPORTS DEPO 豐崎店 <a class="tel" href="tel:+81988511150">098-851-1150</a>，報型號和尺寸，有貨就請店家「取り置き」保留。萬一沒買到，晚上從牧志搭單軌 2 站到おもろまち：Run Ride POINT、BUNRINDO SPORTS（營業到 22:00）。</p></div></div>
           <div class="call warn"><span class="ci"><svg class="ic"><use href="#i-warn"/></svg></span><div><h4>15:25 前到 ORIX</h4><p>豐崎一定 14:55 離開。加油站選還車路線上的，收據留著，櫃檯可能要看。</p></div></div>
+        </div>
+        <div class="callouts">
           <div class="call tip"><span class="ci"><svg class="ic"><use href="#i-bag"/></svg></span><div><h4>伴手禮今天買齊</h4><p>明天 06:40 就到機場，沒有時間採買。陶器請店家包好，隨身帶上飛機。</p></div></div>
         </div>
 
-        <h4 class="picks-h"><svg class="ic"><use href="#i-food"/></svg>今天吃這四家</h4>
-        <div class="picks p4">
+        <h4 class="picks-h"><svg class="ic"><use href="#i-food"/></svg>晚餐拉麵五選一</h4>
+        <div class="picks">
           <article class="pick">
-            <span class="slot">午餐 · 11:30</span>
-            <h5>中本鮮魚天婦羅＋いまいゆ市場</h5>
-            <div class="kind">奧武島 現炸天婦羅・刺身</div>
-            <dl><dt>營業</dt><dd>10:00–18:00 · 週四休</dd><dt>電話</dt><dd><a class="tel" href="tel:+81989483583">098-948-3583</a></dd></dl>
-            <div class="tagrow"><span class="tg ok">不用訂</span></div>
-            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E4%B8%AD%E6%9C%AC%E9%AE%AE%E9%AD%9A%E3%81%A6%E3%82%93%E3%81%B7%E3%82%89%E5%BA%97%20%E5%A5%A5%E6%AD%A6%E5%B3%B6"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+            <span class="slot">拉麵 1</span>
+            <h5 lang="ja">ラーメン暖暮 那覇牧志店</h5>
+            <div class="kind">九州豚骨・細麵＋特製辣醬</div>
+            <dl><dt>營業</dt><dd>中午到深夜 · 無休</dd><dt>電話</dt><dd><a class="tel" href="tel:+81988638331">098-863-8331</a></dd></dl>
+            <p class="note">2002 年九州拉麵總選舉第一名，晚餐時段常排隊。</p>
+            <div class="tagrow"><span class="tg ">最有名</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E6%9A%96%E6%9A%AE%20%E9%82%A3%E8%A6%87%E7%89%A7%E5%BF%97%E5%BA%97"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
           </article>
           <article class="pick">
-            <span class="slot">下午茶 · 12:50</span>
-            <h5>浜辺の茶屋</h5>
-            <div class="kind">海景長吧台・紅茶司康</div>
-            <dl><dt>營業</dt><dd>08:00 起 · 無休</dd><dt>電話</dt><dd><a class="tel" href="tel:+81989482073">098-948-2073</a></dd></dl>
-            <div class="tagrow"><span class="tg ok">不用訂</span></div>
-            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E6%B5%9C%E8%BE%BA%E3%81%AE%E8%8C%B6%E5%B1%8B%20%E5%8D%97%E5%9F%8E%E5%B8%82%E7%8E%89%E5%9F%8E%E7%8E%89%E5%9F%8E2-1"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+            <span class="slot">拉麵 2</span>
+            <h5 lang="ja">町の麺処 琉家 国際通り本店</h5>
+            <div class="kind">焦香豚骨「琉焦がしラーメン」</div>
+            <dl><dt>營業</dt><dd>到 0:00</dd><dt>評分</dt><dd>Google 4.5（1,985）</dd></dl>
+            <p class="note">在國際通上，有中文菜單，配菜豚辛飯很受歡迎。</p>
+            <div class="tagrow"><span class="tg ok">最穩</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%94%BA%E3%81%AE%E9%BA%BA%E5%87%A6%20%E7%90%89%E5%AE%B6%20%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A%E6%9C%AC%E5%BA%97"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
           </article>
           <article class="pick">
-            <span class="slot">點心 · 16:35</span>
-            <h5>ポークたまごおにぎり 牧志市場店</h5>
-            <div class="kind">豬肉蛋飯糰・外帶</div>
-            <dl><dt>營業</dt><dd>07:00–17:30 · 週三休</dd><dt>電話</dt><dd><a class="tel" href="tel:+81988679550">098-867-9550</a></dd></dl>
-            <div class="tagrow"><span class="tg ok">不用訂</span></div>
-            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9D%E3%83%BC%E3%82%AF%E3%81%9F%E3%81%BE%E3%81%94%E3%81%8A%E3%81%AB%E3%81%8E%E3%82%8A%20%E7%89%A7%E5%BF%97%E5%B8%82%E5%A0%B4%E5%BA%97"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+            <span class="slot">拉麵 3</span>
+            <h5 lang="ja">麺屋おがわら</h5>
+            <div class="kind">濃厚雞白湯・雞鹽・辣沾麵</div>
+            <dl><dt>營業</dt><dd>到 0:00</dd><dt>評分</dt><dd>Google 4.7（1,069）</dd></dl>
+            <p class="note">只有吧台座位，先買餐券。加點叉燒丼。</p>
+            <div class="tagrow"><span class="tg ">換口味</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E9%BA%BA%E5%B1%8B%E3%81%8A%E3%81%8C%E3%82%8F%E3%82%89%20%E9%82%A3%E8%A6%87%E5%B8%82%E6%9D%BE%E5%B0%BE2-6-18"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
           </article>
           <article class="pick">
-            <span class="slot">晚餐 · 18:45</span>
-            <h5>第一牧志公設市場</h5>
-            <div class="kind">樓下挑魚、樓上代工</div>
-            <dl><dt>營業</dt><dd>2 樓食堂 20:00 LO</dd><dt>位置</dt><dd>國際通旁，牧志站步行</dd></dl>
-            <div class="tagrow"><span class="tg ok">不用訂</span></div>
-            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E7%AC%AC%E4%B8%80%E7%89%A7%E5%BF%97%E5%85%AC%E8%A8%AD%E5%B8%82%E5%A0%B4"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+            <span class="slot">拉麵 4</span>
+            <h5 lang="ja">ラーメンパラダイス丸幸</h5>
+            <div class="kind">濃厚湯頭＋沖繩蔬菜、島辣椒</div>
+            <dl><dt>營業</dt><dd>到 1:00</dd><dt>評分</dt><dd>Google 4.9（792）</dd></dl>
+            <p class="note">就在公設市場旁，逛完最順路。</p>
+            <div class="tagrow"><span class="tg ">市場旁</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E3%83%91%E3%83%A9%E3%83%80%E3%82%A4%E3%82%B9%E4%B8%B8%E5%B9%B8%20%E9%82%A3%E8%A6%87%E5%B8%82%E6%9D%BE%E5%B0%BE2-11-15"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
+          </article>
+          <article class="pick">
+            <span class="slot">拉麵 5</span>
+            <h5 lang="ja">和牛すき焼きと牛骨ラーメン 康</h5>
+            <div class="kind">牛骨拉麵・和牛壽喜燒</div>
+            <dl><dt>營業</dt><dd>11:00–22:00</dd><dt>評分</dt><dd>Google 4.9（935）</dd></dl>
+            <p class="note">第三方介紹最少，當最後選項。</p>
+            <div class="tagrow"><span class="tg cash">22:00 打烊</span></div>
+            <div class="btns"><a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=%E5%92%8C%E7%89%9B%E3%81%99%E3%81%8D%E7%84%BC%E3%81%8D%E3%81%A8%E7%89%9B%E9%AA%A8%E3%83%A9%E3%83%BC%E3%83%A1%E3%83%B3%E5%BA%B7%20%E5%9B%BD%E9%9A%9B%E9%80%9A%E3%82%8A%E5%BA%97"><svg class="ic"><use href="#i-pin"/></svg>地圖</a></div>
           </article>
         </div>
       </div>
@@ -971,7 +1031,7 @@ ul.plain b{font-weight:700}
             <div class="badge"><span>DAY</span><b>5</b></div>
             <div class="sign-name"><h3>那霸空港</h3><div class="kana">なはくうこう</div></div>
           </div>
-          <div class="sign-bar"><span><svg class="ic"><use href="#i-back"/></svg>南城</span><span>桃園<svg class="ic"><use href="#i-arrow"/></svg></span></div>
+          <div class="sign-bar"><span><svg class="ic"><use href="#i-back"/></svg>海中道路</span><span>桃園<svg class="ic"><use href="#i-arrow"/></svg></span></div>
           <div class="sign-foot"><span class="date">2026/11/15<small>週日</small><span class="stamp">今天</span></span><span class="theme">早班機返台</span></div>
         </div>
         <figure class="day-photo">
@@ -985,7 +1045,7 @@ ul.plain b{font-weight:700}
           <li data-t="06:10"><span class="t">06:10</span><div class="e"><strong>退房</strong><p>櫃檯 06:00 起辦理。行李前一晚就打包完。</p></div></li>
           <li class="mv"><span class="t"><svg class="ic"><use href="#i-walk"/></svg></span><div class="e">06:20 出門 · 走到旭橋站<span class="dur">約 4 分</span></div></li>
           <li class="key" data-t="06:25"><span class="t">06:25</span><div class="e"><strong>單軌 旭橋站 → 那霸空港站</strong><p>約 11 分鐘。首班車 6 點過後發車，出發前查官網時刻表。萬一睡過頭，計程車約 15 分鐘到機場。</p></div></li>
-          <li data-t="06:40"><span class="t">06:40</span><div class="e"><strong>抵達機場國際線，報到</strong><p>時間很寬裕，買杯咖啡配昨天的飯糰。</p></div></li>
+          <li data-t="06:40"><span class="t">06:40</span><div class="e"><strong>抵達機場國際線，報到</strong><p>時間很寬裕，買杯咖啡、吃個早餐。</p></div></li>
           <li class="must" data-t="07:25"><span class="t">07:25</span><div class="e"><strong>報到截止</strong><p>樂桃在起飛前 50 分鐘關櫃，晚一分鐘都不能上。</p></div></li>
           <li class="key" data-t="08:15"><span class="t">08:15</span><div class="e"><strong>MM921 起飛</strong><p>08:55 抵達桃園，9 點前就到家。</p></div></li>
         </ol>
@@ -1003,7 +1063,7 @@ ul.plain b{font-weight:700}
     <div class="sec-head rv">
       <span class="n">04</span>
       <h2 id="stay-h">住宿與租車</h2>
-      <p>三間住宿都是 2 位成人、1 間房，全部訂好了。取消期限列在下面，要改行程就在期限前決定。</p>
+      <p>三間住宿都是 2 位成人、1 間房，全部訂好了。名護改住有廚房和洗衣機的 Little Island，原本的 Yugaf Inn 記得取消。</p>
     </div>
 
     <div class="stays">
@@ -1016,10 +1076,10 @@ ul.plain b{font-weight:700}
       </article>
       <article class="stay d2 rv">
         <div class="night"><b>2–3</b><span>11/12–11/14 · 2 晚</span></div>
-        <h4>Hotel Yugaf Inn Okinawa</h4>
-        <p class="where">名護市宮里 453-1 · <a class="tel" href="tel:+81980530031">0980-53-0031</a></p>
-        <dl><dt>入住</dt><dd>15:00 起</dd><dt>退房</dt><dd>11/14 11:00 前</dd><dt>位置</dt><dd>濱海，鄰 21 世紀之森公園，國道 58 號旁</dd></dl>
-        <ul><li class="ok">已訂</li><li>連住不換房</li><li class="dl">免費取消至 11/9</li></ul>
+        <h4>Little Island Okinawa Nago</h4>
+        <p class="where">名護市為又 1219-376</p>
+        <dl><dt>入住</dt><dd>15:00–23:30</dd><dt>退房</dt><dd>11/14 05:00–10:00</dd><dt>設備</dt><dd>廚房、洗衣機、免費停車</dd><dt>超市</dt><dd>サンエー 5 分 · マックスバリュ 4 分（24h）</dd></dl>
+        <ul><li class="ok">已訂</li><li>連住不換房</li><li class="dl">免費取消至 11/10</li></ul>
       </article>
       <article class="stay d4 rv">
         <div class="night"><b>4</b><span>11/14 六 · 1 晚</span></div>
@@ -1035,7 +1095,7 @@ ul.plain b{font-weight:700}
       <div class="ticket-head"><svg class="ic"><use href="#i-car"/></svg><b>ORIX 租車 · 旭橋站西店</b><span class="ok">已預約</span></div>
       <div class="ticket-body">
         <div class="ticket-grid">
-          <div><span>預約號碼</span><b class="big num">••••3845</b></div>
+          <div><span>預約號碼</span><b class="big num"><span class="mask">••••3845</span></b></div>
           <div><span>取車</span><b class="big num">11/12 09:00</b></div>
           <div><span>還車（同店）</span><b class="big num">11/14 15:30</b></div>
           <div><span>車型</span><b>SA CLASS 小型車・禁菸</b></div>
@@ -1049,7 +1109,7 @@ ul.plain b{font-weight:700}
     </div>
     <ol class="steps">
       <li class="rv"><span class="k num">01</span><b>帶齊三樣證件</b><p>台灣駕照正本＋監理站日文譯本＋護照，<strong>缺一樣就不交車</strong>。</p></li>
-      <li class="rv"><span class="k num">02</span><b>外語對應專用櫃檯</b><p>報預約號 ••••3845，已加購快速取車，手續較快。</p></li>
+      <li class="rv"><span class="k num">02</span><b>外語對應專用櫃檯</b><p>報預約號 <span class="mask">••••3845</span>，已加購快速取車，手續較快。</p></li>
       <li class="rv"><span class="k num">03</span><b>上路前檢查</b><p>ETC 卡預約單沒列，當場問要不要租。看油量、車身刮痕拍照。</p></li>
       <li class="rv"><span class="k num">04</span><b>還車</b><p>11/14 15:25 前到。滿油，收據留著。費用在店舖現場結帳，可刷卡。</p></li>
     </ol>
@@ -1068,27 +1128,24 @@ ul.plain b{font-weight:700}
     <div class="sec-head rv">
       <span class="n">05</span>
       <h2 id="food-h">吃什麼、要不要訂</h2>
-      <p>海鮮 3 餐、本部牛燒肉 1 餐、阿古豬 1 餐、海景咖啡 3 次。真正非訂不可的只有一家，另外兩家建議先訂。</p>
+      <p>名護兩晚一晚自己煮、一晚燒肉；D3 午餐和最後一晚的拉麵保留彈性，當天看心情。唯一要預約的焼肉こうちゃん已經訂好了。</p>
     </div>
     <figure class="band rv">
       <img loading="lazy" src="img/band-market.jpg" alt="第一牧志公設市場鮮魚攤上的龍蝦與螃蟹">
-      <figcaption><b>樓下挑、樓上煮：最後一晚的公設市場</b><small>照片：KQuhen · <a href="https://commons.wikimedia.org/wiki/File:Seafood_stall_Makishi_First_Public_Market_03.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></small></figcaption>
+      <figcaption><b>第一牧志公設市場：最後一晚去逛逛</b><small>照片：KQuhen · <a href="https://commons.wikimedia.org/wiki/File:Seafood_stall_Makishi_First_Public_Market_03.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></small></figcaption>
     </figure>
     <div class="board fboard rv">
-      <div class="board-row board-head" aria-hidden="true"><span>時段</span><span>店名</span><span>吃什麼</span><span>訂位</span></div>
+      <div class="board-row board-head" aria-hidden="true"><span>時段</span><span>吃哪裡</span><span>吃什麼</span><span>訂位</span></div>
       <a class="board-row d2" href="#d2"><span class="when"><b>D2</b><small>早午</small></span><span class="what">漁師食堂 魚大統領</span><span class="meta">港邊定食，券売機自助</span><span class="meta"><span class="lbl">訂位</span><span class="tg">開門就到</span></span></a>
-      <a class="board-row d2" href="#d2"><span class="when"><b>D2</b><small>下午</small></span><span class="what">花人逢</span><span class="meta">古民家海景，只點飲料</span><span class="meta"><span class="lbl">訂位</span><span class="tg">不收訂位</span></span></a>
-      <a class="board-row d2" href="#d2"><span class="when"><b>D2</b><small>晚</small></span><span class="what">燒肉 もとぶ牧場 本部店</span><span class="meta">本部牛 8 部位食べ比べ</span><span class="meta"><span class="lbl">訂位</span><span class="tg book">建議・網路可訂</span></span></a>
-      <a class="board-row d3" href="#d3"><span class="when"><b>D3</b><small>午</small></span><span class="what">笑味の店</span><span class="meta">長壽村定食</span><span class="meta"><span class="lbl">訂位</span><span class="tg book">先預約</span></span></a>
+      <a class="board-row d2" href="#d2"><span class="when"><b>D2</b><small>晚</small></span><span class="what">住宿自煮</span><span class="meta">サンエー為又シティ採買</span><span class="meta"><span class="lbl">訂位</span><span class="tg ok">不用訂</span></span></a>
+      <a class="board-row d3" href="#d3"><span class="when"><b>D3</b><small>午</small></span><span class="what">國頭港食堂／くにがみ亭／笑味の店</span><span class="meta">刺身定食、家常定食、島野菜</span><span class="meta"><span class="lbl">訂位</span><span class="tg">當天決定</span></span></a>
       <a class="board-row d3" href="#d3"><span class="when"><b>D3</b><small>下午</small></span><span class="what">BRULEE＆COFFEE PARITTHI</span><span class="meta">古宇利海景、現烤布蕾</span><span class="meta"><span class="lbl">訂位</span><span class="tg ok">不用訂</span></span></a>
-      <a class="board-row d3" href="#d3"><span class="when"><b>D3</b><small>晚</small></span><span class="what">松の古民家</span><span class="meta">島黑阿古豬涮涮鍋</span><span class="meta"><span class="lbl">訂位</span><span class="tg core">務必訂位</span></span></a>
-      <a class="board-row d4" href="#d4"><span class="when"><b>D4</b><small>午</small></span><span class="what">奧武島 中本＋いまいゆ市場</span><span class="meta">刺身、現炸天婦羅</span><span class="meta"><span class="lbl">訂位</span><span class="tg ok">不用訂</span></span></a>
-      <a class="board-row d4" href="#d4"><span class="when"><b>D4</b><small>下午</small></span><span class="what">浜辺の茶屋</span><span class="meta">海景長吧台、紅茶司康</span><span class="meta"><span class="lbl">訂位</span><span class="tg ok">不用訂</span></span></a>
-      <a class="board-row d4" href="#d4"><span class="when"><b>D4</b><small>點心</small></span><span class="what">豬肉蛋飯糰 牧志市場店</span><span class="meta">外帶，17:30 打烊</span><span class="meta"><span class="lbl">訂位</span><span class="tg ok">不用訂</span></span></a>
-      <a class="board-row d4" href="#d4"><span class="when"><b>D4</b><small>晚</small></span><span class="what">第一牧志公設市場</span><span class="meta">樓下挑魚、樓上代工</span><span class="meta"><span class="lbl">訂位</span><span class="tg ok">不用訂</span></span></a>
+      <a class="board-row d3" href="#d3"><span class="when"><b>D3</b><small>晚</small></span><span class="what">焼肉こうちゃん</span><span class="meta">燒肉，走路 5 分</span><span class="meta"><span class="lbl">訂位</span><span class="tg ok">已訂 18:00</span></span></a>
+      <a class="board-row d4" href="#d4"><span class="when"><b>D4</b><small>午</small></span><span class="what">AEON Mall 沖繩來客夢</span><span class="meta">館內餐廳、美食街</span><span class="meta"><span class="lbl">訂位</span><span class="tg ok">不用訂</span></span></a>
+      <a class="board-row d4" href="#d4"><span class="when"><b>D4</b><small>晚</small></span><span class="what">國際通拉麵五選一</span><span class="meta">暖暮、琉家、おがわら、丸幸、康</span><span class="meta"><span class="lbl">訂位</span><span class="tg">當天決定</span></span></a>
     </div>
     <div class="callouts rv" style="margin-top:14px">
-      <div class="call info"><span class="ci"><svg class="ic"><use href="#i-food"/></svg></span><div><h4>備案</h4><p>D4 午餐可改糸滿「港町パーラー」海鮮丼（11:00–15:00，賣完為止）；D4 下午咖啡可改「山の茶屋 楽水」（週三四休）。<strong>只收現金</strong>的是花人逢和笑味の店，路邊小攤和在地老店也多半只收現金。</p></div></div>
+      <div class="call info"><span class="ci"><svg class="ic"><use href="#i-food"/></svg></span><div><h4>現金與預約</h4><p><strong>只收現金</strong>的是笑味の店，路邊小攤和在地老店也多半只收現金。D3 午餐如果決定吃笑味の店，要<strong>前一天</strong>電話預約；國頭港食堂不收訂位，開門就到。</p></div></div>
     </div>
   </div>
 </section>
@@ -1099,7 +1156,7 @@ ul.plain b{font-weight:700}
     <div class="sec-head rv">
       <span class="n">06</span>
       <h2 id="shop-h">購物與退稅</h2>
-      <p>購物全部集中在 D4 下午到晚上。退稅制度 11/1 剛改，先看清楚再決定要不要辦。</p>
+      <p>購物集中在 D4：上午來客夢、下午豐崎 On 鞋、晚上國際通。退稅制度 11/1 剛改，先看清楚再決定要不要辦。</p>
     </div>
     <figure class="band rv">
       <img loading="lazy" src="img/band-kokusai.jpg" alt="白天的那霸國際通，椰子樹與伴手禮店">
@@ -1114,17 +1171,18 @@ ul.plain b{font-weight:700}
       <div class="panel w5 rv">
         <h3><svg class="ic"><use href="#i-bag"/></svg>D4 採買路線</h3>
         <ul class="plain">
+          <li><b>來客夢</b>：10:50–13:10，3F ABC-MART GRAND STAGE 先看 On。</li>
+          <li><b>On 鞋</b>：SPORTS DEPO 豐崎店，14:05–14:55，出發前請店家保留。</li>
           <li><b>國際通</b>：伴手禮、紅芋塔、泡盛、黑糖。唐吉訶德 24 小時營業。</li>
           <li><b>平和通・市場本通</b>：有頂商店街，藥妝比大街便宜。</li>
           <li><b>壺屋やちむん通</b>：陶器，請店家包好隨身帶。</li>
-          <li><b>On 鞋</b>：SPORTS DEPO 豐崎店，14:05–14:55。</li>
         </ul>
       </div>
       <div class="panel tint w12 rv" style="grid-column:1 / -1">
         <h3><svg class="ic"><use href="#i-bulb"/></svg>幾個容易忘的細節</h3>
         <ul class="plain">
           <li><b>店家優惠券和退稅是兩回事。</b>唐吉訶德、BicCamera、Alpen 的觀光客折價券當場折抵，不受新制影響。券要存<b>原圖</b>給店員掃，截圖無效。</li>
-          <li><b>On 鞋備案</b>：從牧志搭單軌 2 站到おもろまち的 San-A 那霸 Main Place（ABC-MART GRAND STAGE、BUNRINDO SPORTS，營業到 22:00），有沒有 On 要先打電話問。</li>
+          <li><b>On 鞋最後備案</b>：從牧志搭單軌 2 站到おもろまち。跑步專門店 Run Ride POINT（<a class="tel" href="tel:+818098547568">080-9854-7568</a>），或 San-A 那霸 Main Place 2F 的 BUNRINDO SPORTS（<a class="tel" href="tel:+81989513356">098-951-3356</a>，營業到 22:00）。有沒有 On 要先打電話問。</li>
           <li><b>行李</b>：隨身只有 7 kg，陶器、泡盛、鞋盒很快就超重，回程在樂桃官網加購託運。</li>
           <li><b>付款</b>：多數店可用 PayPay 和信用卡。</li>
         </ul>
@@ -1145,10 +1203,11 @@ ul.plain b{font-weight:700}
       <div class="todo w7 rv">
         <label><input type="checkbox" data-k="t1"><span><b>監理站辦駕照日文譯本</b>，出發帶正本＋譯本＋護照。沒有譯本 ORIX 不交車</span></label>
         <label><input type="checkbox" data-k="t2"><span>樂桃官網<b>加購回程託運行李</b></span></label>
-        <label><input type="checkbox" data-k="t3"><span>訂位：<b>松の古民家</b> 11/13 18:30（務必，12:00–16:30 打）</span></label>
-        <label><input type="checkbox" data-k="t4"><span>訂位：<b>笑味の店</b> 11/13 午餐、<b>もとぶ牧場 本部店</b> 11/12 18:00（網路可訂）</span></label>
-        <label><input type="checkbox" data-k="t5"><span>打 <a class="tel" href="tel:+81988511150">098-851-1150</a> 問 SPORTS DEPO 豐崎店 On 鞋型號與尺寸庫存</span></label>
-        <label><input type="checkbox" data-k="t6"><span>準備日圓現金（花人逢、笑味の店只收現金）</span></label>
+        <label><input type="checkbox" data-k="t12"><span><b>取消 Yugaf Inn</b> 原本的 2 晚（11/9 前免費）</span></label>
+        <label><input type="checkbox" data-k="t13"><span>如果之前訂過<b>松の古民家</b>或<b>もとぶ牧場</b>，打電話取消</span></label>
+        <label><input type="checkbox" data-k="t5"><span>打 <a class="tel" href="tel:+81988511150">098-851-1150</a> 問 SPORTS DEPO 豐崎店 On 鞋型號與尺寸，有貨請店家<b>取り置き</b>保留到 11/14</span></label>
+        <label><input type="checkbox" data-k="t14"><span>D3 午餐如果想吃<b>笑味の店</b>，前一天打 <a class="tel" href="tel:+81980443220">0980-44-3220</a> 預約</span></label>
+        <label><input type="checkbox" data-k="t15"><span>準備日圓現金（笑味の店、路邊小店只收現金）</span></label>
         <label><input type="checkbox" data-k="t7"><span>Visit Japan Web 登錄，並登記退稅用信用卡</span></label>
         <label><input type="checkbox" data-k="t8"><span>把店家優惠券存成<b>手機原圖</b>（截圖無效）</span></label>
         <label><input type="checkbox" data-k="t9"><span>確認手機網路或 eSIM，PayPay 可用</span></label>
@@ -1159,7 +1218,8 @@ ul.plain b{font-weight:700}
       <div class="w5 rv" style="display:grid; gap:12px; align-content:start">
         <h3 class="sub-h" style="margin:0"><svg class="ic"><use href="#i-cal"/></svg>住宿取消期限</h3>
         <div class="deadlines" id="deadlines">
-          <div data-until="2026-11-09T23:59:00+09:00"><b class="num">11/9</b><span>Yugaf Inn<small>三筆裡最早的一筆</small></span><em>入住前 3 天</em></div>
+          <div data-until="2026-11-09T23:59:00+09:00"><b class="num">11/9</b><span>Yugaf Inn<small>已改住 Little Island，記得取消</small></span><em>要取消</em></div>
+          <div data-until="2026-11-10T23:59:00+09:00"><b class="num">11/10</b><span>Little Island Okinawa Nago<small>名護時間 23:59 前</small></span><em>入住前 2 天</em></div>
           <div data-until="2026-11-11T23:59:00+09:00"><b class="num">11/11</b><span>KIYAZA Resort EAST<small>D4 晚上那霸</small></span><em>出發當天</em></div>
           <div data-until="2026-11-11T14:00:00+09:00"><b class="num">11/11</b><span>Nest Hotel 那霸西<small>14:00 前</small></span><em>出發當天</em></div>
         </div>
@@ -1183,7 +1243,7 @@ ul.plain b{font-weight:700}
         <ul class="plain">
           <li>白天約 20–25°C，短袖就好；晚上和冷氣房要薄外套。</li>
           <li><b>飯店和租車的冷氣都開很強</b>，邊戶岬、岬角一帶風也大。</li>
-          <li>日落約 17:40。只有 D2 燒肉後要開 30 分鐘夜路回名護，其他天都在天黑前結束移動。</li>
+          <li>日落約 17:40。三天都在天黑前收車，晚上走路或在住宿處吃。</li>
           <li>自然景點多半沒有販賣部，車上放礦泉水和小點心。</li>
         </ul>
       </div>
@@ -1191,8 +1251,8 @@ ul.plain b{font-weight:700}
         <h3><svg class="ic"><use href="#i-car"/></svg>開車</h3>
         <ul class="plain">
           <li>導航用<b>電話號碼或 MapCode</b> 輸入最準，地址常找不到。下方速查表的電話可直接用。</li>
-          <li>高速只走三段：那霸 IC ↔ 許田 IC（D2、D4）、沖繩北 IC ↔ 南風原南 IC（D4）。</li>
-          <li><b>日本酒駕零容忍。</b>D2 燒肉那晚司機不喝；D3 晚餐搭計程車。</li>
+          <li>高速：那霸 IC → 許田 IC（D2）、許田 IC → 沖繩北 IC（D4）。D4 來客夢到豐崎照 Google Maps 即時路線。</li>
+          <li><b>日本酒駕零容忍。</b>D2 自煮、D3 燒肉走路去，晚上都不用開車，兩個人都可以喝。</li>
           <li>還車前加滿油並留收據。</li>
         </ul>
       </div>
@@ -1207,7 +1267,7 @@ ul.plain b{font-weight:700}
         </div>
       </div>
       <div class="call tip w12 rv" style="grid-column:1 / -1"><span class="ci"><svg class="ic"><use href="#i-wave"/></svg></span><div><h4>海邊禮儀</h4><p>沙灘上的貝殼、珊瑚不可撿拾帶走，違規會開罰；垃圾隨身帶走。</p></div></div>
-      <div class="call info w12 rv" style="grid-column:1 / -1"><span class="ci"><svg class="ic"><use href="#i-route"/></svg></span><div><h4>評估後沒排的三個點</h4><p><strong>美國村</strong>：晚上點燈才好逛，但 11/14 15:30 就還車，晚上沒車。<strong>鳳梨園</strong>：偏親子團客，D3 回程已接近閉園。<strong>PARCO CITY</strong>：在浦添，還車後單軌到不了，要去只能擠掉 On 鞋或國際通。</p></div></div>
+      <div class="call info w12 rv" style="grid-column:1 / -1"><span class="ci"><svg class="ic"><use href="#i-route"/></svg></span><div><h4>評估後沒排的點</h4><p><strong>美麗海水族館</strong>：改去今歸仁城跡，避開人潮，看世界遺產。<strong>南城（奧武島、浜辺の茶屋）</strong>：和來客夢方向相反，D4 排不進。<strong>美國村</strong>：晚上點燈才好逛，但 15:30 就還車。<strong>PARCO CITY</strong>：在浦添，還車後單軌到不了。</p></div></div>
     </div>
   </div>
 </section>
@@ -1218,44 +1278,65 @@ ul.plain b{font-weight:700}
     <div class="sec-head rv">
       <span class="n">09</span>
       <h2 id="nav-h">導航速查表</h2>
-      <p>按「地圖」開 Google Maps，「路線」直接開始導航，「撥號」直接打。「複製」會把日文名稱、地址和電話一起複製，貼進車上導航或傳給對方。</p>
+      <p>照天數排好，當天打開就是當天要去的地方。「地圖」開 Google Maps，「路線」直接導航，「撥號」直接打；「複製」會把日文名稱、地址和電話一起複製，貼進車上導航。</p>
     </div>
 
-    <div class="places-group">
-      <h3><svg class="ic"><use href="#i-bed"/></svg>住宿與租車</h3>
+    <div class="places-group d1">
+      <h3><span class="gday">DAY 1</span>11/11 三 · 那霸</h3>
       <div class="places">
-        <article class="place d1"><div class="place-top"><span class="when">DAY 1</span><span class="role">住宿</span></div><h4>ネストホテル那覇西</h4><p class="addr">沖縄県那覇市西1-20-19</p><p class="note">Nest Hotel 那霸西 · 旭橋站步行 5 分</p><div class="btns" data-q="ネストホテル那覇西 沖縄県那覇市西1-20-19"></div></article>
-        <article class="place d2"><div class="place-top"><span class="when">DAY 2</span><span class="role">取車・還車</span></div><h4>オリックスレンタカー 旭橋駅西店</h4><p class="addr">沖縄県那覇市西2-3-1</p><p class="note">預約號 ••••3845 · 取車 11/12 09:00 · 還車 11/14 15:30</p><div class="btns" data-q="オリックスレンタカー 旭橋駅西店 沖縄県那覇市西2-3-1"></div></article>
-        <article class="place d2"><div class="place-top"><span class="when">DAY 2–3</span><span class="role">住宿</span></div><h4>ホテルゆがふいんおきなわ</h4><p class="addr">沖縄県名護市宮里453-1</p><p class="note">Hotel Yugaf Inn Okinawa · 連住 2 晚</p><div class="btns" data-q="ホテルゆがふいんおきなわ 沖縄県名護市宮里453-1" data-tel="0980-53-0031"></div></article>
-        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">住宿</span></div><h4>KIYAZA Resort 沖縄 EAST</h4><p class="addr">沖縄県那覇市東町19-13</p><p class="note">入住 15:00–22:00 · 退房 06:00 起</p><div class="btns" data-q="KIYAZA Resort Okinawa EAST 沖縄県那覇市東町19-13"></div></article>
+        <article class="place d1"><div class="place-top"><span class="when">22:00</span><span class="role">住宿</span></div><h4 lang="ja">ネストホテル那覇西</h4><p class="addr" lang="ja">沖縄県那覇市西1-20-19</p><p class="note">Nest Hotel 那霸西 · 旭橋站步行 5 分</p><div class="btns" data-q="ネストホテル那覇西 沖縄県那覇市西1-20-19"></div></article>
       </div>
     </div>
 
-    <div class="places-group">
-      <h3><svg class="ic"><use href="#i-pin"/></svg>景點</h3>
+    <div class="places-group d2">
+      <h3><span class="gday">DAY 2</span>11/12 四 · 今歸仁</h3>
       <div class="places">
-        <article class="place d2"><div class="place-top"><span class="when">DAY 2</span><span class="role">散步</span></div><h4>備瀬のフクギ並木</h4><p class="addr">沖縄県国頭郡本部町備瀬</p><p class="note">備瀨福木林道 · 12:30 · 離水族館 10 分</p><div class="btns" data-q="備瀬のフクギ並木"></div></article>
-        <article class="place d2"><div class="place-top"><span class="when">DAY 2</span><span class="role">核心</span></div><h4>沖縄美ら海水族館（P7 駐車場）</h4><p class="addr">沖縄県国頭郡本部町石川424</p><p class="note">導航設 P7 立體停車場，離入口最近</p><div class="btns" data-q="沖縄美ら海水族館 P7駐車場" data-tel="0980-48-3748"></div></article>
-        <article class="place d3"><div class="place-top"><span class="when">DAY 3</span><span class="role">核心</span></div><h4>辺戸岬</h4><p class="addr">沖縄県国頭郡国頭村辺戸</p><p class="note">本島最北端 · 免費 · 24 小時</p><div class="btns" data-q="辺戸岬 沖縄県国頭郡国頭村辺戸"></div></article>
-        <article class="place d3"><div class="place-top"><span class="when">DAY 3</span><span class="role">核心</span></div><h4>古宇利大橋</h4><p class="addr">沖縄県国頭郡今帰仁村古宇利</p><p class="note">橋頭兩端都有停車場，下車走一段</p><div class="btns" data-q="古宇利大橋"></div></article>
-        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">兜風</span></div><h4>海中道路（海の駅あやはし館）</h4><p class="addr">沖縄県うるま市与那城屋平4</p><p class="note">中段 Road Park 免費停車 · 停 20–30 分</p><div class="btns" data-q="海の駅あやはし館 うるま市"></div></article>
-        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">購物</span></div><h4>スポーツデポ 豊崎店</h4><p class="addr">沖縄県豊見城市豊崎1-411</p><p class="note">On 鞋 · 14:05–14:55 · 免費停車</p><div class="btns" data-q="スポーツデポ 豊崎店 沖縄県豊見城市豊崎1-411" data-tel="098-851-1150"></div></article>
+        <article class="place d2"><div class="place-top"><span class="when">09:00</span><span class="role">取車</span></div><h4 lang="ja">オリックスレンタカー 旭橋駅西店</h4><p class="addr" lang="ja">沖縄県那覇市西2-3-1</p><p class="note">預約號 <span class="mask">••••3845</span> · 外語對應專用櫃檯</p><div class="btns" data-q="オリックスレンタカー 旭橋駅西店 沖縄県那覇市西2-3-1"></div></article>
+        <article class="place d2"><div class="place-top"><span class="when">09:55</span><span class="role">早午</span></div><h4 lang="ja">漁師食堂 おーばんぶるまい 魚大統領</h4><p class="addr" lang="ja">沖縄県那覇市港町3-1-17</p><p class="note">10:00 開門 · 券売機自助</p><div class="btns" data-q="漁師食堂 魚大統領 那覇市港町3-1-17" data-tel="098-894-8636"></div></article>
+        <article class="place d2"><div class="place-top"><span class="when">11:45</span><span class="role">休息站</span></div><h4 lang="ja">道の駅許田（北上側駐車場）</h4><p class="addr" lang="ja">〒905-0024 沖縄県名護市許田 · HX29+WJ</p><p class="note">導航貼 HX29+WJ · 北上車道靠海側 · 24 小時</p><div class="btns" data-q="HX29+WJ 名護市"></div></article>
+        <article class="place d2"><div class="place-top"><span class="when">12:50</span><span class="role">散步</span></div><h4 lang="ja">備瀬のフクギ並木</h4><p class="addr" lang="ja">沖縄県国頭郡本部町備瀬</p><p class="note">備瀨福木林道 · 免費</p><div class="btns" data-q="備瀬のフクギ並木"></div></article>
+        <article class="place d2"><div class="place-top"><span class="when">13:45</span><span class="role">世界遺產</span></div><h4 lang="ja">今帰仁城跡</h4><p class="addr" lang="ja">沖縄県国頭郡今帰仁村字今泊5101</p><p class="note">08:00–18:00 · 無休 · 石階多</p><div class="btns" data-q="今帰仁城跡 今帰仁村今泊5101" data-tel="0980-56-4400"></div></article>
+        <article class="place d2"><div class="place-top"><span class="when">16:00</span><span class="role">超市</span></div><h4 lang="ja">サンエー為又シティ</h4><p class="addr" lang="ja">沖縄県名護市為又904-5 · JX5J+9X</p><p class="note">營業到 22:00 · 住宿開車 5 分</p><div class="btns" data-q="サンエー為又シティ 名護市為又904-5" data-tel="0980-54-0222"></div></article>
+        <article class="place d2"><div class="place-top"><span class="when">24h</span><span class="role">備援超市</span></div><h4 lang="ja">マックスバリュなご店</h4><p class="addr" lang="ja">沖縄県名護市宮里1592 · JX4H+VM</p><p class="note">24 小時 · 住宿開車 4 分</p><div class="btns" data-q="マックスバリュなご店 名護市宮里1592" data-tel="0980-53-2111"></div></article>
+        <article class="place d2"><div class="place-top"><span class="when">16:45</span><span class="role">住宿・2 晚</span></div><h4 lang="ja">Little Island Okinawa 名護</h4><p class="addr" lang="ja">沖縄県名護市為又1219-376</p><p class="note">入住 15:00–23:30 · 退房 05:00–10:00</p><div class="btns" data-q="Little Island Okinawa 名護 名護市為又1219-376"></div></article>
       </div>
     </div>
 
-    <div class="places-group">
-      <h3><svg class="ic"><use href="#i-food"/></svg>餐廳</h3>
+    <div class="places-group d3">
+      <h3><span class="gday">DAY 3</span>11/13 五 · 山原</h3>
       <div class="places">
-        <article class="place d2"><div class="place-top"><span class="when">DAY 2</span><span class="role">早午</span></div><h4>漁師食堂 おーばんぶるまい 魚大統領</h4><p class="addr">沖縄県那覇市港町3-1-17</p><p class="note">10:00 開門 · 券売機自助</p><div class="btns" data-q="漁師食堂 魚大統領 那覇市港町3-1-17" data-tel="098-894-8636"></div></article>
-        <article class="place d2"><div class="place-top"><span class="when">DAY 2</span><span class="role">下午茶</span></div><h4>ピザ喫茶 花人逢</h4><p class="addr">沖縄県国頭郡本部町山里1153-2</p><p class="note">只收現金 · 最後一段窄坡道</p><div class="btns" data-q="ピザ喫茶 花人逢 本部町山里1153-2" data-tel="0980-47-5537"></div></article>
-        <article class="place d2"><div class="place-top"><span class="when">DAY 2</span><span class="role">晚餐・開車</span></div><h4>焼肉 もとぶ牧場 もとぶ店</h4><p class="addr">沖縄県国頭郡本部町字大浜881-1</p><p class="note">18:00 · 停車場 40 台 · 吃完開 30 分回名護</p><div class="btns" data-q="焼肉もとぶ牧場 もとぶ店 本部町大浜881-1" data-tel="050-5484-7152"></div></article>
-        <article class="place d3"><div class="place-top"><span class="when">DAY 3</span><span class="role">午餐</span></div><h4>笑味の店</h4><p class="addr">沖縄県国頭郡大宜味村大兼久61</p><p class="note">只收現金 · 先預約</p><div class="btns" data-q="笑味の店 大宜味村大兼久61" data-tel="0980-44-3220"></div></article>
-        <article class="place d3"><div class="place-top"><span class="when">DAY 3</span><span class="role">下午茶</span></div><h4>BRULEE＆COFFEE PARITTHI</h4><p class="addr">沖縄県国頭郡今帰仁村古宇利2829-1</p><p class="note">08:00–16:00 · 15:30 前進店</p><div class="btns" data-q="PARITTHI 今帰仁村古宇利2829-1"></div></article>
-        <article class="place d3"><div class="place-top"><span class="when">DAY 3</span><span class="role">晚餐・計程車</span></div><h4>やんばるダイニング 松の古民家</h4><p class="addr">沖縄県名護市大南2-14-5</p><p class="note">務必訂位 · 17:30–22:00 · 週日休</p><div class="btns" data-q="やんばるダイニング 松の古民家 名護市大南2-14-5" data-tel="050-5485-8909"></div></article>
-        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">午餐</span></div><h4>中本鮮魚てんぷら店</h4><p class="addr">沖縄県南城市玉城奥武9</p><p class="note">10:00–18:00 · 週四休 · 隔壁いまいゆ市場</p><div class="btns" data-q="中本鮮魚てんぷら店 南城市玉城奥武" data-tel="098-948-3583"></div></article>
-        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">下午茶</span></div><h4>浜辺の茶屋</h4><p class="addr">沖縄県南城市玉城玉城2-1</p><p class="note">08:00 起 · 無休</p><div class="btns" data-q="浜辺の茶屋 南城市玉城玉城2-1" data-tel="098-948-2073"></div></article>
-        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">點心・步行</span></div><h4>ポークたまごおにぎり 牧志市場店</h4><p class="addr">沖縄県那覇市松尾2-8-35</p><p class="note">17:30 打烊 · 週三休</p><div class="btns" data-q="ポークたまごおにぎり 牧志市場店 那覇市松尾2-8-35" data-tel="098-867-9550"></div></article>
-        <article class="place d4"><div class="place-top"><span class="when">DAY 4</span><span class="role">晚餐・步行</span></div><h4>第一牧志公設市場</h4><p class="addr">沖縄県那覇市松尾2-10-1</p><p class="note">2 樓食堂 20:00 LO</p><div class="btns" data-q="第一牧志公設市場 那覇市松尾2-10-1"></div></article>
+        <article class="place d3"><div class="place-top"><span class="when">10:05</span><span class="role">核心</span></div><h4 lang="ja">辺戸岬</h4><p class="addr" lang="ja">沖縄県国頭郡国頭村辺戸</p><p class="note">本島最北端 · 免費 · 24 小時</p><div class="btns" data-q="辺戸岬 沖縄県国頭郡国頭村辺戸"></div></article>
+        <article class="place d3"><div class="place-top"><span class="when">11:30</span><span class="role">午餐 A</span></div><h4 lang="ja">国頭港食堂</h4><p class="addr" lang="ja">沖縄県国頭郡国頭村浜477-1</p><p class="note">11:30 開門 · 要排隊</p><div class="btns" data-q="国頭港食堂 国頭村浜477-1" data-tel="0980-50-1660"></div></article>
+        <article class="place d3"><div class="place-top"><span class="when">11:30</span><span class="role">午餐 B</span></div><h4 lang="ja">山原食事処 くにがみ亭</h4><p class="addr" lang="ja">沖縄県国頭郡国頭村半地9-1 · P5H9+R5</p><p class="note">11:00–21:00 · 不用排</p><div class="btns" data-q="山原食事処 くにがみ亭 国頭村半地9-1" data-tel="0980-43-5520"></div></article>
+        <article class="place d3"><div class="place-top"><span class="when">11:30</span><span class="role">午餐 C</span></div><h4 lang="ja">笑味の店</h4><p class="addr" lang="ja">沖縄県国頭郡大宜味村大兼久61</p><p class="note">前一天預約 · 只收現金</p><div class="btns" data-q="笑味の店 大宜味村大兼久61" data-tel="0980-44-3220"></div></article>
+        <article class="place d3"><div class="place-top"><span class="when">13:30</span><span class="role">兜風</span></div><h4 lang="ja">古宇利大橋</h4><p class="addr" lang="ja">沖縄県国頭郡今帰仁村古宇利</p><p class="note">橋頭兩端都有停車場</p><div class="btns" data-q="古宇利大橋"></div></article>
+        <article class="place d3"><div class="place-top"><span class="when">13:30</span><span class="role">下午茶</span></div><h4 lang="ja">BRULEE＆COFFEE PARITTHI</h4><p class="addr" lang="ja">沖縄県国頭郡今帰仁村古宇利2829-1</p><p class="note">08:00–16:00 · 15:30 前進店</p><div class="btns" data-q="PARITTHI 今帰仁村古宇利2829-1"></div></article>
+        <article class="place d3"><div class="place-top"><span class="when">18:00</span><span class="role">晚餐・走路</span></div><h4 lang="ja">焼肉こうちゃん</h4><p class="addr" lang="ja">沖縄県名護市為又1219-163 · JX79+XJ</p><p class="note">已訂 18:00 · 2 位 · <span class="mask">••••ZLMC</span></p><div class="btns" data-q="焼肉こうちゃん 名護市為又1219-163" data-tel="0980-43-9820"></div></article>
+      </div>
+    </div>
+
+    <div class="places-group d4">
+      <h3><span class="gday">DAY 4</span>11/14 六 · 海中道路</h3>
+      <div class="places">
+        <article class="place d4"><div class="place-top"><span class="when">09:45</span><span class="role">兜風</span></div><h4 lang="ja">海中道路（海の駅あやはし館）</h4><p class="addr" lang="ja">沖縄県うるま市与那城屋平4</p><p class="note">中段 Road Park 免費停車</p><div class="btns" data-q="海の駅あやはし館 うるま市"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">10:50</span><span class="role">逛街・午餐</span></div><h4 lang="ja">イオンモール沖縄ライカム</h4><p class="addr" lang="ja">沖縄県中頭郡北中城村ライカム1</p><p class="note">10:00–22:00 · 3F ABC-MART GRAND STAGE</p><div class="btns" data-q="イオンモール沖縄ライカム"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">14:05</span><span class="role">On 鞋</span></div><h4 lang="ja">スポーツデポ 豊崎店</h4><p class="addr" lang="ja">沖縄県豊見城市豊崎1-411</p><p class="note">14:55 一定要走 · 免費停車</p><div class="btns" data-q="スポーツデポ 豊崎店 沖縄県豊見城市豊崎1-411" data-tel="098-851-1150"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">15:30</span><span class="role">還車</span></div><h4 lang="ja">オリックスレンタカー 旭橋駅西店</h4><p class="addr" lang="ja">沖縄県那覇市西2-3-1</p><p class="note">15:25 前到 · 滿油還車</p><div class="btns" data-q="オリックスレンタカー 旭橋駅西店 沖縄県那覇市西2-3-1"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">15:50</span><span class="role">住宿</span></div><h4 lang="ja">KIYAZA Resort 沖縄 EAST</h4><p class="addr" lang="ja">沖縄県那覇市東町19-13</p><p class="note">入住 15:00–22:00 · 退房 06:00 起</p><div class="btns" data-q="KIYAZA Resort Okinawa EAST 沖縄県那覇市東町19-13"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">16:30</span><span class="role">逛逛</span></div><h4 lang="ja">第一牧志公設市場</h4><p class="addr" lang="ja">沖縄県那覇市松尾2-10-1</p><p class="note">國際通旁 · 牧志站步行</p><div class="btns" data-q="第一牧志公設市場 那覇市松尾2-10-1"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">18:30</span><span class="role">拉麵 1</span></div><h4 lang="ja">ラーメン暖暮 那覇牧志店</h4><p class="addr" lang="ja">沖縄県那覇市牧志2-16-10</p><p class="note">九州豚骨 · 無休</p><div class="btns" data-q="ラーメン暖暮 那覇牧志店" data-tel="098-863-8331"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">18:30</span><span class="role">拉麵 2</span></div><h4 lang="ja">町の麺処 琉家 国際通り本店</h4><p class="addr" lang="ja">沖縄県那覇市松尾1-6-8</p><p class="note">焦香豚骨 · 到 0:00</p><div class="btns" data-q="町の麺処 琉家 国際通り本店"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">18:30</span><span class="role">拉麵 3</span></div><h4 lang="ja">麺屋おがわら</h4><p class="addr" lang="ja">沖縄県那覇市松尾2-6-18</p><p class="note">雞白湯 · 到 0:00</p><div class="btns" data-q="麺屋おがわら 那覇市松尾2-6-18"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">18:30</span><span class="role">拉麵 4</span></div><h4 lang="ja">ラーメンパラダイス丸幸</h4><p class="addr" lang="ja">沖縄県那覇市松尾2-11-15</p><p class="note">公設市場旁 · 到 1:00</p><div class="btns" data-q="ラーメンパラダイス丸幸 那覇市松尾2-11-15"></div></article>
+        <article class="place d4"><div class="place-top"><span class="when">18:30</span><span class="role">拉麵 5</span></div><h4 lang="ja">和牛すき焼きと牛骨ラーメン 康</h4><p class="addr" lang="ja">沖縄県那覇市松尾2-5-1</p><p class="note">牛骨拉麵 · 22:00 打烊</p><div class="btns" data-q="和牛すき焼きと牛骨ラーメン康 国際通り店"></div></article>
+      </div>
+    </div>
+
+    <div class="places-group d5">
+      <h3><span class="gday">DAY 5</span>11/15 日 · 回程</h3>
+      <div class="places">
+        <article class="place d5"><div class="place-top"><span class="when">06:20</span><span class="role">單軌</span></div><h4 lang="ja">ゆいレール 旭橋駅</h4><p class="addr" lang="ja">沖縄県那覇市泉崎1</p><p class="note">KIYAZA 步行 4 分 · 到機場約 11 分</p><div class="btns" data-q="ゆいレール 旭橋駅"></div></article>
+        <article class="place d5"><div class="place-top"><span class="when">06:40</span><span class="role">報到</span></div><h4 lang="ja">那覇空港 国際線ターミナル</h4><p class="addr" lang="ja">沖縄県那覇市鏡水150</p><p class="note">樂桃 MM921 · 07:25 報到截止</p><div class="btns" data-q="那覇空港 国際線"></div></article>
       </div>
     </div>
   </div>
@@ -1268,14 +1349,19 @@ ul.plain b{font-weight:700}
     <p>營業時間為 2026 年 10 月查詢的資料，出發前一週再確認一次。行程時間是建議節奏，可以依當天狀況調整。</p>
     <div class="credits">
       <h4>照片來源（Wikimedia Commons）</h4>
-      <span>古宇利大橋 · Takuya ASADA · <a href="https://commons.wikimedia.org/wiki/File:Kouri_Bridge_(15130568259).jpg" target="_blank" rel="noopener">CC BY 2.0</a></span>
+      <span>古宇利大橋（主視覺） · Takuya ASADA · <a href="https://commons.wikimedia.org/wiki/File:Kouri_Bridge_(15130568259).jpg" target="_blank" rel="noopener">CC BY 2.0</a></span>
       <span>國際通夜景 · TurnOnTheNight · <a href="https://commons.wikimedia.org/wiki/File:Night_at_Kokusai-dori_20250503183151.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
-      <span>美麗海水族館鯨鯊 · pelican from Tokyo · <a href="https://commons.wikimedia.org/wiki/File:Whale_Shark_-_Churaumi_aquarium,_Okinawa,_Japan.jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a></span>
+      <span>今歸仁城跡 · Suicasmo · <a href="https://commons.wikimedia.org/wiki/File:Nakijin_Castle_20221229-2.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+      <span>道の駅許田 · kamiosaki · <a href="https://commons.wikimedia.org/wiki/File:Michinoeki_-_Kyoda_-_panoramio.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></span>
+      <span>備瀨福木林道 · cyawan · <a href="https://commons.wikimedia.org/wiki/File:%E6%8E%83%E3%81%8D%E6%B8%85%E3%82%81%E3%82%89%E3%82%8C%E3%81%9F%E6%9C%9D%E3%81%AE%E9%81%93.jpg" target="_blank" rel="noopener">CC BY 2.0</a></span>
       <span>邊戶岬 · Kugel · <a href="https://commons.wikimedia.org/wiki/File:Cape_Hedo_202011.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
-      <span>奧武島 · Kugel · <a href="https://commons.wikimedia.org/wiki/File:Ou_Island_Nanjo_202208.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+      <span>古宇利大橋橋面 · Kugel · <a href="https://commons.wikimedia.org/wiki/File:Kouri_Bridge_202006.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+      <span>海中道路 · N · <a href="https://commons.wikimedia.org/wiki/File:Kaichu-Doro.jpg" target="_blank" rel="noopener">Public domain</a></span>
+      <span>來客夢中庭 · Kugel · <a href="https://commons.wikimedia.org/wiki/File:AEON_Mall_Okinawa_Rycom_06.JPG" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
+      <span>暖暮 牧志店 · Hsu Luke · <a href="https://commons.wikimedia.org/wiki/File:Naha_Makishi_Store,_Ramen_Danbo_20190217.jpg" target="_blank" rel="noopener">CC BY-SA 2.0</a></span>
+      <span>旭橋站單軌電車 · Mk2010 · <a href="https://commons.wikimedia.org/wiki/File:Okinawa_Monorail_1203%2B1103_at_Asahibashi_Station_20111127.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></span>
       <span>牧志公設市場鮮魚攤 · KQuhen · <a href="https://commons.wikimedia.org/wiki/File:Seafood_stall_Makishi_First_Public_Market_03.jpg" target="_blank" rel="noopener">CC BY-SA 4.0</a></span>
       <span>國際通 · 663highland · <a href="https://commons.wikimedia.org/wiki/File:Kokusai-dori08s3s4440.jpg" target="_blank" rel="noopener">CC BY 2.5</a></span>
-      <span>旭橋站單軌電車 · Mk2010 · <a href="https://commons.wikimedia.org/wiki/File:Okinawa_Monorail_1203%2B1103_at_Asahibashi_Station_20111127.jpg" target="_blank" rel="noopener">CC BY-SA 3.0</a></span>
     </div>
   </div>
 </footer>
@@ -1377,11 +1463,12 @@ ul.plain b{font-weight:700}
     const q = encodeURIComponent(b.dataset.q);
     const tel = b.dataset.tel;
     const card = b.closest('.place');
+    if (tel) card.querySelector('.note').insertAdjacentHTML('beforeend', ` · <span class="num">${tel}</span>`);
     const copyText = [card.querySelector('h4').textContent, card.querySelector('.addr').textContent, tel].filter(Boolean).join(' ');
     b.innerHTML =
       `<a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/search/?api=1&query=${q}">${icon('pin')}地圖</a>` +
       `<a class="btn btn-sm" target="_blank" rel="noopener" href="https://www.google.com/maps/dir/?api=1&destination=${q}">${icon('nav')}路線</a>` +
-      (tel ? `<a class="btn btn-sm" href="tel:+81${tel.replace(/^0/, '').replace(/-/g, '')}">${icon('phone')}${tel}</a>` : '') +
+      (tel ? `<a class="btn btn-sm" href="tel:+81${tel.replace(/^0/, '').replace(/-/g, '')}" title="${tel}" aria-label="撥打 ${tel}">${icon('phone')}撥號</a>` : '') +
       `<button class="btn btn-sm copy" type="button" data-copy="${copyText.replace(/"/g, '&quot;')}">${icon('copy')}<span>複製</span></button>`;
   });
   document.addEventListener('click', e => {
